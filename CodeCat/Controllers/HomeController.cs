@@ -10,6 +10,7 @@ namespace CodeCat.Controllers
     {
         public ActionResult Index()
         {
+            //UserModel newUser = new UserModel();
             return View();
         }
 
