@@ -3,10 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using CodeCat.Models;
+using CodeCat.Models;
 
 namespace CodeCat.Services
 {
     public class DocumentService
     {
+        public DocumendModel document;
+
+        public DocumendModel getDocument(int documentID)
+        {
+            return null;
+        }
+        
+        public bool addDocument()
+        {
+            return false;
+        }
     }
 }
