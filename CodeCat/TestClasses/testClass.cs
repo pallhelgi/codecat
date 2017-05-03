@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using CodeCat.Models.ViewModeles;
 
 namespace CodeCat.TestClasses
 {
     //lists of projects, documents and users to test with before database is used
     public class testClass
     {
-        public void Seed()
+        public List<ProjectModel> SeedProject()
         {
-
             List<ProjectModel> projects = new List<ProjectModel>();
 
             ProjectModel project1 = new ProjectModel
@@ -41,6 +41,11 @@ namespace CodeCat.TestClasses
 
             projects.Add(project3);
 
+            return projects;
+        }
+
+        public List<UserModel> seedUsers()
+        {
             List<UserModel> users = new List<UserModel>();
 
             UserModel user1 = new UserModel
@@ -76,6 +81,11 @@ namespace CodeCat.TestClasses
 
             users.Add(user3);
 
+            return users;
+        }
+
+        public List<DocumendModel> seedDocs()
+        {
             List<DocumendModel> documents = new List<DocumendModel>();
 
             DocumendModel doc1 = new DocumendModel
@@ -105,6 +115,7 @@ namespace CodeCat.TestClasses
 
             documents.Add(doc3);
 
+            return documents;
         }
     }
 }
