@@ -10,6 +10,7 @@ namespace CodeCat.Models
 
     public class DocumendModel
     {
+        [Key]
         public int ID { get; set; }
         [Display(Name = "Document name")]
         [Required(ErrorMessage = "You must enter a name for the document!")]

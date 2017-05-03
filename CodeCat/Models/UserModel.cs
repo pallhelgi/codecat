@@ -8,6 +8,7 @@ namespace CodeCat.Models
 {
     public class UserModel
     {
+        [Key]
         public int ID { get; set; }
         [Display(Name = "Username")]
         [Required(ErrorMessage = "You must enter a username!")]
