@@ -9,9 +9,9 @@ namespace CodeCat.Models
 
     public class DocumendModel
     {
-        int ID { get; set; }
-        string name { get; set; }
-        string content { get; set; }
+        public int ID { get; set; }
+        public string name { get; set; }
+        public string content { get; set; }
         documentType type { get; set; }
     }
 }
