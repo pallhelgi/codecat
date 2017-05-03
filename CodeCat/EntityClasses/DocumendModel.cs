@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-
 namespace CodeCat.Models
 {
-    enum documentType { html, css, cplusplus, csharp}
+    enum documentType { html, css, cplusplus, js }
 
     public class DocumendModel
     {
