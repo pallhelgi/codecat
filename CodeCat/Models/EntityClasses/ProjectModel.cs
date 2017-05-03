@@ -7,8 +7,8 @@ namespace CodeCat.Models
 {
     public class ProjectModel
     {
-        int ID { get; set; }
-        string name { get; set; }
-        int creatorUserID { get; set; }
+        public int ID { get; set; }
+        public string name { get; set; }
+        public int creatorUserID { get; set; }
     }
 }

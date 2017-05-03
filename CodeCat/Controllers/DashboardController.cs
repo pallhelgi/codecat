@@ -32,5 +32,10 @@ namespace CodeCat.Controllers
             //TODO
             return View();
         }
+
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
     }
 }
