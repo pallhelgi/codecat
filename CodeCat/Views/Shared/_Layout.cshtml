@@ -16,18 +16,20 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href=".."><img src="~/Images/codecat2_white.png" alt="Code::Cat" width="40" height="40"></a>
+                <div class="logo-navbar">
+                    <a href=".."><img src="~/Images/codecat2_white.png" alt="Code::Cat" class="navbar-brand"></a>
+                    <p>Code::Cat</p>
+                </div>
+
             </div>
-            <div class="navbar-collapse collapse">
-                @Html.Partial("_LoginPartial")
-            </div>
+            
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Code::Cat</p>
         </footer>
     </div>
 

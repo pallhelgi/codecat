@@ -5,7 +5,7 @@
 
 /**/
 .logo-frontpage {
-    padding-top: 50px;
+    padding-top: 80px;
     width: 200px;
     display: block;
     margin-left: auto;
@@ -34,15 +34,26 @@
     margin: 0 auto;
 }
 
+/*Info about the system on the frontpage*/
 .info {
     padding-top: 20px;
 }
 
+/*Logo on nav bar*/
 .navbar-brand {
-    
+    width: 60px;
+    height: 60px;
+    position: absolute<
 }
 
 .navbar-inverse {
-    background-color: #606060;
-    border-color: #606060;
-    }
+    background-color: #262626;
+    margin-bottom: 4px;
+}
+
+/*Code::Cat text under logo in nav bar*/
+.navbar-header p {
+    font-weight: bold;
+    font-size: 9px;
+    color: white;
+}
