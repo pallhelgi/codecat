@@ -201,9 +201,9 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Models\EntityClasses\DocumendModel.cs" />
-    <Compile Include="Models\EntityClasses\ProjectModel.cs" />
-    <Compile Include="Models\EntityClasses\UserModel.cs" />
+    <Compile Include="EntityClasses\DocumendModel.cs" />
+    <Compile Include="EntityClasses\ProjectModel.cs" />
+    <Compile Include="EntityClasses\UserModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
