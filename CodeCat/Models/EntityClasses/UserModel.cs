@@ -7,10 +7,10 @@ namespace CodeCat.Models
 {
     public class UserModel
     {
-        int ID { get; set; }
-        string userName { get; set; }
-        string password { get; set; }
-        string email { get; set; }
-        string fullName { get; set; }
+        public int ID { get; set; }
+        public string userName { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public string fullName { get; set; }
     }
 }

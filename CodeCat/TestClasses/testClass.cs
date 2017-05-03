@@ -31,5 +31,34 @@ namespace CodeCat.TestClasses
             name = "Project 3",
             creatorUserID = 1
         };
+
+        List<UserModel> users = new List<UserModel>();
+
+        UserModel user1 = new UserModel
+        {
+            ID = 0,
+            userName = "iceHot1",
+            email = "bjarnib@n1.is",
+            fullName = "Bjarni",
+            password = "123456789"
+        };
+
+        UserModel user2 = new UserModel
+        {
+            ID = 1,
+            userName = "Meowzer",
+            email = "pallhelgi@ru.is",
+            fullName = "Pall",
+            password = "123456789"
+        };
+
+        UserModel user3 = new UserModel
+        {
+            ID = 2,
+            userName = "Ziggs",
+            email = "waldorf@ru.is",
+            fullName = "Siggi",
+            password = "123456789"
+        };
     }
 }
