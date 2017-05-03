@@ -1,0 +1,27 @@
+﻿@model CodeCat.Models.UserModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div id="signin-dialog">
+        <h2>Sign in</h2>
+
+        @Html.LabelFor(model => model.username, new { htmlAttributes = new { @class = "form-label" } })
+        @Html.TextBoxFor(model => model.username, new { htmlAttributes = new { @class = "form-signin" } })
+        <br/>
+        @Html.LabelFor(model => model.password, new { htmlAttributes = new { @class = "form-label" } })
+        @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-signin" } }) 
+        <br/>
+
+        <!--DASHBOARD is just a fillup, not correct, needs to redirect to view for Dashboard-->
+        <a href="@Url.Action("Dashboard")" class="btn btn-success sign-popup">
+            Sign in
+        </a>
+
+        <!--DASHBOARD is just a fillup, not correct, needs to redirect to Sign up popup-->
+        <a href="@Url.Action("Dashboard")" class="btn btn-success sign-popup">
+            Sign up
+        </a>
+    </div>
+}

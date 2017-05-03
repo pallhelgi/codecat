@@ -46,7 +46,7 @@ namespace CodeCat.TestClasses
             UserModel user1 = new UserModel
             {
                 ID = 0,
-                userName = "iceHot1",
+                username = "iceHot1",
                 email = "bjarnib@n1.is",
                 fullName = "Bjarni",
                 password = "123456789"
@@ -57,7 +57,7 @@ namespace CodeCat.TestClasses
             UserModel user2 = new UserModel
             {
                 ID = 1,
-                userName = "Meowzer",
+                username = "Meowzer",
                 email = "pallhelgi@ru.is",
                 fullName = "Pall",
                 password = "123456789"
@@ -68,7 +68,7 @@ namespace CodeCat.TestClasses
             UserModel user3 = new UserModel
             {
                 ID = 2,
-                userName = "Ziggs",
+                username = "Ziggs",
                 email = "waldorf@ru.is",
                 fullName = "Siggi",
                 password = "123456789"
