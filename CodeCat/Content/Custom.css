@@ -1,2 +1,34 @@
 ﻿body {
+    font-family: Helvetica, Arial;
+    background-color: #e1e1e1
+}
+
+.logo-frontpage {
+    padding-top: 50px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#code-cat {
+    font-weight: bold;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+}
+
+.sign-frontpage {
+    margin: 40px 10px;
+}
+
+.info, .center-buttons {
+    display: table; 
+    margin: 0 auto;
+}
+
+.info {
+    padding-top: 20px;
 }
