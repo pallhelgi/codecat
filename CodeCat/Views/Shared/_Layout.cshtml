@@ -12,29 +12,18 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="logo-navbar">
+          
                     <a href=".."><img src="~/Images/codecat2_white.png" alt="Code::Cat" class="navbar-brand"></a>
                     <p>Code::Cat</p>
-                </div>
-                <a class="navbar-brand" href=".."><img src="~/Images/codecat2_white.png" alt="Code::Cat" width="40" height="40"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Dashboard", "Dashboard", "Dashboard")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>          
             </div>
-            <div class="navbar-collapse collapse">
-
-            </div>
+   
         </div>
-    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
