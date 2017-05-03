@@ -32,3 +32,12 @@
 .info {
     padding-top: 20px;
 }
+
+.navbar-brand {
+    
+}
+
+.navbar-inverse {
+    background-color: #606060;
+    border-color: #606060;
+    }
