@@ -16,8 +16,12 @@ namespace CodeCat.Models
         [Display(Name = "Password")]
         [Required(ErrorMessage = "You must enter a password!")]
         public string password { get; set; }
+        [Display(Name = "Confirm password")]
+        [Required(ErrorMessage = "You must enter a password!")]
+        public string confirmPassword { get; set; }
         [Display(Name = "Email")]
         [Required(ErrorMessage = "You must enter an email!")]
+        [Compare("password", ErrorMessage = "The password and confirmation password do not match.")]
         public string email { get; set; }
         [Display(Name = "Full name")]
         public string fullName { get; set; }

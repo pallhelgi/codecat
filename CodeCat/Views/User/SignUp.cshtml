@@ -19,6 +19,9 @@
         @Html.LabelFor(model => model.password, new { htmlAttributes = new { @class = "form-label" } })
         @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-signup" } })
         <br />
+        @Html.LabelFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-label" } })
+        @Html.PasswordFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-signup" } })
+        <br />
 
         <!--DASHBOARD is just a fillup, not correct, needs to redirect to view for Dashboard-->
         <a href="@Url.Action("Dashboard")" class="btn btn-success sign-popup">
