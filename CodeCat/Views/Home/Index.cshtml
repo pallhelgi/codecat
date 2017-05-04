@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+
 @model CodeCat.Models.UserModel
 
 <!--LOGO-->
@@ -20,14 +21,17 @@
 <!--SIGN IN og SIGN UP buttons-->
 <div class="center-buttons">
     <!--Sign in button-->
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#SignInModal">
-        Sign in
-    </button>
-
+    <span class="sign-in-button">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#SignInModal">
+            Sign in
+        </button>
+    </span>
     <!--Sign up button-->
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#SignUpModal">
-        Sign up
-    </button>
+    <span class="sign-up-button">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#SignUpModal">
+            Sign up
+        </button>
+    </span>
 </div>
 
 <!--Sign in modal window-->

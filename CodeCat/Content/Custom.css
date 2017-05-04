@@ -34,6 +34,14 @@
     margin: 0 auto;
 }
 
+.sign-in-button {
+    margin-right: 5px;
+}
+
+.sign-un-button {
+    margin-left: 5px;
+}
+
 /*Info about the system on the frontpage*/
 .info {
     padding-top: 20px;
