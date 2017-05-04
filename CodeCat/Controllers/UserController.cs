@@ -32,7 +32,7 @@ namespace CodeCat.Controllers
             return View();
         }
 
-        public ActionResult SignUp()
+        public ActionResult signUp()
         {
             //TODO
             return View();
