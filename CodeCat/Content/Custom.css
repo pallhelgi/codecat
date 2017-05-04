@@ -102,3 +102,12 @@ h2 {
 .settings-dropdown .caret {
     border-top-color:white;
 }
+
+/*Shape of ACE EDITOR*/
+#editor {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    bottom: 50px;
+    left: 100px;
+}
