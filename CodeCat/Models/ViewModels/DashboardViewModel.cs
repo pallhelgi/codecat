@@ -5,9 +5,9 @@ using System.Web;
 using CodeCat.Models;
 using CodeCat.TestClasses;
 
-namespace CodeCat.Models.ViewModeles
+namespace CodeCat.Models.ViewModels
 {
-    public class DashBoardViewModel
+    public class DashboardViewModel
     {
         public List<ProjectModel> projects { get; set; }
     }

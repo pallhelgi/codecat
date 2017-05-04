@@ -46,12 +46,15 @@
             </div>
             <div class="modal-body">
                 <div id="sign-in-form">
+                @using (Html.BeginForm())
+                {
                     @Html.LabelFor(model => model.username, new { htmlAttributes = new { @class = "form-label" } })
                     @Html.TextBoxFor(model => model.username, new { htmlAttributes = new { @class = "form-signin" } })
                     <br />
                     @Html.LabelFor(model => model.password, new { htmlAttributes = new { @class = "form-label" } })
                     @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-signin" } })
                     <br />
+                }
                 </div>
             </div>
             <div class="modal-footer">
