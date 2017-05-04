@@ -42,23 +42,34 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+                <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
             <div class="modal-body">
-                <div id="sign-in-form">
-                @using (Html.BeginForm())
-                {
-                    @Html.LabelFor(model => model.username, new { htmlAttributes = new { @class = "form-label" } })
-                    @Html.TextBoxFor(model => model.username, new { htmlAttributes = new { @class = "form-signin" } })
-                    <br />
-                    @Html.LabelFor(model => model.password, new { htmlAttributes = new { @class = "form-label" } })
-                    @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-signin" } })
-                    <br />
-                }
+
+                <!--Pop up window LOGO-->
+                <div class="popup-window-logo">
+                    <img src="~/Images/codecat_with_text.png" width="150" height="150" alt="Code Cat Logo" />
                 </div>
+
+                <!--Pop up window sign in form-->
+                <div id="sign-in-form">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.LabelFor(model => model.username, new { htmlAttributes = new { @class = "form-label" } })
+                        <br />
+                        @Html.TextBoxFor(model => model.username, new { htmlAttributes = new { @class = "form-signin" } })
+                        <br />
+                        @Html.LabelFor(model => model.password, new { htmlAttributes = new { @class = "form-label" } })
+                        <br />
+                        @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-signin" } })
+                        <br />
+                    }
+                </div>
+
             </div>
+
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Sign in</button>
+                <button type="button" class="btn btn-success sign-in-button" data-dismiss="modal">Sign in</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -73,29 +84,44 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">Sign up</h4>
+                <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
             <div class="modal-body">
+
+                <!--Pop up window LOGO-->
+                <div class="popup-window-logo">
+                    <img src="~/Images/codecat_with_text.png" width="150" height="150" alt="Code Cat Logo" />
+                </div>
+
                 <div id="sign-in-form">
                     @Html.LabelFor(model => model.fullName, new { htmlAttributes = new { @class = "form-label" } })
+                    <br />
                     @Html.TextBoxFor(model => model.fullName, new { htmlAttributes = new { @class = "form-signup" } })
                     <br />
                     @Html.LabelFor(model => model.username, new { htmlAttributes = new { @class = "form-label" } })
+                    <br />
                     @Html.TextBoxFor(model => model.username, new { htmlAttributes = new { @class = "form-signup" } })
                     <br />
                     @Html.LabelFor(model => model.email, new { htmlAttributes = new { @class = "form-label" } })
+                    <br />
                     @Html.TextBoxFor(model => model.email, new { htmlAttributes = new { @class = "form-signup" } })
                     <br />
                     @Html.LabelFor(model => model.password, new { htmlAttributes = new { @class = "form-label" } })
+                    <br />
                     @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-signup" } })
                     <br />
                     @Html.LabelFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-label" } })
+                    <br />
                     @Html.PasswordFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-signup" } })
                     <br />
                 </div>
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Sign up</button>
+                <span class="sign-in-button">
+                    <button type="button" class="btn btn-basic" data-toggle="modal" data-target="#SignInModal">Sign in</button>
+                </span>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
