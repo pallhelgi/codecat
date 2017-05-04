@@ -49,21 +49,14 @@
 
 /*Logo on nav bar*/
 .navbar-brand {
-    width: 60px;
-    height: 60px;
-    position: absolute;
+    width: 120px;
+    height: 120px;
+    padding-right: 10px;
 }
 
 .navbar-inverse {
     background-color: #262626;
     margin-bottom: 4px;
-}
-
-/*Code::Cat text under logo in nav bar*/
-.navbar-header p {
-    font-weight: bold;
-    font-size: 9px;
-    color: white;
 }
 
 h2 {

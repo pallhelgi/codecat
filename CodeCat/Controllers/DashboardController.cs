@@ -9,6 +9,7 @@ using CodeCat.TestClasses;
 
 namespace CodeCat.Controllers
 {
+    [Authorize]
     public class DashboardController : Controller
     {
         // GET: Dashboard
