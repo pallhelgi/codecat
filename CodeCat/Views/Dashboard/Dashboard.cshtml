@@ -1,21 +1,37 @@
 ﻿@model CodeCat.Models.ViewModeles.DashBoardViewModel
+
 @{
     ViewBag.Title = "Dashboard";
 }
 
 <h2>Dashboard</h2>
 
-<section class="row">
-    @foreach (var itemj in Model.projects)
-    {
-        <section class="col-sm-4">
-            <section class="well">
-                <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
-                <p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>
-                <p>creatorUserID: @Html.DisplayFor(modelItem => itemj.creatorUserID)</p>
-            </section>
+<!--Dropdown list for settings and help...-->
+<div class="dropdown">
+    <button class="btn btn-basic dropdown-toggle settings-dropdown" type="button" data-toggle="dropdown">
+        Username
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu dropdown-items">
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Help</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+</div><section class="row">
+
+<!--List of projects-->
+@foreach (var itemj in Model.projects)
+{
+    <section class="col-sm-4">
+        <section class="well">
+            <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
+            <p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>
+            <p>creatorUserID: @Html.DisplayFor(modelItem => itemj.creatorUserID)</p>
         </section>
-    }
+    </section>
+}
 </section>
 
 
