@@ -133,9 +133,9 @@ h2 {
 }
 
 /*Shape of ACE EDITOR*/
-#editor {
+#ace-editor {
     position: absolute;
-    top: 100px;
+    top: 150px;
     right: 100px;
     bottom: 50px;
     left: 100px;
