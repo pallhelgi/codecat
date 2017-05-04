@@ -1,6 +1,6 @@
 ﻿body {
     font-family: Helvetica, Arial;
-    background-color: #e1e1e1
+    background-color: #e1e1e1;
 }
 
 /**/
@@ -29,13 +29,29 @@
 }
 
 /*Centering buttons and ul list*/
-.info, .center-buttons {
+.info, 
+.center-buttons {
     display: table; 
     margin: 0 auto;
 }
 
 .sign-in-button {
     margin-right: 5px;
+}
+
+#sign-in-form {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.modal-dialog {
+  z-index: 1050;
+  width: 400px;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .sign-up-button {
@@ -49,9 +65,29 @@
 
 /*Logo on nav bar*/
 .navbar-brand {
-    width: 60px;
-    height: 60px;
-    position: absolute;
+    width: 90px;
+    height: 90px;
+    padding-right: 10px;
+}
+
+/*Logo on pop up windows*/
+.popup-window-logo {
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+}
+
+.modal-header,
+.modal-body {
+    background-color: #e1e1e1;
+}
+
+.modal-footer button {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .navbar-inverse {
@@ -59,17 +95,9 @@
     margin-bottom: 4px;
 }
 
-/*Code::Cat text under logo in nav bar*/
-.navbar-header p {
-    font-weight: bold;
-    font-size: 9px;
-    color: white;
-}
-
 h2 {
     padding-top: 50px;
 }
-
 
 .navbar-collapse collapse alignlink {
 
@@ -99,7 +127,8 @@ h2 {
     background-color: #a3a3a3;
 }
 
-.settings-dropdown .caret {
+.settings-dropdown 
+.caret {
     border-top-color:white;
 }
 

@@ -29,6 +29,7 @@ namespace CodeCat.Controllers
         public ActionResult signIn()
         {
             //TODO
+            Console.Write("hi");
             return View();
         }
 

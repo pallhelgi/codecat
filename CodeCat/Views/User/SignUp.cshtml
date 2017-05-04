@@ -1,6 +1,6 @@
 ﻿@model CodeCat.Models.UserModel
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("createUser", "User", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -24,8 +24,10 @@
         <br />
 
         <!--DASHBOARD is just a fillup, not correct, needs to redirect to view for Dashboard-->
-        <a href="@Url.Action("Dashboard")" class="btn btn-success sign-popup">
+        @*<a href="@Url.Action("Dashboard")" class="btn btn-success sign-popup">
             Sign up
-        </a>
+        </a>*@
+        <input type="submit" class=""btn btn-success sign-popup" value="Sign up" />
+
     </div>
 }

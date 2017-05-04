@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using CodeCat.Models;
 
-namespace CodeCat.Models.ViewModeles
+namespace CodeCat.Models.ViewModels
 {
     public class SideBarViewModel
     {

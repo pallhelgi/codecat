@@ -5,7 +5,7 @@ using System.Web;
 using CodeCat.Models;
 using System.Web.Mvc;
 
-namespace CodeCat.Models.ViewModeles
+namespace CodeCat.Models.ViewModels
 {
     public class ProjectViewModel
     {
