@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using CodeCat.Services;
 
 namespace CodeCat.Services
 {
     public class UserService
     {
+        ServiceBase baas = new ServiceBase();
         public UserModel user;
 
         public bool getUser(int userID)
@@ -21,7 +23,8 @@ namespace CodeCat.Services
         }
 
         public bool addUser(UserModel user)
-        {
+        {       
+            baas.addUser(user);
             return false;
         }
     }

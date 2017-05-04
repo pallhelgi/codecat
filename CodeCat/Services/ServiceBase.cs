@@ -44,6 +44,8 @@ namespace CodeCat.Services
 
         public bool addUser(UserModel user)
         {
+            _db.users.Add(user);
+            _db.SaveChanges();
             return false;
         }
     }
