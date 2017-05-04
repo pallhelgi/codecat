@@ -51,7 +51,7 @@
 .navbar-brand {
     width: 60px;
     height: 60px;
-    position: absolute<
+    position: absolute;
 }
 
 .navbar-inverse {
@@ -73,4 +73,32 @@ h2 {
 
 .navbar-collapse collapse alignlink {
 
+}
+
+/*Settings dropdown list on Dashboard*/
+.settings-dropdown {
+    position: relative;
+    background-color: #3c3a3a;
+    border: 0px;
+    color: white;
+}
+
+.settings-dropdown:hover, 
+.settings-dropdown:focus,
+.settings-dropdown:visited, 
+.settings-dropdown:active {
+    background-color: #575757;
+    color: white;
+}
+
+.dropdown-items > li > a:hover,
+.dropdown-items > li > a:focus
+.dropdown-items > .active > a,
+.dropdown-items > .active > a:hover,
+.dropdown-items > .active > a:focus {
+    background-color: #a3a3a3;
+}
+
+.settings-dropdown .caret {
+    border-top-color:white;
 }
