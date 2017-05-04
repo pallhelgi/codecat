@@ -24,10 +24,11 @@ namespace CodeCat.Controllers
         public ActionResult signIn()
         {
             //TODO
+            Console.Write("hi");
             return View();
         }
 
-        public ActionResult SignUp()
+        public ActionResult signUp()
         {
             //TODO
             return View();

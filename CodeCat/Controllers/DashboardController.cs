@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CodeCat.Models.ViewModeles;
+using CodeCat.Models.ViewModels;
 using CodeCat.TestClasses;
 
 namespace CodeCat.Controllers
@@ -37,7 +37,7 @@ namespace CodeCat.Controllers
 
         public ActionResult Dashboard()
         {
-            DashBoardViewModel viewModel = new DashBoardViewModel();
+            DashboardViewModel viewModel = new DashboardViewModel();
             testClass test = new testClass();
             viewModel.projects = test.SeedProject();
             return View(viewModel);
