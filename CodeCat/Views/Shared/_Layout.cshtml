@@ -34,7 +34,7 @@
         <!--Dropdown list for settings and help...-->
         <div class="navdropdown">
             <button class="btn btn-basic dropdown-toggle settings-dropdown" type="button" data-toggle="dropdown">
-                Username
+                @Html.Partial("_LoginPartial")
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-items">
@@ -42,7 +42,7 @@
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Help</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Sign out</a></li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a></li>
             </ul>
         </div>
     </div>

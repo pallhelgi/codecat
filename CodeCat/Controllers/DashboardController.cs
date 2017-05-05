@@ -10,7 +10,7 @@ using CodeCat.Services;
 
 namespace CodeCat.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class DashboardController : Controller
     {
         ProjectService projectService = new ProjectService();
