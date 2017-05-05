@@ -27,12 +27,12 @@ namespace CodeCat.Services
             return false;
         }
 
-        public DocumendModel getDocumentByID(int documentID)
+        public DocumentModel getDocumentByID(int documentID)
         {
             return null;
         }
 
-        public bool addDocument(DocumendModel document)
+        public bool addDocument(DocumentModel document)
         {
             return false;
         }
