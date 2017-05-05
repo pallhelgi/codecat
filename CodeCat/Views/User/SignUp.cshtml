@@ -1,25 +1,25 @@
 ﻿@model CodeCat.Models.UserModel
 
-@using (Html.BeginForm("createUser", "User", FormMethod.Post))
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div id="signup-dialog">
         <h2>Sign up</h2>
 
-        @Html.LabelFor(model => model.fullName, new { htmlAttributes = new { @class = "form-label" } })
+        @Html.LabelFor(model => model.fullName,  htmlAttributes: new { @class = "form-label" } )
         @Html.TextBoxFor(model => model.fullName, new { htmlAttributes = new { @class = "form-signup" } })
         <br />
-        @Html.LabelFor(model => model.username, new { htmlAttributes = new { @class = "form-label" } })
+        @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "form-label" } )
         @Html.TextBoxFor(model => model.username, new { htmlAttributes = new { @class = "form-signup" } })
         <br />
-        @Html.LabelFor(model => model.email, new { htmlAttributes = new { @class = "form-label" } })
+        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "form-label" } )
         @Html.TextBoxFor(model => model.email, new { htmlAttributes = new { @class = "form-signup" } })
         <br />
-        @Html.LabelFor(model => model.password, new { htmlAttributes = new { @class = "form-label" } })
+        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "form-label" } )
         @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-signup" } })
         <br />
-        @Html.LabelFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-label" } })
+        @Html.LabelFor(model => model.confirmPassword, htmlAttributes: new { @class = "form-label" } )
         @Html.PasswordFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-signup" } })
         <br />
 
