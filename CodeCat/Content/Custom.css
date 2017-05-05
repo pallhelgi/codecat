@@ -39,6 +39,7 @@
     margin-right: 5px;
 }
 
+/*In the pop up windows*/
 #sign-in-form {
     text-align: center;
     margin-left: auto;
@@ -46,6 +47,7 @@
     margin-top: 40px;
 }
 
+/*Pop up window*/
 .modal-dialog {
   z-index: 1050;
   width: 400px;
@@ -54,6 +56,7 @@
   margin-left: auto;
 }
 
+/*On the front page*/
 .sign-up-button {
     margin-left: 5px;
 }
@@ -79,11 +82,13 @@
     padding-bottom: 30px;
 }
 
+/*Background color for the popup windows*/
 .modal-header,
 .modal-body {
     background-color: #e1e1e1;
 }
 
+/*Pop up window buttons*/
 .modal-footer button {
     margin-left: auto;
     margin-right: auto;
@@ -111,6 +116,7 @@ h2 {
     color: white;
 }
 
+/*Dropdown list*/
 .settings-dropdown:hover, 
 .settings-dropdown:focus,
 .settings-dropdown:visited, 
@@ -119,6 +125,7 @@ h2 {
     color: white;
 }
 
+/*Dropdown list*/
 .dropdown-items > li > a:hover,
 .dropdown-items > li > a:focus
 .dropdown-items > .active > a,
@@ -127,6 +134,7 @@ h2 {
     background-color: #a3a3a3;
 }
 
+/*Dropdown list arrow*/
 .settings-dropdown 
 .caret {
     border-top-color:white;
