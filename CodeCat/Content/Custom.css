@@ -183,3 +183,14 @@ h2 {
 .sign-up-from-sign-in {
     float: right;
 }
+
+.sign-up-logo {
+    width: 150px;
+    height: 150px;
+}
+
+.sign-in-logo-div {
+    margin-left: auto;
+    margin-right: auto;    
+    padding-bottom: 40px;
+}
