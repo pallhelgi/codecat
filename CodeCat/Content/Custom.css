@@ -148,3 +148,38 @@ h2 {
     bottom: 50px;
     left: 100px;
 }
+
+/*Login page*/
+.sign-in-form {
+    text-align: center;
+    margin-left: auto;
+}
+
+#loginForm, 
+#registerForm {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
+
+.form-group,
+.form-control {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-horizontal {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.control-label {
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sign-up-from-sign-in {
+    float: right;
+}
