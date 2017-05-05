@@ -11,8 +11,15 @@
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
+
+                <!--LOGO-->
+                <div class="sign-in-logo-div">
+                    <img src="~/Images/codecat_with_text.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
+                </div>
+
                 <h4>Speak friend and enter!</h4>
                 <hr />
+
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })

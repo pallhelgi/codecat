@@ -9,6 +9,6 @@ namespace CodeCat.Models.ViewModels
 {
     public class ProjectViewModel
     {
-        public List<DocumendModel> documents;
+        public List<DocumentModel> documents;
     }
 }

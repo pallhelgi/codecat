@@ -6,11 +6,11 @@ using CodeCat.Models;
 
 namespace CodeCat.Services
 {
-    public class DocumentService
+    public class DocumentService : ServiceBase
     {
-        public DocumendModel document;
+        public DocumentModel document;
 
-        public DocumendModel getDocument(int documentID)
+        public DocumentModel getDocument(int documentID)
         {
             return null;
         }

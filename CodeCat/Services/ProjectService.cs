@@ -7,7 +7,7 @@ using CodeCat.Services;
 
 namespace CodeCat.Services
 {
-    public class ProjectService
+    public class ProjectService : ServiceBase
     {
         public ProjectModel project;
 

@@ -7,9 +7,9 @@ using CodeCat.Services;
 
 namespace CodeCat.Services
 {
-    public class UserService
+    public class UserService : ServiceBase
     {
-        ServiceBase baas = new ServiceBase();
+      //  ServiceBase baas = new ServiceBase();
         public UserModel user;
 
         public bool getUser(int userID)
@@ -23,8 +23,8 @@ namespace CodeCat.Services
         }
 
         public bool addUser(UserModel user)
-        {       
-            baas.addUser(user);
+        {
+            addUser(user);
             return false;
         }
     }
