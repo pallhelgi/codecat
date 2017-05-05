@@ -7,9 +7,14 @@ using CodeCat.Services;
 
 namespace CodeCat.Services
 {
-    public class ProjectService
+    public class ProjectService : ServiceBase
     {
         public ProjectModel project;
+
+        public List<ProjectModel> getAllProjects()
+        {
+            return getAllProjectsFromDb();
+        }
 
         public bool getProject(int projectID)
         {

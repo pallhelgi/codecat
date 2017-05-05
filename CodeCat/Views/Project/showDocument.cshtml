@@ -3,6 +3,20 @@
     ViewBag.Title = "showDocument";
 }
 
+<!--Commented out until the DB is up!!!-->
+@*The Tabs above the Ace Editor
+    <div>
+        <ul class="navDoc nav-tabs">
+            @foreach(var DocumendModel in Models.DocumendModel)
+            {
+                <li role:"presentation" class="@(Model.selectedDocument == DocumendModel.ID ? "active" : "")">
+                    <a href="? Document = @DocumendModel.ID">@DocumendModel.name</a>
+                </li>
+            }
+        </ul>
+    </div>
+*@
+
 <!--The Ace Editor begin-->
 <div id="ace-editor">
     function foo(items) {

@@ -30,9 +30,23 @@
                 </ul>
                 <!--@Html.Partial("_LoginPartial")-->
             </div>
-            </div>
-
         </div>
+        <!--Dropdown list for settings and help...-->
+        <div class="navdropdown">
+            <button class="btn btn-basic dropdown-toggle settings-dropdown" type="button" data-toggle="dropdown">
+                Username
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-items">
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Help</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
