@@ -1,6 +1,6 @@
 ﻿@model CodeCat.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Sign up";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -10,10 +10,10 @@
         @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
         @Html.AntiForgeryToken()
-
+        
         <!--LOGO-->
         <div class="sign-in-logo-div">
-            <img src="~/Images/codecat_with_text.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
+            <img src="~/Images/codecat2_black.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
         </div>
 
         <h4>Create a new account, my friend.</h4>
