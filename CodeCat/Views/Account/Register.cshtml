@@ -10,10 +10,14 @@
         @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
         @Html.AntiForgeryToken()
-            <div class="sign-in-logo-div">
-                <img src="~/Images/codecat_with_text.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
-            </div>
+
+        <!--LOGO-->
+        <div class="sign-in-logo-div">
+            <img src="~/Images/codecat_with_text.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
+        </div>
+
         <h4>Create a new account, my friend.</h4>
+
         <hr />
         @Html.ValidationSummary("", new { @class = "text-danger" })
         <div class="form-group">
