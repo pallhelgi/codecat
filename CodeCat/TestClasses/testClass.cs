@@ -12,6 +12,7 @@ namespace CodeCat.TestClasses
     {
         public List<ProjectModel> SeedProject()
         {
+            //ApplicationDbContext context = new ApplicationDbContext();
             List<ProjectModel> projects = new List<ProjectModel>();
 
             ProjectModel project1 = new ProjectModel
@@ -40,6 +41,9 @@ namespace CodeCat.TestClasses
             };
 
             projects.Add(project3);
+
+            //projects.ForEach(c => context.ProjectModel.Add(c));
+            //context.SaveChanges();
 
             return projects;
         }

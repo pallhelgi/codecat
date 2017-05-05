@@ -17,6 +17,11 @@ namespace CodeCat.Services
             _db = new ApplicationDbContext();
         }
 
+        public List<ProjectModel> getAllProjectsFromDb()
+        {
+            return _db.ProjectModel.ToList();
+        }
+
         public ProjectModel getProjectByID(int id)
         {
             return null;

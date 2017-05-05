@@ -6,12 +6,14 @@ using System.Web;
 using System.Web.Mvc;
 using CodeCat.Models.ViewModels;
 using CodeCat.TestClasses;
+using CodeCat.Services;
 
 namespace CodeCat.Controllers
 {
     //[Authorize]
     public class DashboardController : Controller
     {
+        ProjectService projectService = new ProjectService();
         // GET: Dashboard
         public ActionResult Index()
         {
@@ -40,7 +42,9 @@ namespace CodeCat.Controllers
         {
             DashboardViewModel viewModel = new DashboardViewModel();
             testClass test = new testClass();
-            viewModel.projects = test.SeedProject();
+            viewModel.projects = projectService.getAllProjects();
+            //viewModel.projects = test.SeedProject();
+
             return View(viewModel);
         }
     }

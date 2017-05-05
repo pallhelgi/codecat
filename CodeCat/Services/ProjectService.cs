@@ -11,6 +11,11 @@ namespace CodeCat.Services
     {
         public ProjectModel project;
 
+        public List<ProjectModel> getAllProjects()
+        {
+            return getAllProjectsFromDb();
+        }
+
         public bool getProject(int projectID)
         {
             return false;
