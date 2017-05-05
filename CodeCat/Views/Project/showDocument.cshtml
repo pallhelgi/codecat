@@ -3,10 +3,8 @@
     ViewBag.Title = "showDocument";
 }
 
-<h2>showDocument</h2>
-
 <!--The Ace Editor begin-->
-<div id="editor">
+<div id="ace-editor">
     function foo(items) {
         var x = "I am Code::Cat";
         return x;
@@ -15,7 +13,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
-        var editor = ace.edit("editor");
+        var editor = ace.edit("ace-editor");
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
 </script>
