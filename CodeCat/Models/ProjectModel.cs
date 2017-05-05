@@ -16,7 +16,7 @@ namespace CodeCat.Models
         [Required(ErrorMessage = "You must enter a name for the project!")]
         public string name { get; set; }
 
-        [ForeignKey("User")] //veit ekki hvort þetta sé rétt
+        //[ForeignKey("User")] //veit ekki hvort þetta sé rétt
         public int creatorUserID { get; set; }
     }
 }
