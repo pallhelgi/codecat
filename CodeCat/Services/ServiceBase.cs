@@ -27,12 +27,12 @@ namespace CodeCat.Services
             return false;
         }
 
-        public DocumendModel getDocumentByID(int documentID)
+        public DocumentModel getDocumentByID(int documentID)
         {
             return null;
         }
 
-        public bool addDocument(DocumendModel document)
+        public bool addDocument(DocumentModel document)
         {
             return false;
         }
@@ -44,7 +44,7 @@ namespace CodeCat.Services
 
         public bool addUser(UserModel user)
         {
-            _db.users.Add(user);
+            _db.UserModel.Add(user);
             _db.SaveChanges();
             return false;
         }

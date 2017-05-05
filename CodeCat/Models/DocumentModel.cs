@@ -8,7 +8,7 @@ namespace CodeCat.Models
 {
     enum documentType { html, css, cplusplus, js }
 
-    public class DocumendModel
+    public class DocumentModel
     {
         [Key]
         public int ID { get; set; }

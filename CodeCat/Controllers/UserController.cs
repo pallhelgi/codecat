@@ -33,29 +33,18 @@ namespace CodeCat.Controllers
             return View();
         }
 
+
         public ActionResult signUp()
         {
-            //TODO
-            return View();
-        }
-
-        public ActionResult forgottenPassword()
-        {
-            //TODO
-            return View();
-        }
-
-        public ActionResult createUser()
-        {
-            //TODO
             return View();
         }
 
         [HttpPost]
-        public ActionResult createUser(UserModel user)
+        public ActionResult signUp(UserModel user)
         {
             //TODO
-            if(ModelState.IsValid)
+            //TODO
+            if (ModelState.IsValid)
             {
                 UserModel newUser = new UserModel();
                 newUser.ID = user.ID;
@@ -68,8 +57,20 @@ namespace CodeCat.Controllers
 
                 return RedirectToAction("Index");
             }
-            
+
             return View(user);
+        }
+
+        public ActionResult forgottenPassword()
+        {
+            //TODO
+            return View();
+        }
+
+        public ActionResult createUser()
+        {
+            //TODO
+            return View();
         }
     }
 }

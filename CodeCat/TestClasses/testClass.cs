@@ -84,11 +84,11 @@ namespace CodeCat.TestClasses
             return users;
         }
 
-        public List<DocumendModel> seedDocs()
+        public List<DocumentModel> seedDocs()
         {
-            List<DocumendModel> documents = new List<DocumendModel>();
+            List<DocumentModel> documents = new List<DocumentModel>();
 
-            DocumendModel doc1 = new DocumendModel
+            DocumentModel doc1 = new DocumentModel
             {
                 ID = 0,
                 name = "doc1",
@@ -97,7 +97,7 @@ namespace CodeCat.TestClasses
 
             documents.Add(doc1);
 
-            DocumendModel doc2 = new DocumendModel
+            DocumentModel doc2 = new DocumentModel
             {
                 ID = 1,
                 name = "doc2",
@@ -106,7 +106,7 @@ namespace CodeCat.TestClasses
 
             documents.Add(doc2);
 
-            DocumendModel doc3 = new DocumendModel
+            DocumentModel doc3 = new DocumentModel
             {
                 ID = 2,
                 name = "doc3",

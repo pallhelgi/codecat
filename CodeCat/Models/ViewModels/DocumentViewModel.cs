@@ -8,6 +8,6 @@ namespace CodeCat.Models.ViewModels
 {
     public class DocumentViewModel
     {
-        public DocumendModel document;   
+        public DocumentModel document;   
     }
 }
