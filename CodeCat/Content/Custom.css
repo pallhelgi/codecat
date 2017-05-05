@@ -88,6 +88,15 @@
     background-color: #e1e1e1;
 }
 
+/*dropdown navbar*/
+.navdropdown {
+    padding: 0px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+}
+
 /*Pop up window buttons*/
 .modal-footer button {
     margin-left: auto;
