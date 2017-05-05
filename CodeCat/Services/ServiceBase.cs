@@ -10,7 +10,7 @@ namespace CodeCat.Services
     public class ServiceBase
     {
         //Connecting the serviceBase to the appDbContext class which speaks to the database(sql)
-        ApplicationDbContext _db;
+        public ApplicationDbContext _db;
 
         public ServiceBase()
         {

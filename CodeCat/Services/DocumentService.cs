@@ -6,7 +6,7 @@ using CodeCat.Models;
 
 namespace CodeCat.Services
 {
-    public class DocumentService
+    public class DocumentService : ServiceBase
     {
         public DocumendModel document;
 
