@@ -47,6 +47,8 @@ namespace CodeCat.Services
         public string getProjectCreatorID()
         {
             //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
+
+            
             return getProjectCreatorID();
         }
 
