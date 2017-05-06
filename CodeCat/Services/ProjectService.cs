@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
+//using CodeCat.DAL;
 using CodeCat.Models;
 using CodeCat.Services;
+
+
 
 namespace CodeCat.Services
 {
@@ -13,7 +17,7 @@ namespace CodeCat.Services
 
         public List<ProjectModel> getAllProjects()
         {
-            return getAllProjectsFromDb();
+            return base.getAllProjects();
         }
 
         public bool getProject(int projectID)
@@ -21,9 +25,20 @@ namespace CodeCat.Services
             return false;
         }
 
-        public bool addProject(int creatorUserID, ProjectModel project)
+        public bool addProject(ProjectModel project)
         {
-            return false;
+            _db = new ApplicationDbContext();
+          /*  ProjectModel newProject = new ProjectModel();
+            newProject.creatorUserID = 1;
+            newProject.ID = 5;
+            newProject.name = "Bla";*/
+
+            _db.ProjectModel.Add(project);
+            _db.SaveChanges();
+
+            return true;
+          
+            //return _db.ProjectModel.Add(project);
         }
 
         public UserModel getProjectCreator(int projectID)
