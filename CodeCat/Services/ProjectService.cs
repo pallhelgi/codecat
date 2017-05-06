@@ -29,10 +29,6 @@ namespace CodeCat.Services
 
         public bool addProject(ProjectModel project)
         {
-          /*  ProjectModel newProject = new ProjectModel();
-            newProject.creatorUserID = 1;
-            newProject.ID = 5;
-            newProject.name = "Bla";*/
 
             _db.ProjectModel.Add(project);
             _db.SaveChanges();
@@ -42,8 +38,9 @@ namespace CodeCat.Services
             //return _db.ProjectModel.Add(project);
         }
 
-        public UserModel getProjectCreator(int projectID)
+        public UserModel getProjectCreator()
         {
+            //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
             return null;
         }
 
