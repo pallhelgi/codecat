@@ -209,6 +209,10 @@
     <Compile Include="Migrations\201705051432244_DocumentModel.Designer.cs">
       <DependentUpon>201705051432244_DocumentModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705061439397_ProjectModel.cs" />
+    <Compile Include="Migrations\201705061439397_ProjectModel.Designer.cs">
+      <DependentUpon>201705061439397_ProjectModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -320,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705051432244_DocumentModel.resx">
       <DependentUpon>201705051432244_DocumentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705061439397_ProjectModel.resx">
+      <DependentUpon>201705061439397_ProjectModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

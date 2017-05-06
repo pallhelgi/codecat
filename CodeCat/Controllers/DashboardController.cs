@@ -40,6 +40,7 @@ namespace CodeCat.Controllers
 
             };
 
+                
             projectService.addProject(newProject);
 
             return RedirectToAction("Dashboard");
