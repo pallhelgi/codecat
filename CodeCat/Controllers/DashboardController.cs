@@ -39,6 +39,7 @@ namespace CodeCat.Controllers
                   //  creatorUserID = projectService.getProjectCreator();
 
             };
+
             projectService.addProject(newProject);
 
             return RedirectToAction("Dashboard");
