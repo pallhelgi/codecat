@@ -19,7 +19,7 @@ namespace CodeCat.TestClasses
             {
                 ID = 0,
                 name = "Project 1",
-                creatorUserID = 1
+                creatorUserID = "1"
             };
 
             projects.Add(project1);
@@ -28,7 +28,7 @@ namespace CodeCat.TestClasses
             {
                 ID = 1,
                 name = "Project 2",
-                creatorUserID = 1
+                creatorUserID = "2"
             };
 
             projects.Add(project2);
@@ -37,7 +37,7 @@ namespace CodeCat.TestClasses
             {
                 ID = 2,
                 name = "Project 3",
-                creatorUserID = 1
+                creatorUserID = "3"
             };
 
             projects.Add(project3);

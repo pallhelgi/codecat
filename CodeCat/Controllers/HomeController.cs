@@ -11,10 +11,10 @@ namespace CodeCat.Controllers
     {
         public ActionResult Index(FormCollection collection)
         {
-            UserModel user = new UserModel();
-            user.fullName = collection["signin"];
-            string movieId = collection["form-signin"];
-            Console.Write(user.fullName);
+            if(User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("../Dashboard/Dashboard");
+            }
             
             return View();
             //return View();

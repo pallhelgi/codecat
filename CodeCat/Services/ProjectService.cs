@@ -29,12 +29,15 @@ namespace CodeCat.Services
             return false;
         }
 
-        public bool addProject(ProjectModel project)
+        public bool addProject(ProjectModel project, string username)
         {
             // _db.ProjectModel.Add(project);
             //_db.SaveChanges();
 
+            project.creatorUserID = getProjectCreatorByID(username);
+
             addProjectToDB(project);
+
 
             return true;
           
