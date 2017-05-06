@@ -37,8 +37,8 @@ namespace CodeCat.Controllers
             //{
                 ProjectModel newProject = new ProjectModel
                 {
-                    ID = 10,
-                    name = "SUCCESS",
+                    ID = 13,
+                    name = "SUCCESS3",
                     creatorUserID = 1
                 };
             projectService.addProject(newProject);
