@@ -26,16 +26,13 @@
                         @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
 
                         <!--Validation always shows for some reason... NEED TO FIX-->
-                        @*@Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })*@
+                        @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <!-- <input type="submit" value="Create" class="btn btn-success" /> -->
-                        <!--Should not be Dashboard! Needs correct ... maybe submit button above?-->
-                        <!--<a href="@Url.Action("Dashboard")" class="btn btn-success">Create</a>-->
-                        <button type="submit" value="Create" class="btn btn-success" />
+                        <button type="submit" value="Create" id="create-button" class="btn btn-success">Create</button>
                     </div>
                 </div>
             }
