@@ -13,7 +13,8 @@ namespace CodeCat.Models
         public int ID { get; set; }
 
         [Display(Name = "Project name")]
-        [Required(ErrorMessage = "You must enter a name for the project!")]
+        [Required(ErrorMessage = "You must enter a name for the project!"), MaxLength(20, ErrorMessage = "Project name must be less than 20 characters")]
+        //[MaxLength(20, ErrorMessage = "Project name must be less than 20 characters")]
         public string name { get; set; }
 
         //[ForeignKey("User")] //veit ekki hvort þetta sé rétt
