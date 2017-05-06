@@ -19,33 +19,17 @@
         </a>
 </section>
 
-<<<<<<< HEAD
 <!--List of projects-->
 @foreach (var itemj in Model.projects)
 {
-    <section class="col-sm-4 project-box">
-        <!--<a href="#">-->
+    <a href="@Url.Action("../Project/ShowDocument")">
+        <section class="col-sm-4 project-box">
             <section class="well project-box-inner">
                 <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
-                <p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>
-                <p>creatorUserID: @Html.DisplayFor(modelItem => itemj.creatorUserID)</p>
+                <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
+                <p>Author: @Html.DisplayFor(modelItem => itemj.creatorUserID) </p>
             </section>
-        <!--</a>-->
-    </section>
+        </section>
+    </a>
 }
-=======
-    <!--List of projects-->
-    @foreach (var itemj in Model.projects)
-    {
-        <a href="@Url.Action("../Project/ShowDocument")">
-            <section class="col-sm-4 project-box">
-                <section class="well project-box-inner">
-                    <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
-                    <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
-                    <p>Author: @Html.DisplayFor(modelItem => itemj.creatorUserID) </p>
-                </section>
-            </section>
-        </a>
-    }
->>>>>>> 87adb865ff0ae71b9e2ae14e967707eb37d659d9
 </div>
