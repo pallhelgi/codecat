@@ -24,9 +24,9 @@ namespace CodeCat.Services
 
         }
 
-        public bool getProject(int projectID)
+        public List<ProjectModel> getUserProjects(string username)
         {
-            return false;
+            return getUserProjectsFromDB(username);
         }
 
         public bool addProject(ProjectModel project, string username)
@@ -46,7 +46,6 @@ namespace CodeCat.Services
 
         public string getProjectCreatorID()
         {
-            //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
             return getProjectCreatorID();
         }
 
