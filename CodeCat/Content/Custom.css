@@ -149,6 +149,14 @@ h2 {
     border-top-color:white;
 }
 
+/*Tabs of ACE EDITOR*/
+.navDoc {
+    position: absolute;
+    top: 110px;
+    right: 100px;
+    left: 100px;
+}
+
 /*Shape of ACE EDITOR*/
 #ace-editor {
     position: absolute;
@@ -204,7 +212,16 @@ h2 {
     padding-bottom: 40px;
 }
 
+<<<<<<< HEAD
 /**/
 .toggle-theme {
     padding-top:100px;
 }
+=======
+/*footer*/
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+>>>>>>> 5d39795b870c26b74a6deeb65ac9b2e341d2d724

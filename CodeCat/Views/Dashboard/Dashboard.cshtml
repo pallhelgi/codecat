@@ -6,19 +6,20 @@
 
 <h2>Dashboard</h2>
 
+<section class="col-sm-4">
+    <section class="well">
+        <h3>@Html.ActionLink("Create a new project", "AddProject")</h3>
+    </section>
+</section>
 
-
-
-    <!--List of projects-->
-    @foreach (var itemj in Model.projects)
-    {
-        <section class="col-sm-4">
-            <section class="well">
-                <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
-                <p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>
-                <p>creatorUserID: @Html.DisplayFor(modelItem => itemj.creatorUserID)</p>
-            </section>
+<!--List of projects-->
+@foreach (var itemj in Model.projects)
+{
+    <section class="col-sm-4">
+        <section class="well">
+            <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
+            <p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>
+            <p>creatorUserID: @Html.DisplayFor(modelItem => itemj.creatorUserID)</p>
         </section>
-    }
-
-
+    </section>
+}

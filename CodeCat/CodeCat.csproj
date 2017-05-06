@@ -299,6 +299,7 @@
     <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\showDocument.cshtml" />
+    <Content Include="Views\Dashboard\AddProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
