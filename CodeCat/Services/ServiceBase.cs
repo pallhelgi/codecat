@@ -10,7 +10,7 @@ namespace CodeCat.Services
     public class ServiceBase
     {
         //Connecting the serviceBase to the appDbContext class which speaks to the database(sql)
-        public ApplicationDbContext _db;
+        public ApplicationDbContext _db; //= new ApplicationDbContext();
 
         public ServiceBase()
         {
@@ -29,7 +29,11 @@ namespace CodeCat.Services
 
         public bool addProject(int creatorID, ProjectModel project)
         {
-            return false;
+           // _db.ProjectModel.Add(project);
+            //_db.SaveChanges();
+
+            //MUNA AD BREYTA SVO THETTA SE EKKI ALLTAF TRUE
+            return true;
         }
 
         public DocumentModel getDocumentByID(int documentID)
@@ -51,6 +55,7 @@ namespace CodeCat.Services
         {
             _db.UserModel.Add(user);
             _db.SaveChanges();
+            
             return false;
         }
     }

@@ -27,16 +27,17 @@ namespace CodeCat.Services
 
         public bool addProject(ProjectModel project)
         {
-           // if (ModelState.IsValid)
-            //{
-                ProjectModel newProject = new ProjectModel();
-                newProject.ID = 5;
-                newProject.name = project.name;
+            _db = new ApplicationDbContext();
+          /*  ProjectModel newProject = new ProjectModel();
+            newProject.creatorUserID = 1;
+            newProject.ID = 5;
+            newProject.name = "Bla";*/
 
-                _db.ProjectModel.Add(newProject);
-                _db.SaveChanges();
-                return true;
-            //}
+            _db.ProjectModel.Add(project);
+            _db.SaveChanges();
+
+            return true;
+          
             //return _db.ProjectModel.Add(project);
         }
 

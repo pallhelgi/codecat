@@ -21,21 +21,29 @@ namespace CodeCat.Controllers
         }
             //TODO
 
+        [HttpGet]
+        public ActionResult addProject()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult addProject(int creatorUserID, ProjectModel project)
         {
-            // if (ModelState.IsValid)
-            //{
-            ProjectModel newProject = new ProjectModel();
-            newProject.creatorUserID = 1;
-            newProject.ID = 5;
-            newProject.name = project.name;
+            if (ModelState.IsValid)
+            {
+                ProjectModel newProject = new ProjectModel
+                {
+                    ID = 4,
+                    name = "SUCCESS",
+                    creatorUserID = 1
+                };
+                projectService.addProject(newProject);
 
-            projectService.addProject(project);
+                return RedirectToAction("Dashboard");
+            }
 
-            return RedirectToAction("Index");
-            //}
-            //return _db.ProjectModel.Add(project);
+            return View(project);
         }
 
         public ActionResult share(UserModel user)
