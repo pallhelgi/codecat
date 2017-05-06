@@ -22,6 +22,13 @@ namespace CodeCat.Services
 
         public List<ProjectModel> getAllProjectsFromDB()
         {
+            /*This is a work in process
+             * var result = from projects in _db.ProjectModel
+                         join users in _db.Users
+                         on projects.users equals users.Id
+                         where users.id == userID
+                         select projects;*/
+          
             return _db.ProjectModel.ToList();
         }
 
@@ -53,6 +60,24 @@ namespace CodeCat.Services
 
             //MUNA AD BREYTA SVO THETTA SE EKKI ALLTAF TRUE
             return true;
+        }
+
+        //Might want to rename this properly
+        //Is supposed to retrieve all documents contained in a single project and return them
+        public List<DocumentModel> getProjectFromDB(int projectID)
+        {
+            /*This is a work in process
+             * var result = from docs in _db.DocumendModel
+                         join project in _db.ProjectModel
+                         on docs.projects.ID equals project.ID
+                         where docs.projects.ID == projectID
+                         select docs;
+                            
+
+            List<DocumentModel> documents = new List<DocumentModel>();
+            documents = result.ToList();*/
+
+            return null;
         }
 
         public DocumentModel getDocumentByID(int documentID)
