@@ -31,20 +31,25 @@
                 <!--@Html.Partial("_LoginPartial")-->
             </div>
         </div>
-        <!--Dropdown list for settings and help...-->
-        <div class="navdropdown">
-            <button class="btn btn-basic dropdown-toggle settings-dropdown" type="button" data-toggle="dropdown">
-                @Html.Partial("_LoginPartial")
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu dropdown-items">
-                <li><a href="#">Settings</a></li>
-                <li><a href="~/Home/About">About us</a></li>
-                <li><a href="#">Help</a></li>
-                <li class="divider"></li>
-                <li><a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a></li>
-            </ul>
-        </div>
+
+        <!-- Dropdown only shows if user is logged in -->
+        @if (Context.User.Identity.IsAuthenticated)
+        {
+            <!--Dropdown list for settings and help...-->
+            <div class="navdropdown">
+                <button class="btn btn-basic dropdown-toggle settings-dropdown" type="button" data-toggle="dropdown">                
+                    @Html.Partial("_LoginPartial")
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-items">
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="~/Home/About">About us</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a></li>
+                </ul>
+            </div>
+        }
     </div>
 
     <div class="container body-content">
