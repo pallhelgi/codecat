@@ -221,6 +221,10 @@
     <Compile Include="Migrations\201705061559441_one-to-many.Designer.cs">
       <DependentUpon>201705061559441_one-to-many.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705061646579_ProjectModel1.cs" />
+    <Compile Include="Migrations\201705061646579_ProjectModel1.Designer.cs">
+      <DependentUpon>201705061646579_ProjectModel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -342,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705061559441_one-to-many.resx">
       <DependentUpon>201705061559441_one-to-many.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705061646579_ProjectModel1.resx">
+      <DependentUpon>201705061646579_ProjectModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
