@@ -9,13 +9,15 @@
 <div class="dashboard-wrapper">
     <!--Create new project button-->
     <section class="col-sm-4 create-new-project-box">
-        <section class="well new-box">
-            <div class="plus-sign-div">
-                <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
-            </div>
-            <p>@Html.ActionLink("Create a new project", "AddProject")</p>
-        </section>
-    </section>
+        <a href="@Url.Action("AddProject")" class="plus-link">
+            <section class="well new-box">
+                <div class="plus-sign-div">
+                    <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
+                </div>
+                <p>@Html.ActionLink("Create a new project", "AddProject")</p>
+            </section>
+        </a>
+</section>
 
     <!--List of projects-->
     @foreach (var itemj in Model.projects)
