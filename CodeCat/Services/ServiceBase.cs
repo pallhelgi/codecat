@@ -25,7 +25,7 @@ namespace CodeCat.Services
             return _db.ProjectModel.ToList();
         }
 
-        public ProjectModel getProjectByID(int projectID)
+        /*public ProjectModel getProjectByID(int projectID)
         {
             ProjectModel project = _db.ProjectModel.Where(x => x.ID == projectID).SingleOrDefault();
             if(project != null)
@@ -35,6 +35,13 @@ namespace CodeCat.Services
             }
 
             return null;
+        }*/
+
+        public List<ProjectModel> getUserProjectsFromDB(string username)
+        {
+
+            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
+            return _db.ProjectModel.Where(x => x.creatorUserID == user.Id).ToList();
         }
 
         public bool addProjectToDB(ProjectModel project)

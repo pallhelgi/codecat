@@ -40,12 +40,11 @@ namespace CodeCat.Controllers
 
                  };
 
-             /*   DocumentModel firstDocument = new DocumentModel
+                DocumentModel firstDocument = new DocumentModel
                 {
                     name = "index.js",
                     content = null
                 };
-                */
                 
                 projectService.addProject(newProject, User.Identity.Name);
 
@@ -73,7 +72,7 @@ namespace CodeCat.Controllers
         {
             DashboardViewModel viewModel = new DashboardViewModel();
             testClass test = new testClass();
-            viewModel.projects = projectService.getAllProjects();
+            viewModel.projects = projectService.getUserProjects(User.Identity.Name);
             //viewModel.projects = test.SeedProject();
 
             return View(viewModel);
