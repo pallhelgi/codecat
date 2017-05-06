@@ -57,6 +57,11 @@ namespace CodeCat.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("../Dashboard/Dashboard");
+            }
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -141,6 +146,11 @@ namespace CodeCat.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("../Dashboard/Dashboard");
+            }
+
             return View();
         }
 
