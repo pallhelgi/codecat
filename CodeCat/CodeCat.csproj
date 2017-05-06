@@ -213,6 +213,14 @@
     <Compile Include="Migrations\201705061439397_ProjectModel.Designer.cs">
       <DependentUpon>201705061439397_ProjectModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705061542463_ICollection.cs" />
+    <Compile Include="Migrations\201705061542463_ICollection.Designer.cs">
+      <DependentUpon>201705061542463_ICollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705061559441_one-to-many.cs" />
+    <Compile Include="Migrations\201705061559441_one-to-many.Designer.cs">
+      <DependentUpon>201705061559441_one-to-many.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -303,7 +311,7 @@
     <Content Include="Views\User\SignIn.cshtml" />
     <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
-    <Content Include="Views\Project\showDocument.cshtml" />
+    <Content Include="Views\Project\ShowDocument.cshtml" />
     <Content Include="Views\Dashboard\AddProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -328,6 +336,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705061439397_ProjectModel.resx">
       <DependentUpon>201705061439397_ProjectModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705061542463_ICollection.resx">
+      <DependentUpon>201705061542463_ICollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705061559441_one-to-many.resx">
+      <DependentUpon>201705061559441_one-to-many.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

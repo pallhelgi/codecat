@@ -14,10 +14,12 @@ namespace CodeCat.Models
 
         [Display(Name = "Project name")]
         [Required(ErrorMessage = "You must enter a name for the project!"), MaxLength(20, ErrorMessage = "Project name must be less than 20 characters")]
-        //[MaxLength(20, ErrorMessage = "Project name must be less than 20 characters")]
         public string name { get; set; }
 
         //[ForeignKey("User")] //veit ekki hvort þetta sé rétt
         public int creatorUserID { get; set; }
+
+        public virtual ICollection<UserModel> users { get; set; }
+        public virtual ICollection<DocumentModel> documents { get; set; }
     }
 }
