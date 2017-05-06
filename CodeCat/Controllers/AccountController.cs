@@ -86,6 +86,7 @@ namespace CodeCat.Controllers
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
+                    //return View("Login");
                 default:
                     ModelState.AddModelError("", "Either username or password is incorrect!");
                     return View(model);

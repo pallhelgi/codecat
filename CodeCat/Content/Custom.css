@@ -212,9 +212,13 @@ h2 {
     padding-bottom: 40px;
 }
 
+/**/
+.toggle-theme {
+    padding-top:100px;
+}
+
 /*footer*/
 footer {
     position: absolute;
     bottom: 0;
 }
-

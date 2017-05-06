@@ -42,11 +42,55 @@
     }
 </div>
 
+<!-- Rounded switch -->
+<label class="switch slider round">
+    <input type="checkbox" class="toggle-theme">
+</label>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
         var editor = ace.edit("ace-editor");
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
 </script>
-<!--The Ace Editor end-->
 
+<!--Test Gudrunar-->
+<!-- Autocomplete -->
+<script>
+    ace.require("ace/ext/language_tools");
+    var editor = ace.edit("ace-editor");
+    editor.setOptions({
+        enableBasicAutocompletion: true
+    });
+</script>
+
+<!-- Trying to save the file -->
+<script>
+    editor.getSession().on('change', function (e) {
+        thisfile = editor.getValue();
+    });
+</script>
+
+<script>
+    var lastLine = editor.session.getLength();
+    editor.gotoLine(lastLine);
+    editor.insert("the new text here"); // or session.setValue
+    editor.getValue(); // or session.getValue
+</script>
+
+<!-- Script to override enter button -->
+<script>
+    editor.commands.addCommand({
+        name: 'Enter',
+        bindKey: {win: 'Enter',  mac: 'Enter'},
+        exec: function(editor) {
+            editor.gotoLine(editor.session.getLength() + 1);
+            editor.insert("\n");
+            editor.insert("I'm at the bottom.");
+        },
+        readOnly: true // false if this command should not apply in readOnly mode
+    });
+</script>
+
+<!--End of test Gudrun-->
+<!--The Ace Editor end-->
