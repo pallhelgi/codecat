@@ -23,7 +23,7 @@ namespace CodeCat.Models
         [Required(ErrorMessage = "You must select a document type!")]
         documentType type { get; set; }
 
-        public virtual ICollection<ProjectModel> projects { get; set; }
+        public virtual ProjectModel projects { get; set; }
     }
 }
 
