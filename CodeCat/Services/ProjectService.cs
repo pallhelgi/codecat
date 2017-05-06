@@ -6,6 +6,7 @@ using System.Web.Mvc;
 //using CodeCat.DAL;
 using CodeCat.Models;
 using CodeCat.Services;
+using Microsoft.AspNet.Identity;
 
 
 
@@ -28,22 +29,25 @@ namespace CodeCat.Services
             return false;
         }
 
-        public bool addProject(ProjectModel project)
+        public bool addProject(ProjectModel project, string username)
         {
             // _db.ProjectModel.Add(project);
             //_db.SaveChanges();
 
+            project.creatorUserID = getProjectCreatorByID(username);
+
             addProjectToDB(project);
+
 
             return true;
           
             //return _db.ProjectModel.Add(project);
         }
 
-        public UserModel getProjectCreator()
+        public string getProjectCreatorID()
         {
             //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
-            return null;
+            return getProjectCreatorID();
         }
 
         public bool share(int userID)

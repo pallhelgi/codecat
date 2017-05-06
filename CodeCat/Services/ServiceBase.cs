@@ -1,8 +1,11 @@
 ﻿using CodeCat.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
+
 
 
 namespace CodeCat.Services
@@ -58,6 +61,17 @@ namespace CodeCat.Services
         public UserModel getuserByID(int userID)
         {
             return null;
+        }
+
+        public string getProjectCreatorByID(string username)
+        {
+            //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
+
+             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
+
+            return user.Id;
+
+            //return _db.Users.FirstOrDefault(x => x.Email == Users.Identity.Email);
         }
 
         public bool addUser(UserModel user)

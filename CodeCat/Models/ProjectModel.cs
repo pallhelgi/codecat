@@ -17,7 +17,7 @@ namespace CodeCat.Models
         public string name { get; set; }
 
         //[ForeignKey("User")] //veit ekki hvort þetta sé rétt
-        public int creatorUserID { get; set; }
+        public string creatorUserID { get; set; }
 
         public virtual ICollection<UserModel> users { get; set; }
         public virtual ICollection<DocumentModel> documents { get; set; }

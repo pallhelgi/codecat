@@ -36,16 +36,21 @@ namespace CodeCat.Controllers
                 ProjectModel newProject = new ProjectModel
                 {
                     name = project.name,
-                  //  creatorUserID = projectService.getProjectCreator();
+                    //  creatorUserID = projectService.getProjectCreator();
 
-            };
+                 };
 
+             /*   DocumentModel firstDocument = new DocumentModel
+                {
+                    name = "index.js",
+                    content = null
+                };
+                */
                 
-            projectService.addProject(newProject);
+                projectService.addProject(newProject, User.Identity.Name);
 
-            return RedirectToAction("Dashboard");
+                return RedirectToAction("Dashboard");
 
-              
             }
                 
 
