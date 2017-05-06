@@ -13,7 +13,7 @@ namespace CodeCat.Services
 
         public List<ProjectModel> getAllProjects()
         {
-            return getAllProjectsFromDb();
+            return base.getAllProjects();
         }
 
         public bool getProject(int projectID)
