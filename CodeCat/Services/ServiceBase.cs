@@ -60,6 +60,14 @@ namespace CodeCat.Services
             return null;
         }
 
+        public string getProjectCreatorByID()
+        {
+            //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
+
+            // return _db.Users.FirstOrDefault( );
+            return null;
+        }
+
         public bool addUser(UserModel user)
         {
             _db.UserModel.Add(user);
