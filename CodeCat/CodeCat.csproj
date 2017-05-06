@@ -311,7 +311,7 @@
     <Content Include="Views\User\SignIn.cshtml" />
     <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
-    <Content Include="Views\Project\showDocument.cshtml" />
+    <Content Include="Views\Project\ShowDocument.cshtml" />
     <Content Include="Views\Dashboard\AddProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
