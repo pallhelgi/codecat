@@ -11,13 +11,15 @@ using CodeCat.Services;
 
 namespace CodeCat.Services
 {
-    public class ProjectService : ServiceBase
+    public class ProjectService
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         public ProjectModel project;
 
         public List<ProjectModel> getAllProjects()
         {
-            return getAllProjectsFromDb();
+            return _db.ProjectModel.ToList();
+
         }
 
         public bool getProject(int projectID)
@@ -27,7 +29,6 @@ namespace CodeCat.Services
 
         public bool addProject(ProjectModel project)
         {
-            _db = new ApplicationDbContext();
           /*  ProjectModel newProject = new ProjectModel();
             newProject.creatorUserID = 1;
             newProject.ID = 5;

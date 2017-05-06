@@ -7,7 +7,7 @@ using CodeCat.Services;
 
 namespace CodeCat.Services
 {
-    public class UserService : ServiceBase
+    public class UserService
     {
       //  ServiceBase baas = new ServiceBase();
         public UserModel user;

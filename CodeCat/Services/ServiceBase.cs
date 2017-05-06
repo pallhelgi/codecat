@@ -29,8 +29,10 @@ namespace CodeCat.Services
 
         public bool addProject(int creatorID, ProjectModel project)
         {
-           // _db.ProjectModel.Add(project);
-            //_db.SaveChanges();
+            _db.ProjectModel.Add(project);
+            _db.SaveChanges();
+
+            
 
             //MUNA AD BREYTA SVO THETTA SE EKKI ALLTAF TRUE
             return true;
