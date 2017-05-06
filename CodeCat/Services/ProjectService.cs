@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
+//using CodeCat.DAL;
 using CodeCat.Models;
 using CodeCat.Services;
+
+
 
 namespace CodeCat.Services
 {
@@ -21,9 +25,19 @@ namespace CodeCat.Services
             return false;
         }
 
-        public bool addProject(int creatorUserID, ProjectModel project)
+        public bool addProject(ProjectModel project)
         {
-            return false;
+           // if (ModelState.IsValid)
+            //{
+                ProjectModel newProject = new ProjectModel();
+                newProject.ID = 5;
+                newProject.name = project.name;
+
+                _db.ProjectModel.Add(newProject);
+                _db.SaveChanges();
+                return true;
+            //}
+            //return _db.ProjectModel.Add(project);
         }
 
         public UserModel getProjectCreator(int projectID)
