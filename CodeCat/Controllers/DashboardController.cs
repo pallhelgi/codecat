@@ -29,22 +29,26 @@ namespace CodeCat.Controllers
         }
 
         [HttpPost]
-        public ActionResult addProject(int creatorUserID, ProjectModel project)
-        {
+        public ActionResult addProject(ProjectModel project)
+        {     
             if (ModelState.IsValid)
             {
                 ProjectModel newProject = new ProjectModel
                 {
-                    ID = 4,
-                    name = "SUCCESS",
-                    creatorUserID = 1
-                };
-                projectService.addProject(newProject);
+                    name = project.name,
+                  //  creatorUserID = projectService.getProjectCreator();
 
-                return RedirectToAction("Dashboard");
+            };
+
+            projectService.addProject(newProject);
+
+            return RedirectToAction("Dashboard");
+
+              
             }
+                
 
-            return View(project);
+           return View(project);
         }
 
         public ActionResult share(UserModel user)

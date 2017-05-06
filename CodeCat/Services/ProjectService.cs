@@ -13,11 +13,14 @@ namespace CodeCat.Services
 {
     public class ProjectService : ServiceBase
     {
+        //private ApplicationDbContext _db = new ApplicationDbContext();
         public ProjectModel project;
 
         public List<ProjectModel> getAllProjects()
         {
-            return base.getAllProjects();
+            // return _db.ProjectModel.ToList();
+            return getAllProjectsFromDB();
+
         }
 
         public bool getProject(int projectID)
@@ -27,22 +30,19 @@ namespace CodeCat.Services
 
         public bool addProject(ProjectModel project)
         {
-            _db = new ApplicationDbContext();
-          /*  ProjectModel newProject = new ProjectModel();
-            newProject.creatorUserID = 1;
-            newProject.ID = 5;
-            newProject.name = "Bla";*/
+            // _db.ProjectModel.Add(project);
+            //_db.SaveChanges();
 
-            _db.ProjectModel.Add(project);
-            _db.SaveChanges();
+            addProjectToDB(project);
 
             return true;
           
             //return _db.ProjectModel.Add(project);
         }
 
-        public UserModel getProjectCreator(int projectID)
+        public UserModel getProjectCreator()
         {
+            //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
             return null;
         }
 

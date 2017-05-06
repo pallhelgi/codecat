@@ -17,7 +17,7 @@ namespace CodeCat.Services
             _db = new ApplicationDbContext();
         }
 
-        public List<ProjectModel> getAllProjects()
+        public List<ProjectModel> getAllProjectsFromDB()
         {
             return _db.ProjectModel.ToList();
         }
@@ -34,10 +34,12 @@ namespace CodeCat.Services
             return null;
         }
 
-        public bool addProject(int creatorID, ProjectModel project)
+        public bool addProjectToDB(ProjectModel project)
         {
-           // _db.ProjectModel.Add(project);
-            //_db.SaveChanges();
+            _db.ProjectModel.Add(project);
+            _db.SaveChanges();
+
+            
 
             //MUNA AD BREYTA SVO THETTA SE EKKI ALLTAF TRUE
             return true;
