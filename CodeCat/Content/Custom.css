@@ -272,6 +272,11 @@ footer {
     background-color: #808080;
 }
 
+.new-box a {
+    color: black;
+    text-decoration: none;
+}
+
 .new-box a:hover {
     color: white;
 }

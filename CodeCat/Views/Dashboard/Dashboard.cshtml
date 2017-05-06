@@ -19,15 +19,17 @@
         </a>
 </section>
 
-    <!--List of projects-->
-    @foreach (var itemj in Model.projects)
-    {
-        <section class="col-sm-4 project-box">
+<!--List of projects-->
+@foreach (var itemj in Model.projects)
+{
+    <section class="col-sm-4 project-box">
+        <!--<a href="#">-->
             <section class="well project-box-inner">
                 <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
                 <p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>
                 <p>creatorUserID: @Html.DisplayFor(modelItem => itemj.creatorUserID)</p>
             </section>
-        </section>
-    }
+        <!--</a>-->
+    </section>
+}
 </div>
