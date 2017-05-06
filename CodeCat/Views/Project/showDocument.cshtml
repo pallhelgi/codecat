@@ -55,7 +55,7 @@
 </script>
 
 <!--Test Gudrunar-->
-<!--Autocomplete-->
+<!-- Autocomplete -->
 <script>
     ace.require("ace/ext/language_tools");
     var editor = ace.edit("ace-editor");
@@ -64,10 +64,8 @@
     });
 </script>
 
-<!--Trying to save the file-->
+<!-- Trying to save the file -->
 <script>
-    //@Html.Action("Save", "ProjectController");
-   
     editor.getSession().on('change', function (e) {
         thisfile = editor.getValue();
     });
@@ -80,7 +78,7 @@
     editor.getValue(); // or session.getValue
 </script>
 
-<!--Script to override enter button-->
+<!-- Script to override enter button -->
 <script>
     editor.commands.addCommand({
         name: 'Enter',

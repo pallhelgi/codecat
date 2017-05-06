@@ -24,11 +24,7 @@ namespace CodeCat.Controllers
         [HttpGet]
         public ActionResult addProject()
         {
-<<<<<<< HEAD
             //TODO
-
-=======
->>>>>>> abebd7b4e78fb6d3bf9324694e648066e5469897
             return View();
         }
 
