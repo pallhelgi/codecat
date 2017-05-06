@@ -222,3 +222,19 @@ footer {
     position: absolute;
     bottom: 0;
 }
+
+/*Dashboard*/
+.project-box,
+.create-new-project-box {
+    min-height: 90px;
+    overflow: auto;
+    vertical-align: top;
+}
+
+.project-box-inner {
+}
+
+.new-box {
+    background-color: #d0d0d0;
+    min-height: 155px;
+}

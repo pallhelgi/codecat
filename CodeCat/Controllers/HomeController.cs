@@ -15,7 +15,7 @@ namespace CodeCat.Controllers
             user.fullName = collection["signin"];
             string movieId = collection["form-signin"];
             Console.Write(user.fullName);
-
+            
             return View();
             //return View();
         }

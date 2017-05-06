@@ -7,17 +7,18 @@
 <h2>Dashboard</h2>
 
 <!--Create new project button-->
-<section class="col-sm-4">
-    <section class="well">
-        <h3>@Html.ActionLink("Create a new project", "AddProject")</h3>
-    </section>
+<section class="col-sm-4 create-new-project-box">
+        <section class="well new-box">
+            <h3>@Html.ActionLink("Create a new project", "AddProject")</h3>
+            <p>Create a new project</p>
+        </section>
 </section>
 
 <!--List of projects-->
-@foreach (var itemj in Model.projects)
+@foreach (var itemj in Model.projects)  
 {
-    <section class="col-sm-4">
-        <section class="well">
+    <section class="col-sm-4 project-box">
+        <section class="well project-box-inner">
             <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
             <p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>
             <p>creatorUserID: @Html.DisplayFor(modelItem => itemj.creatorUserID)</p>
