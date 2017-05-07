@@ -160,10 +160,19 @@ h2 {
 /*Shape of ACE EDITOR*/
 #ace-editor {
     position: absolute;
+    height: 500px;
     top: 150px;
     right: 100px;
     bottom: 50px;
     left: 100px;
+}
+
+/*Button to save a document in ACE editor*/
+/*Why oh why will it not behave??*/
+.editor-save-div {
+    position: relative;
+    width: 150px;
+    padding-top: 605px;
 }
 
 /*Login page*/
