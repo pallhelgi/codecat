@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CodeCat.Models.ViewModels;
+using CodeCat.Services;
 
 namespace CodeCat.Controllers
 {
     public class ProjectController : Controller
     {
+        ProjectService projectService = new ProjectService();
         // GET: Project
         public ActionResult Index()
         {
@@ -37,9 +40,16 @@ namespace CodeCat.Controllers
             
             ViewBag.Code = Code;
 
-            //TODO: get Document and fill Ace with the string
-
+            //TODO: else: get Document and fill Ace with the string
             return View();
+        }
+
+        public ActionResult showDocuments(int projectID)
+        {
+            ProjectViewModel viewModel = new ProjectViewModel();
+            viewModel.documents = projectService.getProject(projectID);
+
+            return View(viewModel);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace CodeCat.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<ProjectModel> ProjectModel { get; set; }
-        public DbSet<DocumentModel> DocumendModel { get; set; }
+        public DbSet<DocumentModel> DocumentModel { get; set; }
         public DbSet<UserModel> UserModel { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
