@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeCat.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,9 +15,11 @@ namespace CodeCat.Controllers
             return View();
         }
 
-        public ActionResult save()
+        [HttpPost]
+        public ActionResult save(DocumentModel model)
         {
             //TODO
+
             return View();
         }
 

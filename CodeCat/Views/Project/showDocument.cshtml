@@ -1,4 +1,5 @@
-﻿
+﻿@model CodeCat.Models.DocumentModel 
+
 @{
     ViewBag.Title = "showDocument";
 }
@@ -34,33 +35,42 @@
     </ul>
 </div>
 
-<!--The Ace Editor begin-->
-<div id="ace-editor">
-    function foo(items) {
+<div class="container">
+    <!--The Ace Editor begin-->
+    <div id="ace-editor">
+        function foo(items) {
         var x = "I am Code::Cat";
         return x;
-    }
+        }
+    </div>
 </div>
+
+@using (Html.BeginForm("save", "Document", FormMethod.Post))
+{
+    <div class="container editor-save-div">
+        @Html.HiddenFor(m => m.content, new { @id = "hidden-editor" })
+        <input type="submit" value="Save" class="editor-save-button btn btn-success" />
+    </div>
+}
 
 @section scripts 
 {
-        
-}
-
-<!-- Rounded switch -->
-<label class="switch slider round">
-    <input type="checkbox" class="toggle-theme">
-</label>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
         var editor = ace.edit("ace-editor");
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
-</script>
+
+        /*Should save the form on submit button click*/
+        $("form").submit(function () {
+            $("#hidden-editor").val(editor.getSession().getValue());
+        });
+    </script>
+}
 
 <!--Test Gudrunar-->
 <!-- Autocomplete -->
+<!--
 <script>
     ace.require("ace/ext/language_tools");
     var editor = ace.edit("ace-editor");
@@ -68,24 +78,27 @@
         enableBasicAutocompletion: true
     });
 </script>
-
+-->
 <!-- Trying to save the file -->
+<!--
 <script>
     editor.getSession().on('change', function (e) {
         thisfile = editor.getValue();
     });
 </script>
-
+-->
+<!--
 <script>
     var lastLine = editor.session.getLength();
     editor.gotoLine(lastLine);
     editor.insert("the new text here"); // or session.setValue
     editor.getValue(); // or session.getValue
 </script>
-
+-->
+<!--
 <!-- Script to override enter button -->
 <script>
-    editor.commands.addCommand({
+    /* editor.commands.addCommand({
         name: 'Enter',
         bindKey: {win: 'Enter',  mac: 'Enter'},
         exec: function(editor) {
@@ -94,8 +107,7 @@
             editor.insert("I'm at the bottom.");
         },
         readOnly: true // false if this command should not apply in readOnly mode
-    });
+    });*/
 </script>
-
 <!--End of test Gudrun-->
 <!--The Ace Editor end-->
