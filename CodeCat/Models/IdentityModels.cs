@@ -25,6 +25,7 @@ namespace CodeCat.Models
         public DbSet<ProjectModel> ProjectModel { get; set; }
         public DbSet<DocumentModel> DocumendModel { get; set; }
         public DbSet<UserModel> UserModel { get; set; }
+        public DbSet<UserProjectModel> UserProjectModel { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

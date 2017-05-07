@@ -7,23 +7,23 @@ using System.Web.Mvc;
 
 namespace CodeCat.Controllers
 {
-    public class ProjectController : Controller
+    public class DocumentController : Controller
     {
-        // GET: Project
+        // GET: Document
         public ActionResult Index()
         {
-            //TODO
-           
             return View();
         }
 
-        public ActionResult share(UserModel user)
+        [HttpPost]
+        public ActionResult save(DocumentModel model)
         {
             //TODO
+
             return View();
         }
 
-        public ActionResult showDocument()
+        public ActionResult addDocument(FormCollection collection)
         {
             //TODO
             return View();

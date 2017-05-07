@@ -37,7 +37,7 @@
         {
             <!--Dropdown list for settings and help...-->
             <div class="navdropdown">
-                <button class="btn btn-basic dropdown-toggle settings-dropdown" type="button" data-toggle="dropdown">                
+                <button class="dropdown-toggle settings-dropdown" type="button" data-toggle="dropdown">                
                     @Html.Partial("_LoginPartial")
                     <span class="caret"></span>
                 </button>
@@ -52,14 +52,11 @@
         }
     </div>
 
-    <div class="container body-content">
+    <div class="container">
         @RenderBody()
-        <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Code::Cat</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
