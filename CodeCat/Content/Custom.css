@@ -232,6 +232,10 @@ footer {
     vertical-align: top;
 }
 
+.project-box-inner:hover {
+    background-color: #c0c0c0;
+}
+
 .project-box-inner {
     height: 250px;
 }
@@ -278,5 +282,14 @@ footer {
 }
 
 .new-box a:hover {
+    color: white;
+}
+
+.project-box a {
+    color: black;
+    text-decoration: none;
+}
+
+.project-box a:hover {
     color: white;
 }
