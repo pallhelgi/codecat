@@ -18,7 +18,7 @@ namespace CodeCat.Controllers
         [HttpPost]
         public ActionResult save(DocumentModel model)
         {
-            //TODO
+            //TODO: get the Document string and send to DB
 
             return RedirectToAction("../Project/ShowDocument");
         }
@@ -26,6 +26,7 @@ namespace CodeCat.Controllers
         public ActionResult addDocument(FormCollection collection)
         {
             //TODO
+            //DocumentModel doc = new DocumentModel();
             return View();
         }
     }
