@@ -18,30 +18,27 @@
                 <p>@Html.ActionLink("Create a new project", "AddProject")</p>
             </section>
         </a>
-</section>
+    </section>
 
 <!--List of projects-->
-
-@foreach (var itemj in Model.projects)
-{
-    <section class="col-sm-4 project-box">
-        <a href="@Url.Action("../Project/ShowDocument")">
-            
-                <section class="well project-box-inner">
-                    <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
-                    <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
-                    @if (User.Identity.GetUserId() == itemj.creatorUserID)
-                    {
-                        <p> Author: @User.Identity.Name (you) </p>
-                    }
-                    else
-                    {
-                        <p> Author: Still to come... </p>
-                        //TODO ef hofundurinn er ekki sa innskradi...
-                    }
-                </section>
-            
-        </a>
-    </section>
-}
+    @foreach (var itemj in Model.projects)
+    {
+        <section class="col-sm-4 project-box">
+            <a href="@Url.Action("../Project/ShowDocument")">
+                    <section class="well project-box-inner">
+                        <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
+                        <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
+                        @if (User.Identity.GetUserId() == itemj.creatorUserID)
+                        {
+                            <p> Author: @User.Identity.Name (you) </p>
+                        }
+                        else
+                        {
+                            <p> Author: Still to come... </p>
+                            //TODO ef hofundurinn er ekki sa innskradi...
+                        }
+                    </section>
+            </a>
+        </section>
+    }
 </div>
