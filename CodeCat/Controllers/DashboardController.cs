@@ -71,7 +71,7 @@ namespace CodeCat.Controllers
         public ActionResult Dashboard()
         {
             DashboardViewModel viewModel = new DashboardViewModel();
-            testClass test = new testClass();
+            //testClass test = new testClass();
             viewModel.projects = projectService.getUserProjects(User.Identity.Name);
             //viewModel.projects = test.SeedProject();
 

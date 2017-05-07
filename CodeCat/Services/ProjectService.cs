@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-//using CodeCat.DAL;
 using CodeCat.Models;
 using CodeCat.Services;
 using Microsoft.AspNet.Identity;
@@ -19,9 +18,13 @@ namespace CodeCat.Services
 
         public List<ProjectModel> getAllProjects()
         {
-            // return _db.ProjectModel.ToList();
             return getAllProjectsFromDB();
 
+        }
+
+        public List<DocumentModel> getProject(int projectID)
+        {
+            return getProjectFromDB(projectID);
         }
 
         public List<ProjectModel> getUserProjects(string username)
@@ -31,13 +34,9 @@ namespace CodeCat.Services
 
         public bool addProject(ProjectModel project, string username)
         {
-            // _db.ProjectModel.Add(project);
-            //_db.SaveChanges();
-
             project.creatorUserID = getProjectCreatorByID(username);
 
             addProjectToDB(project);
-
 
             return true;
           
