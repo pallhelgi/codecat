@@ -1,5 +1,4 @@
-﻿using CodeCat.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,23 +6,21 @@ using System.Web.Mvc;
 
 namespace CodeCat.Controllers
 {
-    public class ProjectController : Controller
+    public class DocumentController : Controller
     {
-        // GET: Project
+        // GET: Document
         public ActionResult Index()
         {
-            //TODO
-           
             return View();
         }
 
-        public ActionResult share(UserModel user)
+        public ActionResult save()
         {
             //TODO
             return View();
         }
 
-        public ActionResult showDocument()
+        public ActionResult addDocument(FormCollection collection)
         {
             //TODO
             return View();
