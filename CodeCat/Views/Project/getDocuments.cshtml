@@ -1,0 +1,18 @@
+﻿@model CodeCat.Models.ViewModels.ProjectViewModel
+
+@{
+    ViewBag.Title = "Documents";
+}
+
+@foreach (var itemj in Model.documents)
+{
+    <section class="col-sm-4 project-box">
+        <a href="@Url.Action("../Project/getDocuments")">
+            <section class="well project-box-inner">
+                <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
+                <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
+                @Html.DisplayFor(modelItem => itemj.content)
+            </section>
+        </a>
+    </section>
+}

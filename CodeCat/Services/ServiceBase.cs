@@ -22,12 +22,9 @@ namespace CodeCat.Services
 
         public List<ProjectModel> getAllProjectsFromDB()
         {
-            /*This is a work in process
-             * var result = from projects in _db.ProjectModel
-                         join users in _db.Users
-                         on projects.users equals users.Id
-                         where users.id == userID
-                         select projects;*/
+            //This is a work in process
+            
+                    
           
             return _db.ProjectModel.ToList();
         }
@@ -56,8 +53,6 @@ namespace CodeCat.Services
             _db.ProjectModel.Add(project);
             _db.SaveChanges();
 
-            
-
             //MUNA AD BREYTA SVO THETTA SE EKKI ALLTAF TRUE
             return true;
         }
@@ -66,16 +61,7 @@ namespace CodeCat.Services
         //Is supposed to retrieve all documents contained in a single project and return them
         public List<DocumentModel> getProjectFromDB(int projectID)
         {
-            /*This is a work in process
-             * var result = from docs in _db.DocumendModel
-                         join project in _db.ProjectModel
-                         on docs.projects.ID equals project.ID
-                         where docs.projects.ID == projectID
-                         select docs;
-                            
-
-            List<DocumentModel> documents = new List<DocumentModel>();
-            documents = result.ToList();*/
+            //This is a work in process
 
             return null;
         }
@@ -99,7 +85,7 @@ namespace CodeCat.Services
         {
             //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
 
-             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
+            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
 
             return user.Id;
 
