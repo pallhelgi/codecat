@@ -39,8 +39,8 @@
     <!--The Ace Editor begin-->
     <div id="ace-editor">
         function foo(items) {
-        var x = "I am Code::Cat";
-        return x;
+            var x = "I am Code::Cat";
+            return x;
         }
     </div>
 </div>
@@ -63,6 +63,8 @@
 
         /*Should save the form on submit button click*/
         $("form").submit(function () {
+            console.log("Hallo");
+            console.log($("#hidden-editor").val(editor.getSession().getValue()));
             $("#hidden-editor").val(editor.getSession().getValue());
         });
     </script>

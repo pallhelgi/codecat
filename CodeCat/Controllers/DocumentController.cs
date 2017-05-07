@@ -20,7 +20,7 @@ namespace CodeCat.Controllers
         {
             //TODO
 
-            return View();
+            return RedirectToAction("../Project/ShowDocument");
         }
 
         public ActionResult addDocument(FormCollection collection)
