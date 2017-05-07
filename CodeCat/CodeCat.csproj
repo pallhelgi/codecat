@@ -226,6 +226,22 @@
     <Compile Include="Migrations\201705061646579_ProjectModel1.Designer.cs">
       <DependentUpon>201705061646579_ProjectModel1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705071153335_Rerolling.cs" />
+    <Compile Include="Migrations\201705071153335_Rerolling.Designer.cs">
+      <DependentUpon>201705071153335_Rerolling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705071202078_update-database.cs" />
+    <Compile Include="Migrations\201705071202078_update-database.Designer.cs">
+      <DependentUpon>201705071202078_update-database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705071215494_RemovingConnecion.cs" />
+    <Compile Include="Migrations\201705071215494_RemovingConnecion.Designer.cs">
+      <DependentUpon>201705071215494_RemovingConnecion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705071221442_ASpNetUserAdd.cs" />
+    <Compile Include="Migrations\201705071221442_ASpNetUserAdd.Designer.cs">
+      <DependentUpon>201705071221442_ASpNetUserAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -351,6 +367,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705061646579_ProjectModel1.resx">
       <DependentUpon>201705061646579_ProjectModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071153335_Rerolling.resx">
+      <DependentUpon>201705071153335_Rerolling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071202078_update-database.resx">
+      <DependentUpon>201705071202078_update-database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071215494_RemovingConnecion.resx">
+      <DependentUpon>201705071215494_RemovingConnecion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071221442_ASpNetUserAdd.resx">
+      <DependentUpon>201705071221442_ASpNetUserAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
