@@ -8,10 +8,10 @@ namespace CodeCat.Models
 {
     public class UserProjectModel
     {
-        [ForeignKey("UserID")]
+       // [ForeignKey("UserID")]
         public string UserID { get; set; }
 
-        [ForeignKey("ProjectID")]
+       // [ForeignKey("ProjectID")]
         public int ProjectID { get; set; }
     }
 }
