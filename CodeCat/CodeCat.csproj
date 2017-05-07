@@ -242,6 +242,14 @@
     <Compile Include="Migrations\201705071221442_ASpNetUserAdd.Designer.cs">
       <DependentUpon>201705071221442_ASpNetUserAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705071642519_ICollectable removed.cs" />
+    <Compile Include="Migrations\201705071642519_ICollectable removed.Designer.cs">
+      <DependentUpon>201705071642519_ICollectable removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705071649047_Forgot to remove one icollectable.cs" />
+    <Compile Include="Migrations\201705071649047_Forgot to remove one icollectable.Designer.cs">
+      <DependentUpon>201705071649047_Forgot to remove one icollectable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -334,6 +342,7 @@
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\ShowDocument.cshtml" />
     <Content Include="Views\Dashboard\AddProject.cshtml" />
+    <Content Include="Views\Project\getDocuments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -379,6 +388,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705071221442_ASpNetUserAdd.resx">
       <DependentUpon>201705071221442_ASpNetUserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071642519_ICollectable removed.resx">
+      <DependentUpon>201705071642519_ICollectable removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071649047_Forgot to remove one icollectable.resx">
+      <DependentUpon>201705071649047_Forgot to remove one icollectable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

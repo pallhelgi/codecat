@@ -17,7 +17,6 @@ namespace CodeCat.Models
             // Add custom user claims here  
             return userIdentity;
         }
-        public virtual ICollection<ProjectModel> projects { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

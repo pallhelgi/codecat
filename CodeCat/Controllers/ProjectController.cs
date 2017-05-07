@@ -30,12 +30,13 @@ namespace CodeCat.Controllers
         {
             //TODO
         
-
+            
             return View();
         }
 
-        public ActionResult showDocuments(int projectID)
+        public ActionResult getDocuments(int projectID)
         {
+            projectID = 1;
             ProjectViewModel viewModel = new ProjectViewModel();
             viewModel.documents = projectService.getProject(projectID);
 
