@@ -96,6 +96,7 @@ namespace CodeCat.TestClasses
             {
                 ID = 0,
                 name = "doc1",
+                ProjectID = 1,
                 content = "There once was a little boy name Paul, and he was all alone in the whole wide cosmos, which...",
             };
 
@@ -105,6 +106,7 @@ namespace CodeCat.TestClasses
             {
                 ID = 1,
                 name = "doc2",
+                ProjectID = 1,
                 content = "In a galaxy far, far away, a boy found out his father was the dark lord of the sith and a mass murdered..."
             };
 
@@ -114,6 +116,7 @@ namespace CodeCat.TestClasses
             {
                 ID = 2,
                 name = "doc3",
+                ProjectID = 1,
                 content = "You're a Lizzard Harrrry! Haggy said with a frown. What a sad fate that is...",
             };
 

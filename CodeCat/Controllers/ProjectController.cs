@@ -28,9 +28,21 @@ namespace CodeCat.Controllers
 
         public ActionResult showDocument()
         {
-            //TODO
-        
+            //if document is empty:
+            string Code = "Hello my friend, I'm ProjectController" + Environment.NewLine;
+            Code += Environment.NewLine;
+            Code += '\t' + "//This is your javascript code" + Environment.NewLine;
+            Code += Environment.NewLine;
+            Code += '\t' + "function foo(items) {" + Environment.NewLine;
+            Code += "\t\t" + "var x = 'I am Code::Cat'" + Environment.NewLine;
+            Code += "\t\t" + "return x;" + Environment.NewLine;
+            Code += '\t' + "}" + Environment.NewLine;
             
+            ViewBag.Code = Code;
+
+            //else: get Document from DB and fill Ace with the string
+            string content = "content from DB ;)";
+            ViewBag.Code = content;
             return View();
         }
 
