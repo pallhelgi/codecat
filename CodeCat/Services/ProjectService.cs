@@ -16,9 +16,9 @@ namespace CodeCat.Services
         //private ApplicationDbContext _db = new ApplicationDbContext();
         public ProjectModel project;
 
-        public List<ProjectModel> getAllProjects()
+        public List<ProjectModel> getAllProjects(string userName)
         {
-            return getAllProjectsFromDB();
+            return getAllProjectsFromDB(userName);
 
         }
 

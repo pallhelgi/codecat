@@ -94,9 +94,9 @@ namespace CodeCat.Controllers
         {
             DashboardViewModel viewModel = new DashboardViewModel();
             //testClass test = new testClass();
-            viewModel.projects = projectService.getUserProjects(User.Identity.Name);
+            //viewModel.projects = projectService.getUserProjects(User.Identity.Name);
             //viewModel.projects = test.SeedProject();
-            //viewModel.projects = projectService.getAllProjects();
+            viewModel.projects = projectService.getAllProjects(User.Identity.Name);
 
             return View(viewModel);
         }
