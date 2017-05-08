@@ -40,8 +40,7 @@ namespace CodeCat.Controllers
             {
                 DocumentModel doc = new DocumentModel();
                 doc = docFromUser;
-                //This is hardcoded, should not be so yo
-                doc.name = docFromUser.name + ".js";
+                doc.name = docFromUser.name + docFromUser.type.ToString();
                 //Maybe add some default code in content
                 doc.content = null;
                 doc.projectID = 3;
