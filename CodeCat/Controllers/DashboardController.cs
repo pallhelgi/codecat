@@ -45,16 +45,16 @@ namespace CodeCat.Controllers
 
                 DocumentModel firstDocument = new DocumentModel
                 {
-                    name = "index.js",
+                    name = "index",
                     content = null,
                     type = documentType.js,
                     projectID = newProject.ID
                 };
+                firstDocument.name = firstDocument.name + firstDocument.type.ToString();
                 docService.addDocument(firstDocument);
 
                 return RedirectToAction("Dashboard");
             }
-                
 
            return View(project);
         }
@@ -71,8 +71,8 @@ namespace CodeCat.Controllers
             if (ModelState.IsValid)
             {
                 userService.share(user.email, 3);
-                return RedirectToAction("Dashboard");
 
+                return RedirectToAction("Dashboard");
             }
 
             return View(user);
