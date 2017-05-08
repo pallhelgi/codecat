@@ -40,9 +40,9 @@ namespace CodeCat.Controllers
             
             ViewBag.Code = Code;
 
-            //TODO: else: get Document and fill Ace with the string
-            //content from DB
-            //editor.setValue(content);
+            //else: get Document from DB and fill Ace with the string
+            string content = "content from DB ;)";
+            ViewBag.Code = content;
             return View();
         }
 
