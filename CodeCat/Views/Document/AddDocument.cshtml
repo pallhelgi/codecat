@@ -5,53 +5,25 @@
 
 <h2>Add Document</h2>
 
-<div class="row sign-in-form add-document-form">
-    <div class="col-md-12">
-        <section id="add-doc-form">
-            @using (Html.BeginForm("addDocument", "Document", FormMethod.Post))
-            {
-                <!--LOGO-->
-                <div class="sign-in-logo-div">
-                    <img src="~/Images/codecat2_black.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
-                </div>
-                
-                <hr />
-
-                @Html.AntiForgeryToken()
-
-                <!-- Dropdown for doc type -->
-                <div class="buttons-add-doc">
-                    <div class="form-group">
-                        <div class="col-md-10">
-                            @Html.EnumDropDownListFor(
-                                m => m.type,
-                                "Select file type",
-                                new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.type, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <!--Input name for the new doc-->
-                    <div class="form-group">
-
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                        <div class="col-md-10">
-
-                            @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
-                            
-                            @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
-
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create document" id="create-button" class="btn btn-success share-doc-button" />
-                    </div>
-                </div>
-                }
-        </section>
-    </div>
+<!--LOGO-->
+<div class="sign-in-logo-div">
+    <img src="~/Images/codecat2_black.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
 </div>
+<hr />
+
+@using (Html.BeginForm("addDocument", "Document", FormMethod.Post, new { @class = "add-document-form" }))
+{
+    <div class="add-document-div">
+        <div class="form-group">
+            @Html.LabelFor(m => m.type, new { @class = " control-label label-for-type-dropdown" })
+            @Html.EnumDropDownListFor(m => m.type, "Select file type", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.type, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.name, new { @class = "control-label label-for-type-dropdown" })
+            @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+        </div>
+        <button type="submit" class="btn btn-fab">Create document</button>
+    </div>
+}

@@ -34,7 +34,7 @@ namespace CodeCat.Services
                          join con in _db.UserProjectModel
                          on proj.ID equals con.ProjectID
                          where con.UserID == user.Id
-                         select proj
+                         select proj;
 
             List<ProjectModel> lis = new List<ProjectModel>();
             List<ProjectModel> lis2 = new List<ProjectModel>();
