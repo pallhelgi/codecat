@@ -185,7 +185,7 @@ h2 {
 #registerForm {
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 500px;
 }
 
 .form-group,
@@ -319,4 +319,7 @@ footer {
 /*Choose the file type of new document*/
 .file-type-dropdown {
     padding: 10px;
+}
+
+.add-document-form {
 }
