@@ -316,10 +316,15 @@ footer {
     padding-top: 5px;
 }
 
+<<<<<<< HEAD
+.CREATE-TEST-DELETE-LATER {
+
+=======
 /*Choose the file type of new document*/
 .file-type-dropdown {
     padding: 10px;
 }
 
 .add-document-form {
+>>>>>>> e26f4267bf9413ad350284fd7e25ebc36e3b3556
 }

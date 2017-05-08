@@ -18,5 +18,6 @@ namespace CodeCat.Models
 
         //[ForeignKey("User")] //veit ekki hvort þetta sé rétt
         public string creatorUserID { get; set; }
+        public bool isActive { get; set; }
     }
 }
