@@ -36,9 +36,15 @@ namespace CodeCat.Services
                          where con.UserID == user.Id
                          select proj;
 
+            List<ProjectModel> lis = new List<ProjectModel>();
+            List<ProjectModel> lis2 = new List<ProjectModel>();
 
+            lis = _db.ProjectModel.Where(x => x.creatorUserID == user.Id).ToList();
+            lis2 = result.ToList();
+
+            lis2.ForEach(l => lis.Add(l));
             //return _db.ProjectModel.ToList();
-            return result.ToList();
+            return lis;
         }
 
         public ProjectModel getProjectByID(int projectID)
@@ -69,16 +75,6 @@ namespace CodeCat.Services
         //Is supposed to retrieve all documents contained in a single project and return them
         public List<DocumentModel> getProjectFromDB(int projectID)
         {
-            //******************
-            //Adding fake data into database when run for the first time, can be removed after.
-            testClass test = new testClass();
-            List<DocumentModel> lis = new List<DocumentModel>();
-            lis = test.seedDocs();
-
-            lis.ForEach(d => _db.DocumentModel.Add(d));
-            _db.SaveChanges();
-            //*********************
-
             //This is a work in process
             var result = from docs in _db.DocumentModel
                          where docs.projectID == projectID
