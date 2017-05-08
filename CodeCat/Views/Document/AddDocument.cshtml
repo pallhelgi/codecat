@@ -7,7 +7,7 @@
 
 <div class="row sign-in-form add-document-form">
     <div class="col-md-12">
-        <section id="loginForm">
+        <section id="add-doc-form">
             @using (Html.BeginForm("addDocument", "Document", FormMethod.Post))
             {
                 <!--LOGO-->
@@ -20,32 +20,33 @@
                 @Html.AntiForgeryToken()
 
                 <!-- Dropdown for doc type -->
-                <div class="form-group">
-                    @Html.LabelFor(m => m.type, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.EnumDropDownListFor(
-                        m => m.type,
-                        "Select file type",
-                        new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.type, "", new { @class = "text-danger"})
+                <div class="buttons-add-doc">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.type, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.EnumDropDownListFor(
+                                m => m.type,
+                                "Select file type",
+                                new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.type, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
- 
-                <!--Input name for the new doc-->                
-                <div class="form-group">
+
+                    <!--Input name for the new doc-->
+                    <div class="form-group">
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                    <div class="col-md-10">
+                        <div class="col-md-10">
 
-                        @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
-                        @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+                            @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
+                            @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
 
-                        <!--Validation always shows for some reason... NEED TO FIX-->
-                        @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+                            <!--Validation always shows for some reason... NEED TO FIX-->
+                            @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Create document" id="create-button" class="btn btn-success share-doc-button" />
