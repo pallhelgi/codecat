@@ -33,7 +33,6 @@
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <button type="submit" value="Add user to project" id="create-button" class="btn btn-success share-doc-button" onclick="$('#hiddenText').show(); return false;">Send invite</button>
-                    @if(Html.TextBoxFor(m => m.email) != null) { }
                     <div style="display: none;" id="hiddenText">The invite to collaborate on this document has been sent, this user will be able to edit the document.</div>
                 </div>
             </div>

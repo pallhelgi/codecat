@@ -365,11 +365,11 @@
     <Content Include="Views\Dashboard\AddProject.cshtml" />
     <Content Include="Views\Project\getDocuments.cshtml" />
     <Content Include="Views\User\Share.cshtml" />
+    <Content Include="Views\Document\AddDocument.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\EntityClasses\" />
-    <Folder Include="Views\Document\" />
     <Folder Include="Views\Parent\" />
   </ItemGroup>
   <ItemGroup>

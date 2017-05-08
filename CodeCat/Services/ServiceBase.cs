@@ -21,6 +21,8 @@ namespace CodeCat.Services
             _db = new ApplicationDbContext();
         }
 
+
+        //gets a list of projects connected to a specific user
         public List<ProjectModel> getAllProjectsFromDB()
         {
             string userID = "5"; //test for now should be in funciton
@@ -41,6 +43,7 @@ namespace CodeCat.Services
             return null;
         }
 
+        //gets a list of projects created by a specific user
         public List<ProjectModel> getUserProjectsFromDB(string username)
         {
 
@@ -48,6 +51,7 @@ namespace CodeCat.Services
             return _db.ProjectModel.Where(x => x.creatorUserID == user.Id).ToList();
         }
 
+        //adds a project to database
         public bool addProjectToDB(ProjectModel project)
         {
             _db.ProjectModel.Add(project);
@@ -86,6 +90,7 @@ namespace CodeCat.Services
             return null;
         }
 
+        //adds a doccument to database
         public bool addDocumentToDB(DocumentModel document)
         {
             _db.DocumentModel.Add(document);
@@ -118,6 +123,7 @@ namespace CodeCat.Services
             return false;
         }
 
+        //shares the project with another user
         public bool share(string email, int projectID)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
@@ -134,6 +140,7 @@ namespace CodeCat.Services
             return true;
         }
 
+        //Links the user to a project
         public bool linkUserToProjectInDB(string email)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
