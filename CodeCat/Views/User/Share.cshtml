@@ -9,7 +9,7 @@
 <div class="row sign-in-form">
     <div class="col-md-12">
         <section id="loginForm">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("Share", "User"))
             {
             @Html.AntiForgeryToken()
 
@@ -29,6 +29,8 @@
                     @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
                 </div>
             </div>
+
+            <input type="submit" class="btn" value="Send"/>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">

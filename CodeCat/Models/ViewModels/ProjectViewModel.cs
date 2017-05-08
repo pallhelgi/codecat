@@ -10,5 +10,6 @@ namespace CodeCat.Models.ViewModels
     public class ProjectViewModel
     {
         public List<DocumentModel> documents;
+        public string userEmail { get; set; }
     }
 }

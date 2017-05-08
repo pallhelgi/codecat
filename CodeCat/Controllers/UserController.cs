@@ -12,7 +12,7 @@ namespace CodeCat.Controllers
     {
 
         private UserService userService = new UserService();
-
+        private ProjectService projectService = new ProjectService();
         // GET: User
         public ActionResult Index()
         {
@@ -36,20 +36,33 @@ namespace CodeCat.Controllers
         [HttpGet]
         public ActionResult share(ProjectModel project)
         {
-            return View(project);
+           
+
+                project = projectService.getProjectById(project.ID);
+
+                if (project != null)
+                {
+                    return View();
+                }
+          
+
+            return HttpNotFound();
         }
 
         [HttpPost]
-        public ActionResult share(UserModel user, ProjectModel project)
+        public ActionResult share(UserModel user)
         {
-            if (ModelState.IsValid)
+            if (user.email != null)
             {
-                userService.share(user.email, project.ID);
-                return RedirectToAction("Dashboard");
-
+                //The project ID is retrieved from the url
+                var url = Url.RequestContext.RouteData.Values["id"].ToString();
+                int urlInt = int.Parse(url);
+                userService.share(user.email, urlInt);
+                return RedirectToAction("../Dashboard/Dashboard");
             }
 
-            return View(user);
+            return View();
+           // return View(user);
         }
 
 

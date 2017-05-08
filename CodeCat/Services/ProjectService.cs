@@ -48,6 +48,11 @@ namespace CodeCat.Services
             return getProjectCreatorID();
         }
 
+        public ProjectModel getProjectById(int id)
+        {
+            return getProjectByID(id);
+        }
+
         public bool share(int userID)
         {
             return false;
