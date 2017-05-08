@@ -305,7 +305,7 @@ footer {
     color: white;
 }
 
-/* Share document / Add User */
+/* ADD USER / SHARE PROJECT */
 /*Share button*/
 .share-doc-button {
     padding-top: 5px;
@@ -316,15 +316,25 @@ footer {
     padding-top: 5px;
 }
 
-<<<<<<< HEAD
+/* ADD DOCUMENT */
 .CREATE-TEST-DELETE-LATER {
+}
 
-=======
 /*Choose the file type of new document*/
 .file-type-dropdown {
     padding: 10px;
 }
 
+#add-doc-form {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#buttons-add-doc {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .add-document-form {
->>>>>>> e26f4267bf9413ad350284fd7e25ebc36e3b3556
 }
