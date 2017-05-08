@@ -1,0 +1,40 @@
+﻿@model CodeCat.Models.DocumentModel
+@{
+    ViewBag.Title = "AddDocument";
+}
+
+<h2>Add Document</h2>
+
+
+<div class="row sign-in-form">
+    <div class="col-md-12">
+        <section id="loginForm">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <!--LOGO-->
+                <div class="sign-in-logo-div">
+                    <img src="~/Images/codecat2_black.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
+                </div>
+                <hr />
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+
+                        <!--Validation always shows for some reason... NEED TO FIX-->
+                        @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" value="Add document to project" id="create-button" class="btn btn-success share-doc-button" onclick="$('#hiddenText').show(); return false;">Create document</button>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
