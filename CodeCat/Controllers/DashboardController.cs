@@ -15,6 +15,7 @@ namespace CodeCat.Controllers
     {
         ProjectService projectService = new ProjectService();
         UserService userService = new UserService();
+        DocumentService docService = new DocumentService();
         // GET: Dashboard
         public ActionResult Index()
         {
@@ -39,18 +40,22 @@ namespace CodeCat.Controllers
                     name = project.name,
                     //  creatorUserID = projectService.getProjectCreator();
 
-                 };
+                };
+
+                projectService.addProject(newProject, User.Identity.Name);
 
                 DocumentModel firstDocument = new DocumentModel
                 {
                     name = "index.js",
-                    content = null
+                    content = null,
+                    type = documentType.js,
+                    projectID = newProject.ID
                 };
                 
-                projectService.addProject(newProject, User.Identity.Name);
+               // projectService.addProject(newProject, User.Identity.Name);
+                docService.addDocument(firstDocument);
 
                 return RedirectToAction("Dashboard");
-
             }
                 
 
