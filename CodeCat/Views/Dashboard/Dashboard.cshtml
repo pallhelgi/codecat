@@ -46,6 +46,14 @@
          <!-- </a> -->
         }
 
+        @using (Html.BeginForm("Share", "User"))
+        {
+           
+                <button type="submit" class="btn">Share</button>
+         <!-- </a> -->
+        }
+                    
+
                     <a href="@Url.Action("../Dashboard/AddUser/")">
                         Add User
                     </a>     

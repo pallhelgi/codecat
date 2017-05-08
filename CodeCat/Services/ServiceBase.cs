@@ -126,7 +126,7 @@ namespace CodeCat.Services
         //shares the project with another user
         public bool share(string email, int projectID)
         {
-           /* ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
+            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
 
             var link = new UserProjectModel
             {
@@ -135,7 +135,7 @@ namespace CodeCat.Services
             };
 
             _db.UserProjectModel.Add(link);
-            _db.SaveChanges();*/
+            _db.SaveChanges();
 
             return true;
         }
