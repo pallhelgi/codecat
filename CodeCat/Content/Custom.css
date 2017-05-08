@@ -317,6 +317,9 @@ footer {
 }
 
 /* ADD DOCUMENT */
+.CREATE-TEST-DELETE-LATER {
+}
+
 /*Choose the file type of new document*/
 .file-type-dropdown {
     padding: 10px;
@@ -331,4 +334,7 @@ footer {
 #buttons-add-doc {
     margin-left: auto;
     margin-right: auto;
+}
+
+.add-document-form {
 }
