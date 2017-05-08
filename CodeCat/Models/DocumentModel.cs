@@ -23,7 +23,7 @@ namespace CodeCat.Models
         [Required(ErrorMessage = "You must select a document type!")]
         public documentType type { get; set; }
 
-        public int ProjectID { get; set; }
+        public int projectID { get; set; }
     }
 }
 

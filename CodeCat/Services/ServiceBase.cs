@@ -73,7 +73,7 @@ namespace CodeCat.Services
 
             //This is a work in process
             var result = from docs in _db.DocumentModel
-                         where docs.ProjectID == projectID
+                         where docs.projectID == projectID
                          select docs;
 
             List<DocumentModel> documents = result.ToList();
@@ -86,9 +86,12 @@ namespace CodeCat.Services
             return null;
         }
 
-        public bool addDocument(DocumentModel document)
+        public bool addDocumentToDB(DocumentModel document)
         {
-            return false;
+            _db.DocumentModel.Add(document);
+            _db.SaveChanges();
+
+            return true;
         }
 
         public UserModel getuserByID(int userID)
