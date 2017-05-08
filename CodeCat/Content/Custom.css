@@ -302,3 +302,14 @@ footer {
 .project-box a:hover {
     color: white;
 }
+
+/* Share document / Add User */
+/*Share button*/
+.share-doc-button {
+    padding-top: 5px;
+}
+
+/*Text that appears if share button is clicked*/
+#hidden-text {
+    padding-top: 5px;
+}

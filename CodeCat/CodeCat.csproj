@@ -352,6 +352,8 @@
     <Content Include="Views\Project\ShowDocument.cshtml" />
     <Content Include="Views\Dashboard\AddProject.cshtml" />
     <Content Include="Views\Project\getDocuments.cshtml" />
+    <Content Include="Views\AddUser.cshtml" />
+    <Content Include="Views\Dashboard\AddUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
