@@ -117,15 +117,9 @@ namespace CodeCat.Services
 
         public bool linkUserToProjectInDB(string email)
         {
-
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
             //Todo: link the user to the project in the database.
             return true;
-        }
-
-        public bool shareProjectWithUser()
-        {
-            return false;
         }
 
     }
