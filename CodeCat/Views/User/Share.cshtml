@@ -9,7 +9,7 @@
 <div class="row sign-in-form">
     <div class="col-md-12">
         <section id="loginForm">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("Share", "User"))
             {
             @Html.AntiForgeryToken()
 
