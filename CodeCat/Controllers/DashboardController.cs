@@ -14,6 +14,7 @@ namespace CodeCat.Controllers
     public class DashboardController : Controller
     {
         ProjectService projectService = new ProjectService();
+        UserService userService = new UserService();
         // GET: Dashboard
         public ActionResult Index()
         {
@@ -54,6 +55,25 @@ namespace CodeCat.Controllers
                 
 
            return View(project);
+        }
+
+        [HttpGet]
+        public ActionResult addUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult addUser(UserModel user)
+        {
+            if (ModelState.IsValid)
+            {
+                userService.addUserToProject(user.email);
+                return RedirectToAction("Dashboard");
+
+            }
+
+            return View(user);
         }
 
         public ActionResult share(UserModel user)

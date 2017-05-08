@@ -22,6 +22,8 @@ namespace CodeCat.Models
         [Display(Name = "Document type")]
         [Required(ErrorMessage = "You must select a document type!")]
         documentType type { get; set; }
+
+        public int ProjectID { get; set; }
     }
 }
 

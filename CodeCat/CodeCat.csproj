@@ -250,6 +250,14 @@
     <Compile Include="Migrations\201705071649047_Forgot to remove one icollectable.Designer.cs">
       <DependentUpon>201705071649047_Forgot to remove one icollectable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705071726074_UserProjectModel.cs" />
+    <Compile Include="Migrations\201705071726074_UserProjectModel.Designer.cs">
+      <DependentUpon>201705071726074_UserProjectModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705071929382_DocumentModel1.cs" />
+    <Compile Include="Migrations\201705071929382_DocumentModel1.Designer.cs">
+      <DependentUpon>201705071929382_DocumentModel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -260,6 +268,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\UserProjectModel.cs" />
     <Compile Include="Models\ViewModels\DashboardViewModel.cs" />
     <Compile Include="Models\ViewModels\DocumentViewModel.cs" />
     <Compile Include="Models\ViewModels\ProjectViewModel.cs" />
@@ -394,6 +403,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705071649047_Forgot to remove one icollectable.resx">
       <DependentUpon>201705071649047_Forgot to remove one icollectable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071726074_UserProjectModel.resx">
+      <DependentUpon>201705071726074_UserProjectModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071929382_DocumentModel1.resx">
+      <DependentUpon>201705071929382_DocumentModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

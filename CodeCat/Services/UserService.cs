@@ -27,5 +27,11 @@ namespace CodeCat.Services
             addUser(user);
             return false;
         }
+
+        public bool addUserToProject(string email)
+        {
+            linkUserToProjectInDB(email);
+            return true;
+        }
     }
 }

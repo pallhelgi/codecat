@@ -22,24 +22,23 @@ namespace CodeCat.Services
 
         public List<ProjectModel> getAllProjectsFromDB()
         {
+            string userID = "5"; //test for now should be in funciton
             //This is a work in process
-            
+            var result = from proj in _db.ProjectModel
+                         join con in _db.UserProjectModel
+                         on proj.ID equals con.ProjectID
+                         where con.UserID == userID
+                         select proj;
                     
           
             return _db.ProjectModel.ToList();
         }
 
-        /*public ProjectModel getProjectByID(int projectID)
+        public ProjectModel getProjectByID(int projectID)
         {
-            ProjectModel project = _db.ProjectModel.Where(x => x.ID == projectID).SingleOrDefault();
-            if(project != null)
-            {
-                ProjectModel model = new ProjectModel();
-                model.ID = project.ID;
-            }
-
+          
             return null;
-        }*/
+        }
 
         public List<ProjectModel> getUserProjectsFromDB(string username)
         {
@@ -62,8 +61,13 @@ namespace CodeCat.Services
         public List<DocumentModel> getProjectFromDB(int projectID)
         {
             //This is a work in process
+            var result = from docs in _db.DocumentModel
+                         where docs.ProjectID == projectID
+                         select docs;
 
-            return null;
+            List<DocumentModel> documents = result.ToList();
+
+            return documents;
         }
 
         public DocumentModel getDocumentByID(int documentID)
@@ -99,5 +103,14 @@ namespace CodeCat.Services
             
             return false;
         }
+
+        public bool linkUserToProjectInDB(string email)
+        {
+
+            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
+            //Todo: link the user to the project in the database.
+            return true;
+        }
+
     }
 }
