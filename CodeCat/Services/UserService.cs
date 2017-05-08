@@ -30,7 +30,7 @@ namespace CodeCat.Services
 
         public bool share(string email, int projectID)
         {
-            share(email, projectID);
+            shareToDB(email, projectID);
             return true;
         }
 

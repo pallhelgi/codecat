@@ -40,7 +40,7 @@ namespace CodeCat.Services
         public ProjectModel getProjectByID(int projectID)
         {
           
-            return null;
+            return _db.ProjectModel.FirstOrDefault(x => x.ID == projectID);
         }
 
         //gets a list of projects created by a specific user
@@ -124,7 +124,7 @@ namespace CodeCat.Services
         }
 
         //shares the project with another user
-        public bool share(string email, int projectID)
+        public bool shareToDB(string email, int projectID)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
 
