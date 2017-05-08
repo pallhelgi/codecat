@@ -26,7 +26,7 @@ namespace CodeCat.Controllers
             return View();
         }
 
-        public ActionResult showDocument()
+        public ActionResult showDocument(ProjectModel project)
         {
             //if document is empty:
             string Code = "Hello my friend, I'm ProjectController" + Environment.NewLine;
@@ -43,8 +43,11 @@ namespace CodeCat.Controllers
             //else: get Document from DB and fill Ace with the string
             string content = "content from DB ;)";
             ViewBag.Code = content;
+            ViewBag.DocumentID = 17;
             return View();
         }
+
+       // public ActionResult showDocument()
 
         public ActionResult getDocuments(int projectID)
         {
