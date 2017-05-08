@@ -45,7 +45,6 @@ namespace CodeCat.Controllers
                 //Maybe add some default code in content
                 doc.content = null;
                 doc.projectID = 3;
-
                 docService.addDocument(doc);
 
                 return RedirectToAction("PROJECT SIDAN");

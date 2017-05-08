@@ -270,6 +270,10 @@
     <Compile Include="Migrations\201705081316111_Removed UserModelProjectModel table.Designer.cs">
       <DependentUpon>201705081316111_Removed UserModelProjectModel table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705081358122_ProjectModelBool.cs" />
+    <Compile Include="Migrations\201705081358122_ProjectModelBool.Designer.cs">
+      <DependentUpon>201705081358122_ProjectModelBool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -431,6 +435,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705081316111_Removed UserModelProjectModel table.resx">
       <DependentUpon>201705081316111_Removed UserModelProjectModel table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705081358122_ProjectModelBool.resx">
+      <DependentUpon>201705081358122_ProjectModelBool.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
