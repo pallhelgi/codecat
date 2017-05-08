@@ -15,8 +15,10 @@ namespace CodeCat.Services
             return null;
         }
         
-        public bool addDocument()
+        public bool addDocument(DocumentModel doc)
         {
+            addDocumentToDB(doc);
+
             return false;
         }
     }
