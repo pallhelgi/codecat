@@ -6,7 +6,7 @@ using System.Web;
 
 namespace CodeCat.Models
 {
-    enum documentType { html, css, cplusplus, js }
+    public enum documentType { html, css, cplusplus, js }
 
     public class DocumentModel
     {
@@ -21,7 +21,7 @@ namespace CodeCat.Models
 
         [Display(Name = "Document type")]
         [Required(ErrorMessage = "You must select a document type!")]
-        documentType type { get; set; }
+        public documentType type { get; set; }
 
         public int ProjectID { get; set; }
     }
