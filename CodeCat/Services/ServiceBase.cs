@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CodeCat.TestClasses;
 
 
 
@@ -60,6 +61,16 @@ namespace CodeCat.Services
         //Is supposed to retrieve all documents contained in a single project and return them
         public List<DocumentModel> getProjectFromDB(int projectID)
         {
+            //******************
+            //Adding fake data into database when run for the first time, can be removed after.
+            testClass test = new testClass();
+            List<DocumentModel> lis = new List<DocumentModel>();
+            lis = test.seedDocs();
+
+            lis.ForEach(d => _db.DocumentModel.Add(d));
+            _db.SaveChanges();
+            //*********************
+
             //This is a work in process
             var result = from docs in _db.DocumentModel
                          where docs.ProjectID == projectID
@@ -110,6 +121,11 @@ namespace CodeCat.Services
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
             //Todo: link the user to the project in the database.
             return true;
+        }
+
+        public bool shareProjectWithUser()
+        {
+            return false;
         }
 
     }
