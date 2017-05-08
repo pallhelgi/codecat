@@ -28,6 +28,12 @@ namespace CodeCat.Services
             return false;
         }
 
+        public bool share(string email, int projectID)
+        {
+            share(email, projectID);
+            return true;
+        }
+
         public bool addUserToProject(string email)
         {
             linkUserToProjectInDB(email);

@@ -21,12 +21,12 @@
     </section>
 
 <!--List of projects-->
-
 @foreach (var itemj in Model.projects)
 {
     <section class="col-sm-4 project-box">
-        <a href="@Url.Action("../Project/ShowDocument")">
-            
+       <!-- <a href="@Url.Action("../Project/ShowDocument")">-->
+        @using (Html.BeginForm("ShowDocument", "Project"))
+        {
                 <section class="well project-box-inner">
                     <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
                     <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
@@ -41,9 +41,10 @@
                     }
 
                 </section>
-          </a>
+         <!-- </a> -->
+        }
 
-                    <a href="@Url.Action("../Dashboard/AddUser")">
+                    <a href="@Url.Action("../Dashboard/AddUser/")">
                         Add User
                     </a>     
        </section>

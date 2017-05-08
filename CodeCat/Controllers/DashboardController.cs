@@ -68,7 +68,7 @@ namespace CodeCat.Controllers
         {
             if (ModelState.IsValid)
             {
-                userService.addUserToProject(user.email);
+                userService.share(user.email, 3);
                 return RedirectToAction("Dashboard");
 
             }
