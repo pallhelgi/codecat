@@ -338,3 +338,13 @@ footer {
 
 .add-document-form {
 }
+
+.open-share-doc {
+    position: absolute;
+    right: 40px;
+    bottom: 50px;
+}
+
+.btn-fab {
+    background-color: #fab;
+}

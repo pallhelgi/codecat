@@ -27,25 +27,31 @@
     <a href="@Url.Action("../Project/ShowDocument")">
 
                 <section class="well project-box-inner">
-                    <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
-                    <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
-                    @if (User.Identity.GetUserId() == itemj.creatorUserID)
-                    {
-                        <p> Author: @User.Identity.Name (you) </p>
-                    }
-                    else
-                    {
-                        <p> Author: Still to come... </p>
-                        //TODO ef hofundurinn er ekki sa innskradi...
-                    }
+                    <div>
+                        <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
+                        <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
+                        @if (User.Identity.GetUserId() == itemj.creatorUserID)
+                        {
+                            <p> Author: @User.Identity.Name (you) </p>
+                        }
+                        else
+                        {
+                            <p> Author: Still to come... </p>
+                            //TODO ef hofundurinn er ekki sa innskradi...
+                        }
 
+                        <div class="open-share-doc">
+                            <br />
+                            <br />
+                            @Html.ActionLink("Go to project", "../Project/ShowDocument", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
+                            @Html.ActionLink("Share", "../User/Share", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
+                        </div>
+                    </div>
                 </section>
-        @Html.ActionLink("Go to project", "../Project/ShowDocument", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-primary" })
 
 
           </a>
 
-        @Html.ActionLink("Share", "../User/Share", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-primary" })
   
        </section>
 }
