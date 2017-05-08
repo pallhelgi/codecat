@@ -41,11 +41,14 @@ namespace CodeCat.Controllers
             ViewBag.Code = Code;
 
             //TODO: else: get Document and fill Ace with the string
+            //content from DB
+            //editor.setValue(content);
             return View();
         }
 
-        public ActionResult showDocuments(int projectID)
+        public ActionResult getDocuments(int projectID)
         {
+            projectID = 1;
             ProjectViewModel viewModel = new ProjectViewModel();
             viewModel.documents = projectService.getProject(projectID);
 

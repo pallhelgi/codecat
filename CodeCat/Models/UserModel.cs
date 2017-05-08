@@ -33,7 +33,5 @@ namespace CodeCat.Models
 
         [Display(Name = "Full name")]
         public string fullName { get; set; }
-
-        public virtual ICollection<ProjectModel> projects { get; set; }
     }
 }

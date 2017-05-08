@@ -53,8 +53,6 @@ namespace CodeCat.Services
             _db.ProjectModel.Add(project);
             _db.SaveChanges();
 
-            
-
             //MUNA AD BREYTA SVO THETTA SE EKKI ALLTAF TRUE
             return true;
         }
@@ -64,8 +62,8 @@ namespace CodeCat.Services
         public List<DocumentModel> getProjectFromDB(int projectID)
         {
             //This is a work in process
-            
-            return _db.DocumentModel.Where(x => x.projects.ID == projectID).ToList();
+
+            return null;
         }
 
         public DocumentModel getDocumentByID(int documentID)
@@ -87,7 +85,7 @@ namespace CodeCat.Services
         {
             //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
 
-             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
+            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
 
             return user.Id;
 
