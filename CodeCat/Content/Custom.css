@@ -185,7 +185,7 @@ h2 {
 #registerForm {
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 500px;
 }
 
 .form-group,
@@ -314,4 +314,12 @@ footer {
 /*Text that appears if share button is clicked*/
 #hidden-text {
     padding-top: 5px;
+}
+
+/*Choose the file type of new document*/
+.file-type-dropdown {
+    padding: 10px;
+}
+
+.add-document-form {
 }
