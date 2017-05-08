@@ -11,7 +11,7 @@ namespace CodeCat.Controllers
     public class UserController : Controller
     {
 
-        private UserService _user = new UserService();
+        private UserService userService = new UserService();
 
         // GET: User
         public ActionResult Index()
@@ -31,6 +31,25 @@ namespace CodeCat.Controllers
             //TODO
             Console.Write("hi");
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult share(ProjectModel project)
+        {
+            return View(project);
+        }
+
+        [HttpPost]
+        public ActionResult share(UserModel user, ProjectModel project)
+        {
+            if (ModelState.IsValid)
+            {
+                userService.share(user.email, project.ID);
+                return RedirectToAction("Dashboard");
+
+            }
+
+            return View(user);
         }
 
 
@@ -53,7 +72,7 @@ namespace CodeCat.Controllers
                 newUser.email = user.email;
                 newUser.password = user.password;
 
-                _user.addUser(newUser);
+                userService.addUser(newUser);
 
                 return RedirectToAction("Index");
             }

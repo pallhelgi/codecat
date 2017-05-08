@@ -266,6 +266,10 @@
     <Compile Include="Migrations\201705081046512_DocumentModel11.Designer.cs">
       <DependentUpon>201705081046512_DocumentModel11.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705081316111_Removed UserModelProjectModel table.cs" />
+    <Compile Include="Migrations\201705081316111_Removed UserModelProjectModel table.Designer.cs">
+      <DependentUpon>201705081316111_Removed UserModelProjectModel table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -360,7 +364,7 @@
     <Content Include="Views\Project\ShowDocument.cshtml" />
     <Content Include="Views\Dashboard\AddProject.cshtml" />
     <Content Include="Views\Project\getDocuments.cshtml" />
-    <Content Include="Views\Dashboard\AddUser.cshtml" />
+    <Content Include="Views\User\Share.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -424,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705081046512_DocumentModel11.resx">
       <DependentUpon>201705081046512_DocumentModel11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705081316111_Removed UserModelProjectModel table.resx">
+      <DependentUpon>201705081316111_Removed UserModelProjectModel table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
