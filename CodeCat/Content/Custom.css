@@ -315,3 +315,8 @@ footer {
 #hidden-text {
     padding-top: 5px;
 }
+
+/*Choose the file type of new document*/
+.file-type-dropdown {
+    padding: 10px;
+}

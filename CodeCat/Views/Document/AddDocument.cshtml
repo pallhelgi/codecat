@@ -18,6 +18,19 @@
                 </div>
                 <hr />
 
+                <!-- Dropdown for doc type -->
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle file-type-dropdown" type="button" data-toggle="dropdown">
+                        File type
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" value="HTML">HTML</a></li>
+                        <li><a href="#" value="CSS">CSS</a></li>
+                        <li><a href="#" value="JavaScript">JavaScript</a></li>
+                    </ul>
+                </div>
+
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
