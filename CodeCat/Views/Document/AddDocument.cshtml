@@ -22,7 +22,6 @@
                 <!-- Dropdown for doc type -->
                 <div class="buttons-add-doc">
                     <div class="form-group">
-                        @Html.LabelFor(m => m.type, new { @class = "col-md-2 control-label" })
                         <div class="col-md-10">
                             @Html.EnumDropDownListFor(
                                 m => m.type,
@@ -40,10 +39,10 @@
                         <div class="col-md-10">
 
                             @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
+                            
                             @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
-
-                            <!--Validation always shows for some reason... NEED TO FIX-->
                             @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
+
                         </div>
                     </div>
                 </div>
