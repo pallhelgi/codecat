@@ -41,7 +41,6 @@ namespace CodeCat.Controllers
                     //  creatorUserID = projectService.getProjectCreator();
 
                 };
-
                 projectService.addProject(newProject, User.Identity.Name);
 
                 DocumentModel firstDocument = new DocumentModel
@@ -51,8 +50,6 @@ namespace CodeCat.Controllers
                     type = documentType.js,
                     projectID = newProject.ID
                 };
-                
-               // projectService.addProject(newProject, User.Identity.Name);
                 docService.addDocument(firstDocument);
 
                 return RedirectToAction("Dashboard");
