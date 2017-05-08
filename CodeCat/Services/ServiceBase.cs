@@ -23,18 +23,22 @@ namespace CodeCat.Services
 
 
         //gets a list of projects connected to a specific user
-        public List<ProjectModel> getAllProjectsFromDB()
+        public List<ProjectModel> getAllProjectsFromDB(string userName)
         {
-            string userID = "5"; //test for now should be in funciton
+            //ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == "pallhelgi@gmail.com");
+            //string userID = "1"; //test for now should be in funciton
             //This is a work in process
+
+            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == userName);
             var result = from proj in _db.ProjectModel
                          join con in _db.UserProjectModel
                          on proj.ID equals con.ProjectID
-                         where con.UserID == userID
+                         where con.UserID == user.Id
                          select proj;
-                    
-          
-            return _db.ProjectModel.ToList();
+
+
+            //return _db.ProjectModel.ToList();
+            return result.ToList();
         }
 
         public ProjectModel getProjectByID(int projectID)
