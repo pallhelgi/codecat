@@ -43,6 +43,7 @@ namespace CodeCat.Controllers
             //else: get Document from DB and fill Ace with the string
             string content = "content from DB ;)";
             ViewBag.Code = content;
+            ViewBag.DocumentID = 17;
             return View();
         }
 
