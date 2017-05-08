@@ -45,7 +45,7 @@ namespace CodeCat.Controllers
 
                 DocumentModel firstDocument = new DocumentModel
                 {
-                    name = "index",
+                    name = "index.",
                     content = null,
                     type = documentType.js,
                     projectID = newProject.ID
