@@ -34,11 +34,17 @@ namespace CodeCat.Services
                          join con in _db.UserProjectModel
                          on proj.ID equals con.ProjectID
                          where con.UserID == user.Id
-                         select proj;
+                         select proj
 
+            List<ProjectModel> lis = new List<ProjectModel>();
+            List<ProjectModel> lis2 = new List<ProjectModel>();
 
+            lis = _db.ProjectModel.Where(x => x.creatorUserID == user.Id).ToList();
+            lis2 = result.ToList();
+
+            lis2.ForEach(l => lis.Add(l));
             //return _db.ProjectModel.ToList();
-            return result.ToList();
+            return lis;
         }
 
         public ProjectModel getProjectByID(int projectID)
