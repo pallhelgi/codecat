@@ -77,8 +77,8 @@
 .popup-window-logo {
     width: 150px;
     height: 150px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    float: none;
     padding-bottom: 30px;
 }
 
@@ -111,6 +111,8 @@
 
 h2 {
     padding-top: 50px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .navbar-collapse collapse alignlink {
@@ -194,6 +196,21 @@ h2 {
     margin-right: auto;
 }
 
+.add-document-div {
+    margin: auto;
+    width: 50%;
+}
+
+.add-document-form {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.label-for-type-dropdown {
+    text-align: center;
+}
+
 .form-horizontal {
     margin-left: auto;
     margin-right: auto;
@@ -211,8 +228,8 @@ h2 {
 }
 
 .sign-up-logo {
-    width: 150px;
-    height: 150px;
+    display: block;
+    margin: auto;
 }
 
 .sign-in-logo-div {
@@ -345,6 +362,7 @@ footer {
     bottom: 50px;
 }
 
+/* Buttons on project box*/
 .btn-fab {
     background-color: #fab;
 }

@@ -69,9 +69,18 @@
     <div class="container editor-save-div">
         @Html.HiddenFor(m => m.content, new { @id = "hidden-editor" })
         <input type="submit" value="Save" class="editor-save-button btn btn-success" />
-
-        <a href="@Url.Action("../Document/AddDocument")" class="CREATE-TEST-DELETE-LATER">CREATE DOC</a>
-    </div>
+        
+        <button type="button" onclick="k()">Button...</button>
+        <script>
+            var url = window.location.href;
+            var projectID = parseInt(url.substring(url.lastIndexOf('/') + 1));
+            console.log(projectID);
+            
+            function k() {
+                window.location.href = "../../Document/AddDocument/" + projectID;
+            };
+        </script>
+     </div>
 }
 *@
 

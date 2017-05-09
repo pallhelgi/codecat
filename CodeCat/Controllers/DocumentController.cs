@@ -38,15 +38,18 @@ namespace CodeCat.Controllers
         {
             if(ModelState.IsValid)
             {
+                var url = Url.RequestContext.RouteData.Values["id"].ToString();
+                int urlInt = int.Parse(url);
+
                 DocumentModel doc = new DocumentModel();
                 doc = docFromUser;
-                doc.name = docFromUser.name + docFromUser.type.ToString();
+                doc.name = docFromUser.name + "." + docFromUser.type.ToString();
                 //Maybe add some default code in content
                 doc.content = null;
-                doc.projectID = 3;
+                doc.projectID = urlInt;
                 docService.addDocument(doc);
 
-                return RedirectToAction("PROJECT SIDAN");
+                return RedirectToAction("../Project/ShowDocument/" + urlInt.ToString());
             }
 
             return View(docFromUser);
