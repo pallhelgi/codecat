@@ -23,7 +23,7 @@
         <ul class="navDoc nav nav-pills">
             @foreach ( var document in Model.documents) {
                 <li role:"presentation" class="@(Model.selectedDocument == document.ID ? "active" : "")">
-                    <a href="? document = @document.ID">@document.name</a>
+                    <a href="?@document.ID">@document.name</a>
                 </li>
             }
             <!-- /TODO Create New File Tab-->
