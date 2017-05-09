@@ -39,8 +39,13 @@ namespace CodeCat.Services
             addProjectToDB(project);
 
             return true;
-          
-            //return _db.ProjectModel.Add(project);
+        }
+
+        public bool deleteProject(int projectID)
+        {
+            deleteProjectFromDB(projectID);
+
+            return true;
         }
 
         public string getProjectCreatorID()
