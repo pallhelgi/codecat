@@ -44,6 +44,11 @@ namespace CodeCat.Services
 
             lis2.ForEach(l => lis.Add(l));
             //return _db.ProjectModel.ToList();
+
+            /*Trying to make a cleaner code, didn't return in the order I wanted
+             * var resultUnion = result.Union(_db.ProjectModel.Where(x => x.creatorUserID == user.Id)).ToList();
+            return resultUnion;*/
+
             return lis;
         }
 
