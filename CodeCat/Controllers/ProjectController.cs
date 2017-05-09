@@ -67,7 +67,7 @@ namespace CodeCat.Controllers
             return View(viewModel);
         }
 
-       // public ActionResult showDocument()
+        // public ActionResult showDocument()
 
         public ActionResult getDocuments(int projectID)
         {

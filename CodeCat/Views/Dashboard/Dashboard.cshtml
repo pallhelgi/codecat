@@ -15,7 +15,7 @@
                 <div class="plus-sign-div">
                     <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
                 </div>
-                <p>@Html.ActionLink("Create a new project", "AddProject")</p>
+                <p>Create a new project</p>
             </section>
         </a>
     </section>
@@ -24,9 +24,9 @@
 @foreach (var itemj in Model.projects)
 {
     <section class="col-sm-4 project-box">
-    <a href="@Url.Action("../Project/ShowDocument")">
 
                 <section class="well project-box-inner">
+        
                     <div>
                         <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
                         <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
@@ -36,7 +36,7 @@
                         }
                         else
                         {
-                            <p> Author: Still to come... </p>
+                            <p> Author: NOT YOU... </p>
                             //TODO ef hofundurinn er ekki sa innskradi...
                         }
 
@@ -50,7 +50,6 @@
                 </section>
 
 
-          </a>
 
   
        </section>

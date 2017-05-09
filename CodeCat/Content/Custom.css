@@ -94,7 +94,11 @@
     position: absolute;
     right: 15px;
     top: 15px;
+}
 
+#about-link {
+    padding-right: 60px;
+    padding-top: 20px;
 }
 
 /*Pop up window buttons*/
@@ -256,10 +260,31 @@ footer {
     width: 250px;
     overflow: auto;
     vertical-align: top;
+    color: black; 
+}
+
+.create-new-project-box p {
+    color: black;
+    text-decoration: none;
+}
+
+.create-new-project-box:hover p {
+    color: white;
+    text-decoration: none;
+}
+
+.create-new-project-box:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.create-new-project-box a:hover {
+    text-decoration: none;
 }
 
 .project-box-inner:hover {
     background-color: #c0c0c0;
+    color: white;
 }
 
 .project-box-inner {
@@ -365,4 +390,30 @@ footer {
 /* Buttons on project box*/
 .btn-fab {
     background-color: #fab;
+}
+
+/*404 page*/
+#not-found-page {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#not-found-page h2 {
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+#not-found-page h2 {
+    font-size: 60px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.not-found-page button {
 }

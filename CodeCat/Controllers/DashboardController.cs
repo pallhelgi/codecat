@@ -32,7 +32,7 @@ namespace CodeCat.Controllers
 
         [HttpPost]
         public ActionResult addProject(ProjectModel project)
-        {     
+        {
             if (ModelState.IsValid)
             {
                 ProjectModel newProject = new ProjectModel
@@ -53,7 +53,7 @@ namespace CodeCat.Controllers
                 firstDocument.name = firstDocument.name + firstDocument.type.ToString();
                 docService.addDocument(firstDocument);
 
-                return RedirectToAction("Dashboard");
+                return RedirectToAction("../Project/ShowDocument/" + firstDocument.projectID);
             }
 
            return View(project);
