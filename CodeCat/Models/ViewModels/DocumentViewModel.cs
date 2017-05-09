@@ -9,6 +9,7 @@ namespace CodeCat.Models.ViewModels
     public class DocumentViewModel
     {
         public DocumentModel document;
-        public List<DocumentModel> documents { get; set; }   
+        public int? selectedDocument { get; set; }
+        public List<DocumentModel> documents { get; set; }
     }
 }

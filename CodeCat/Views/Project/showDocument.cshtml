@@ -17,11 +17,12 @@
         </ul>
     </div>
 *@
-<!-- The Tabs above the Ace Editor -->
+<!-- The Tabs above the Ace Editor -->    
+
     <div>
-        <ul class="navDoc nav-tabs">
-            @foreach (var document in Model.documents) {
-                <li role:"presentation" class="@(Model.document.ID == document.ID ? "active" : "")">
+        <ul class="navDoc nav nav-pills">
+            @foreach ( var document in Model.documents) {
+                <li role:"presentation" class="@(Model.selectedDocument == document.ID ? "active" : "")">
                     <a href="? document = @document.ID">@document.name</a>
                 </li>
             }
@@ -29,24 +30,25 @@
         </ul>
     </div>
 
-
-<!-- Tabs on the ACE Editor -->
-<div>
-    <ul class="navDoc nav nav-pills">
-        <li class="active" role:"presentation">
-            <a href="#">bla.js</a>
-        </li>
-        <li role:"presentation">
-            <a href="#">jalla.css</a>
-        </li>
-        <li role:"presentation">
-            <a href="#">trallala.html</a>
-        </li>
-        <li role:"presentation">
-            <a href="#">giggle.html</a>
-        </li>
-    </ul>
-</div>
+@*
+    <!-- Tabs on the ACE Editor -->
+    <div>
+        <ul class="navDoc nav nav-pills">
+            <li class="active" role:"presentation">
+                <a href="#">bla.js</a>
+            </li>
+            <li role:"presentation">
+                <a href="#">jalla.css</a>
+            </li>
+            <li role:"presentation">
+                <a href="#">trallala.html</a>
+            </li>
+            <li role:"presentation">
+                <a href="#">giggle.html</a>
+            </li>
+        </ul>
+    </div>
+*@
 
 <!--The Ace Editor begin-->
 <div class="container">
@@ -62,12 +64,12 @@
     </div>
 </div>
 
-@*
+
 <!-- Save button for Document -->
 @using (Html.BeginForm("save", "Document", FormMethod.Post))
 {
     <div class="container editor-save-div">
-        @Html.HiddenFor(m => m.content, new { @id = "hidden-editor" })
+        @Html.HiddenFor(m => m.document.content , new { @id = "hidden-editor" })
         <input type="submit" value="Save" class="editor-save-button btn btn-success" />
         
         <button type="button" onclick="k()">Button...</button>
@@ -82,7 +84,7 @@
         </script>
      </div>
 }
-*@
+
 
 @section scripts
 {
