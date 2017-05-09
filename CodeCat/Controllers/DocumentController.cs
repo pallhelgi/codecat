@@ -21,8 +21,11 @@ namespace CodeCat.Controllers
         public ActionResult save(DocumentModel model)
         {
             //TODO: get the Document string and send to DB
+            int docID = model.ID;
             var output = model.content;
-            return View(model);
+            docService.saveDocument(docID, output);
+            ViewBag.Code = output;
+            return RedirectToAction("../Project/ShowDocument");
         }
 
         [HttpGet]
