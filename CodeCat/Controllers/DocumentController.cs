@@ -25,6 +25,7 @@ namespace CodeCat.Controllers
             var output = model.content;
             docService.saveDocument(docID, output);
             ViewBag.Code = output;
+
             return RedirectToAction("../Project/ShowDocument");
         }
 

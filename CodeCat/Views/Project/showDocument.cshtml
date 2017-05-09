@@ -23,7 +23,7 @@
         <ul class="navDoc nav nav-pills">
             @foreach ( var document in Model.documents) {
                 <li role:"presentation" class="@(Model.selectedDocument == document.ID ? "active" : "")">
-                    <a href="? document = @document.ID">@document.name</a>
+                    <a href="?@document.ID">@document.name</a>
                 </li>
             }
             <!-- /TODO Create New File Tab-->
@@ -81,11 +81,18 @@
 
 <script>
     $("form").click(function () {
-        var code = editor.getValue();
             console.log("Hallo");
             console.log($("#hidden-editor").val(editor.getSession().getValue()));
             $("#hidden-editor").val(editor.getSession().getValue());
             var content = editor.getSession().getValue();
+
+            var url = window.location.href;
+            var docID = parseInt(url.substring(url.lastIndexOf('?') + 1));
+            console.log(docID);
+            
+            function f() {
+                window.location.href = "../../Document/ShowDocument/" + docID;
+            };
         });
 </script>
 
