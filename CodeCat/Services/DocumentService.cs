@@ -28,5 +28,11 @@ namespace CodeCat.Services
 
             return false;
         }
+
+        public bool deleteDocument(int documentID)
+        {
+            deleteDocumentFromDB(documentID);
+            return true;
+        }
     }
 }

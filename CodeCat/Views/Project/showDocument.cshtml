@@ -4,21 +4,7 @@
     ViewBag.Title = "showDocument";
 }
 
-<!--Commented out until the DB is up!!!-->
-@*The Tabs above the Ace Editor
-    <div>
-        <ul class="navDoc nav-tabs">
-            @foreach(var DocumendModel in Models.DocumendModel)
-            {
-                <li role:"presentation" class="@(Model.selectedDocument == DocumendModel.ID ? "active" : "")">
-                    <a href="? Document = @DocumendModel.ID">@DocumendModel.name</a>
-                </li>
-            }
-        </ul>
-    </div>
-*@
 <!-- The Tabs above the Ace Editor -->    
-
     <div>
         <ul class="navDoc nav nav-pills">
             @foreach ( var document in Model.documents) {
@@ -30,30 +16,21 @@
         </ul>
     </div>
 
-@*
-    <!-- Tabs on the ACE Editor -->
-    <div>
-        <ul class="navDoc nav nav-pills">
-            <li class="active" role:"presentation">
-                <a href="#">bla.js</a>
-            </li>
-            <li role:"presentation">
-                <a href="#">jalla.css</a>
-            </li>
-            <li role:"presentation">
-                <a href="#">trallala.html</a>
-            </li>
-            <li role:"presentation">
-                <a href="#">giggle.html</a>
-            </li>
-        </ul>
-    </div>
-*@
-
 <!--The Ace Editor begin-->
 <div class="container">
     <div id="ace-editor">
+<<<<<<< HEAD
         @ViewBag.Code
+=======
+        @Model.document.content
+<!--    //This is your javascript code
+
+    function foo(items) {
+        var x = "I am Code::Cat";
+        return x;
+    }
+-->
+>>>>>>> bcd98b972a044b607545da571dea3f502a5c5b19
     </div>
 </div>
 
@@ -104,7 +81,8 @@
     <script src="~/signalr/hubs"></script>
     <script>
 
-        var documentID = @ViewBag.DocumentID;
+        var documentID = @Model.document.ID;
+        console.log(documentID);
 
         var editor = ace.edit("ace-editor");
         editor.setTheme("ace/theme/monokai");
