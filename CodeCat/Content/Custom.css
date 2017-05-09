@@ -264,6 +264,7 @@ footer {
 
 .project-box-inner:hover {
     background-color: #c0c0c0;
+    color: white;
 }
 
 .project-box-inner {
