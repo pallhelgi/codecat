@@ -14,6 +14,13 @@ namespace CodeCat.Services
         {
             return null;
         }
+
+        public bool saveDocument(int documentID, string content)
+        {
+            saveTDocumentoDB(documentID, content);
+
+            return true;
+        }
         
         public bool addDocument(DocumentModel doc)
         {
