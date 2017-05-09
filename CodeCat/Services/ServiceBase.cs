@@ -76,7 +76,7 @@ namespace CodeCat.Services
             return true;
         }
 
-        public bool saveTDocumentoDB(int documentID, string content)
+        public bool saveDocumentToDB(int documentID, string content)
         {
             var replace = from doc in _db.DocumentModel
                           where doc.ID == documentID

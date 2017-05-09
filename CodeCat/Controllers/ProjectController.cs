@@ -17,7 +17,7 @@ namespace CodeCat.Controllers
         public ActionResult Index()
         {
             //TODO
-           
+
             return View();
         }
 
@@ -50,11 +50,11 @@ namespace CodeCat.Controllers
             viewModel.document = documentService.getDocumentByID(view.documents[0].ID);
 
             //else: get Document from DB and fill Ace with the string
-           
+
             return View(viewModel);
         }
 
-       // public ActionResult showDocument()
+        // public ActionResult showDocument()
 
         public ActionResult getDocuments(int projectID)
         {

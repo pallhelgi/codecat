@@ -4,11 +4,6 @@
     ViewBag.Title = "showDocument";
 }
 
-<<<<<<< HEAD
-<!-- The Tabs above the Ace Editor -->    
-=======
->>>>>>> 8e84531d5a24a378d0dea781e37b5b9c5ce692c7
-
 <!-- The Tabs above the Ace Editor -->    
     <div>
         <ul class="navDoc nav nav-pills">
@@ -24,6 +19,9 @@
 <!--The Ace Editor begin-->
 <div class="container">
     <div id="ace-editor">
+<<<<<<< HEAD
+        @ViewBag.Code
+=======
         @Model.document.content
 <!--    //This is your javascript code
 
@@ -32,9 +30,11 @@
         return x;
     }
 -->
+>>>>>>> bcd98b972a044b607545da571dea3f502a5c5b19
     </div>
 </div>
 
+<!-- Add Document -->
 
 <!-- Save button for Document -->
 @using (Html.BeginForm("save", "Document", FormMethod.Post))
@@ -56,6 +56,23 @@
      </div>
 }
 
+<script>
+    $("form").click(function () {
+            console.log("Hallo");
+            console.log($("#hidden-editor").val(editor.getSession().getValue()));
+            $("#hidden-editor").val(editor.getSession().getValue());
+            var content = editor.getSession().getValue();
+
+            var url = window.location.href;
+            var docID = parseInt(url.substring(url.lastIndexOf('?') + 1));
+            console.log(docID);
+            
+            function f() {
+                window.location.href = "../../Document/ShowDocument/" + docID;
+            };
+        });
+</script>
+
 
 @section scripts
 {
@@ -71,12 +88,9 @@
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
 
-        /*Should save the form on submit button click*/
-        $("form").submit(function () {
-            console.log("Hallo");
-            console.log($("#hidden-editor").val(editor.getSession().getValue()));
-            $("#hidden-editor").val(editor.getSession().getValue());
-        });
+      
+
+
         var codeHub = $.connection.codeHub;
         var silent = false;
 
