@@ -5,40 +5,20 @@
 
 <h2>Share Document</h2>
 
-
-<div class="row sign-in-form">
-    <div class="col-md-12">
-        <section id="loginForm">
-            @using (Html.BeginForm("Share", "User"))
-            {
-            @Html.AntiForgeryToken()
-
-            <!--LOGO-->
-            <div class="sign-in-logo-div">
-                <img src="~/Images/codecat2_black.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
-            </div>
-            <hr />
-
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(m => m.email, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
-
-                    <!--Validation always shows for some reason... NEED TO FIX-->
-                    @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <input type="submit" class="btn" value="Send"/>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <button type="submit" value="Add user to project" id="create-button" class="btn btn-success share-doc-button" onclick="$('#hiddenText').show(); return false;">Send invite</button>
-                    <div style="display: none;" id="hiddenText">The invite to collaborate on this document has been sent, this user will be able to edit the document.</div>
-                </div>
-            </div>
-            }
-        </section>
-    </div>
+<!--LOGO-->
+<div class="sign-in-logo-div">
+    <img src="~/Images/codecat2_black.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
 </div>
+<hr />
+
+@using (Html.BeginForm("Share", "User", FormMethod.Post, new { @class = "add-document-form" }))
+{ 
+    <div class="add-document-div">
+        <div class="form-group">
+            <label for="email" class="control-label">Email of user</label><br />
+            @Html.TextBoxFor(m => m.email, new { @class = "form-conrtol" })
+            @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <input type="submit" class="btn btn-fab" value="Send" />
+}

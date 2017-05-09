@@ -42,17 +42,10 @@
 <div class="container">
     <div id="ace-editor">
         @ViewBag.Code
-<!--    //This is your javascript code
-
-    function foo(items) {
-        var x = "I am Code::Cat";
-        return x;
-    }
--->
     </div>
 </div>
 
-<!-- Save button for Document -->
+<!-- Add Document -->
 @using (Html.BeginForm("save", "Document", FormMethod.Post))
 {
     <div class="container editor-save-div">
@@ -72,6 +65,17 @@
      </div>
 }
 
+<script>
+    $("form").click(function () {
+        var code = editor.getValue();
+        editor.setValue("new code here");
+            console.log("Hallo");
+            console.log($("#hidden-editor").val(editor.getSession().getValue()));
+            $("#hidden-editor").val(editor.getSession().getValue());
+            var content = editor.getSession().getValue();
+        });
+</script>
+
 @section scripts
 {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
@@ -85,12 +89,9 @@
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
 
-        /*Should save the form on submit button click*/
-        $("form").submit(function () {
-            console.log("Hallo");
-            console.log($("#hidden-editor").val(editor.getSession().getValue()));
-            $("#hidden-editor").val(editor.getSession().getValue());
-        });
+      
+
+
         var codeHub = $.connection.codeHub;
         var silent = false;
 
