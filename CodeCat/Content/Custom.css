@@ -260,6 +260,26 @@ footer {
     width: 250px;
     overflow: auto;
     vertical-align: top;
+    color: black; 
+}
+
+.create-new-project-box p {
+    color: black;
+    text-decoration: none;
+}
+
+.create-new-project-box:hover p {
+    color: white;
+    text-decoration: none;
+}
+
+.create-new-project-box:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.create-new-project-box a:hover {
+    text-decoration: none;
 }
 
 .project-box-inner:hover {
