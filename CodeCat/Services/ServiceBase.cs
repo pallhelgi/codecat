@@ -76,6 +76,22 @@ namespace CodeCat.Services
             return true;
         }
 
+        public bool saveToDB(int documentID, string content)
+        {
+            var replace = from doc in _db.DocumentModel
+                          where doc.ID == documentID
+                          select doc;
+
+            foreach(DocumentModel doc in replace)
+            {
+                doc.content = content;
+            }
+
+            _db.SaveChanges();
+
+            return true;
+        }
+
         //Might want to rename this properly
         //Is supposed to retrieve all documents contained in a single project and return them
         public List<DocumentModel> getProjectFromDB(int projectID)

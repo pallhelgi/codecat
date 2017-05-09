@@ -22,6 +22,8 @@ namespace CodeCat.Controllers
         {
             //TODO: get the Document string and send to DB
             
+            
+            
             return RedirectToAction("../Project/ShowDocument");
         }
 
