@@ -53,7 +53,7 @@ namespace CodeCat.Controllers
                 firstDocument.name = firstDocument.name + firstDocument.type.ToString();
                 docService.addDocument(firstDocument);
 
-                return RedirectToAction("../Project/ShowDocum?ent/" + firstDocument.projectID);
+                return RedirectToAction("../Project/ShowDocument/" + firstDocument.projectID);
             }
 
            return View(project);
