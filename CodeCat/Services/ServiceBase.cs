@@ -92,6 +92,43 @@ namespace CodeCat.Services
             return true;
         }
 
+        //Deletes a single document from database
+        public bool deleteDocumentFromDB(int documentID)
+        {
+            var delete = from doc in _db.DocumentModel
+                         where doc.ID == documentID
+                         select doc;
+
+            var item = delete.ToList().First();
+            _db.DocumentModel.Remove(item);
+            
+
+            return true;
+        }
+
+        public bool deleteProjectFromDB(int projectID)
+        {
+            var deleteDocuments = from documents in _db.DocumentModel
+                                  where documents.projectID == projectID
+                                  select documents;
+
+            var docs = deleteDocuments.ToList();
+
+            foreach(DocumentModel doc in docs)
+            {
+                _db.DocumentModel.Remove(doc);
+            }
+
+            var deleteProject = from projects in _db.ProjectModel
+                                where projects.ID == projectID
+                                select projects;
+
+            var project = deleteProject.ToList().First();
+            _db.ProjectModel.Remove(project);
+
+            return true;
+        }
+
         //Might want to rename this properly
         //Is supposed to retrieve all documents contained in a single project and return them
         public List<DocumentModel> getProjectFromDB(int projectID)
