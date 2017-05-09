@@ -1,57 +1,38 @@
 ﻿@model CodeCat.Models.ViewModels.DocumentViewModel
 
-@{
-    ViewBag.Title = "showDocument";
-}
-
-<!-- The Tabs above the Ace Editor -->    
-
-    <div>
-        <ul class="navDoc nav nav-pills">
-            @foreach ( var document in Model.documents) {
-                <li role:"presentation" class="@(Model.selectedDocument == document.ID ? "active" : "")">
-                    <a href="?@document.ID">@document.name</a>
-                </li>
-            }
-            <!-- /TODO Create New File Tab-->
-        </ul>
-    </div>
-
 <!--The Ace Editor begin-->
 <div class="container">
     <div id="ace-editor">
-        @Model.document.content
-<!--    //This is your javascript code
+        @ViewBag.Code
+        <!--    //This is your javascript code
 
-    function foo(items) {
-        var x = "I am Code::Cat";
-        return x;
-    }
--->
+            function foo(items) {
+                var x = "I am Code::Cat";
+                return x;
+            }
+        -->
     </div>
 </div>
-
 
 <!-- Save button for Document -->
 @using (Html.BeginForm("save", "Document", FormMethod.Post))
 {
     <div class="container editor-save-div">
-        @Html.HiddenFor(m => m.document.content , new { @id = "hidden-editor" })
+        @Html.HiddenFor(m => m.document.content, new { @id = "hidden-editor" })
         <input type="submit" value="Save" class="editor-save-button btn btn-success" />
-        
+
         <button type="button" onclick="k()">Button...</button>
         <script>
             var url = window.location.href;
             var projectID = parseInt(url.substring(url.lastIndexOf('/') + 1));
             console.log(projectID);
-            
+
             function k() {
                 window.location.href = "../../Document/AddDocument/" + projectID;
             };
         </script>
-     </div>
+    </div>
 }
-
 
 @section scripts
 {
@@ -60,8 +41,7 @@
     <script src="~/signalr/hubs"></script>
     <script>
 
-        var documentID = @Model.document.ID;
-        console.log(documentID);
+        var documentID = @ViewBag.DocumentID;
 
         var editor = ace.edit("ace-editor");
         editor.setTheme("ace/theme/monokai");
@@ -99,46 +79,4 @@
     </script>
 }
 
-<!--Test Gudrunar-->
-<!-- Autocomplete -->
-<!--
-<script>
-    ace.require("ace/ext/language_tools");
-    var editor = ace.edit("ace-editor");
-    editor.setOptions({
-        enableBasicAutocompletion: true
-    });
-</script>
--->
-<!-- Trying to save the file -->
-<!--
-<script>
-    editor.getSession().on('change', function (e) {
-        thisfile = editor.getValue();
-    });
-</script>
--->
-<!--
-<script>
-    var lastLine = editor.session.getLength();
-    editor.gotoLine(lastLine);
-    editor.insert("the new text here"); // or session.setValue
-    editor.getValue(); // or session.getValue
-</script>
--->
-<!--
-<!-- Script to override enter button -->
-<script>
-    /* editor.commands.addCommand({
-        name: 'Enter',
-        bindKey: {win: 'Enter',  mac: 'Enter'},
-        exec: function(editor) {
-            editor.gotoLine(editor.session.getLength() + 1);
-            editor.insert("\n");
-            editor.insert("I'm at the bottom.");
-        },
-        readOnly: true // false if this command should not apply in readOnly mode
-    });*/
-</script>
-<!--End of test Gudrun-->
-<!--The Ace Editor end-->
+

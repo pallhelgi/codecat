@@ -38,16 +38,19 @@ namespace CodeCat.Controllers
             Code += "\t\t" + "var x = 'I am Code::Cat'" + Environment.NewLine;
             Code += "\t\t" + "return x;" + Environment.NewLine;
             Code += '\t' + "}" + Environment.NewLine;
-            
-            ViewBag.Code = Code;
+
+            // ViewBag.Code = Code;
+
+            ProjectViewModel view = new ProjectViewModel();
+            view.documents = projectService.getProject(project.ID);
 
             DocumentViewModel viewModel = new DocumentViewModel();
             viewModel.documents = projectService.getProject(project.ID);
 
+            viewModel.document = documentService.getDocumentByID(view.documents[0].ID);
+
             //else: get Document from DB and fill Ace with the string
-            string content = "content from DB ;)";
-            ViewBag.Code = content;
-            ViewBag.DocumentID = 17;
+           
             return View(viewModel);
         }
 

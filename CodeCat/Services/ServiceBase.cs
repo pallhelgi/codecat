@@ -108,7 +108,7 @@ namespace CodeCat.Services
 
         public DocumentModel getDocumentByID(int documentID)
         {
-            return null;
+            return _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
         }
 
         //adds a doccument to database
