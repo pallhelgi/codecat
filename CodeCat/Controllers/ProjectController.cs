@@ -12,6 +12,7 @@ namespace CodeCat.Controllers
     public class ProjectController : Controller
     {
         ProjectService projectService = new ProjectService();
+        DocumentService documentService = new DocumentService();
         // GET: Project
         public ActionResult Index()
         {
@@ -40,11 +41,14 @@ namespace CodeCat.Controllers
             
             ViewBag.Code = Code;
 
+            DocumentViewModel viewModel = new DocumentViewModel();
+            viewModel.documents = projectService.getProject(project.ID);
+
             //else: get Document from DB and fill Ace with the string
             string content = "content from DB ;)";
             ViewBag.Code = content;
             ViewBag.DocumentID = 17;
-            return View();
+            return View(viewModel);
         }
 
        // public ActionResult showDocument()

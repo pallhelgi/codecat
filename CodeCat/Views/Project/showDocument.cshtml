@@ -1,4 +1,4 @@
-﻿@model CodeCat.Models.DocumentModel 
+﻿@model CodeCat.Models.ViewModels.DocumentViewModel
 
 @{
     ViewBag.Title = "showDocument";
@@ -17,7 +17,17 @@
         </ul>
     </div>
 *@
-
+<!-- The Tabs above the Ace Editor -->
+    <div>
+        <ul class="navDoc nav-tabs">
+            @foreach (var document in Model.documents) {
+                <li role:"presentation" class="@(Model.document.ID == document.ID ? "active" : "")">
+                    <a href="? document = @document.ID">@document.name</a>
+                </li>
+            }
+            <!-- /TODO Create New File Tab-->
+        </ul>
+    </div>
 
 
 <!-- Tabs on the ACE Editor -->
@@ -52,6 +62,7 @@
     </div>
 </div>
 
+@*
 <!-- Save button for Document -->
 @using (Html.BeginForm("save", "Document", FormMethod.Post))
 {
@@ -62,6 +73,7 @@
         <a href="@Url.Action("../Document/AddDocument")" class="CREATE-TEST-DELETE-LATER">CREATE DOC</a>
     </div>
 }
+*@
 
 @section scripts
 {
