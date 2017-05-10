@@ -46,14 +46,14 @@ namespace CodeCat.Controllers
                 DocumentModel firstDocument = new DocumentModel
                 {
                     name = "index.",
-                    content = null,
+                    content = "Code::Cat",
                     type = documentType.js,
                     projectID = newProject.ID
                 };
                 firstDocument.name = firstDocument.name + firstDocument.type.ToString();
                 docService.addDocument(firstDocument);
 
-                return RedirectToAction("../Project/ShowDocument/" + firstDocument.projectID);
+                return RedirectToAction("../Project/ShowProject/" + firstDocument.projectID);
             }
 
            return View(project);
