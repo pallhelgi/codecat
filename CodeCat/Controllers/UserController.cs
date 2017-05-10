@@ -57,6 +57,24 @@ namespace CodeCat.Controllers
                 //The project ID is retrieved from the url
                 var url = Url.RequestContext.RouteData.Values["id"].ToString();
                 int urlInt = int.Parse(url);
+
+                //Check if user is already in database
+                if(projectService.getuserByID(user.ID) == null)
+                {
+                    return View(user);
+                }
+
+                //Prevent double share
+                List<ProjectModel> userProjects = projectService.getAllProjects(user.email);
+                foreach(var proj in userProjects)
+                {
+                    if(proj.name == userService.getProjectByID(urlInt).name)
+                    {
+                        ModelState.AddModelError(user.email, "YOU FAIL");
+                        return View(user);
+                    }
+                }
+
                 userService.share(user.email, urlInt);
                 return RedirectToAction("../Dashboard/Dashboard");
             }
