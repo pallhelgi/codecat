@@ -1,0 +1,47 @@
+﻿@model CodeCat.Models.ViewModels.ProjectViewModel
+@{
+    ViewBag.Title = "ShowProject";
+}
+
+<h2>ShowProject</h2>
+
+<div class="dashboard-wrapper" id="dashboard-wrapper">
+    <!--Create new project button-->
+    <section class="col-sm-4 create-new-project-box">
+        <a href="@Url.Action("AddProject")" class="plus-link">
+            <section class="well new-box">
+                <div class="plus-sign-div">
+                    <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
+                </div>
+                <p>Create a new project</p>
+            </section>
+        </a>
+    </section>
+
+    <!--List of projects-->
+    @foreach (var document in Model.documents)
+    {
+        <section class="col-sm-4 project-box">
+
+            <section class="well project-box-inner">
+
+                <div>
+                    <h3>@Html.DisplayFor(modelItem => document.name)</h3>
+                    <!--<p>ID: @Html.DisplayFor(modelItem => document.ID)</p>-->
+
+                    <div class="open-share-doc">
+                        <br />
+                        <br />
+                        @Html.ActionLink("Go to document", "../Project/ShowDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-fab" })
+                    </div>
+                </div>
+            </section>
+
+
+
+
+        </section>
+    }
+
+</div>
+

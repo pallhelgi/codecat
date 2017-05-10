@@ -27,25 +27,25 @@ namespace CodeCat.Controllers
             return View();
         }
 
-        public ActionResult showDocument(ProjectModel project)
+        public ActionResult showProject(int id)
+        {
+            ProjectViewModel viewModel = new ProjectViewModel();
+            //testClass test = new testClass();
+            //viewModel.projects = projectService.getUserProjects(User.Identity.Name);
+            //viewModel.projects = test.SeedProject();
+            viewModel.documents = projectService.getProject(id);
+
+            return View(viewModel);
+        }
+
+        public ActionResult showDocument(DocumentModel document)
         {
             //if document is empty:
-         /*   string Code = "Hello my friend, I'm ProjectController" + Environment.NewLine;
-            Code += Environment.NewLine;
-            Code += '\t' + "//This is your javascript code" + Environment.NewLine;
-            Code += Environment.NewLine;
-            Code += '\t' + "function foo(items) {" + Environment.NewLine;
-            Code += "\t\t" + "var x = 'I am Code::Cat'" + Environment.NewLine;
-            Code += "\t\t" + "return x;" + Environment.NewLine;
-            Code += '\t' + "}" + Environment.NewLine;*/
-
-            ProjectViewModel view = new ProjectViewModel();
-            view.documents = projectService.getProject(project.ID);
 
             DocumentViewModel viewModel = new DocumentViewModel();
-            viewModel.documents = projectService.getProject(project.ID);
+            viewModel.documents = projectService.getProject(document.projectID);
  
-            viewModel.document = documentService.getDocumentByID(view.documents[0].ID);
+            viewModel.document = documentService.getDocumentByID(document.ID);
 
             //else: get Document from DB and fill Ace with the string
 
@@ -58,11 +58,6 @@ namespace CodeCat.Controllers
 
             DocumentViewModel viewModel = new DocumentViewModel();
             viewModel.document = documentService.getDocumentByID(id);
-            if(projID != null)
-            {
-                int.Parse(projID);
-            }
-            viewModel.documents = projectService.getProject(projID);
 
             return View(viewModel);
         }

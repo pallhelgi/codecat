@@ -4,31 +4,11 @@
     ViewBag.Title = "showDocument";
 }
 
-<!-- The Tabs above the Ace Editor -->    
-    <div>
-        <ul class="navDoc nav nav-pills">
-            @using (Html.BeginForm())
-            {
-                foreach (var doc in Model.documents)
-                {
-                    <li role:"presentation" class="@(Model.selectedDocument == doc.ID ? "active" : "")">
-                        @Html.HiddenFor(m => m.document.ID)
-                        @Html.HiddenFor(m => m.document.projectID)
-                        <button type="submit" class="btn btn-success">@doc.name</button>
-                    </li>
-                }
-            }
-            
-            <!-- /TODO Create New File Tab-->
-        </ul>
-    </div>
 
 <!--The Ace Editor begin-->
 <div class="container">
     <div id="ace-editor">
-<<<<<<< HEAD
-        @ViewBag.Code
-=======
+
         @Model.document.content
 <!--    //This is your javascript code
 
@@ -37,7 +17,6 @@
         return x;
     }
 -->
->>>>>>> bcd98b972a044b607545da571dea3f502a5c5b19
     </div>
 </div>
 
