@@ -8,14 +8,24 @@
 <div class="dashboard-wrapper" id="dashboard-wrapper">
     <!--Create new project button-->
     <section class="col-sm-4 create-new-project-box">
-        <a href="@Url.Action("AddProject")" class="plus-link">
+        <button type="submit" class="plus-link" onclick="k()">
+            <script>
+                var url = window.location.href;
+                var projectID = parseInt(url.substring(url.lastIndexOf('/') + 1));
+                console.log(projectID);
+
+                function k() {
+                window.location.href = "../../Document/AddDocument/" + projectID;
+            };
+            </script>
+
             <section class="well new-box">
                 <div class="plus-sign-div">
                     <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
                 </div>
-                <p>Create a new project</p>
+                <p>Create a new document</p>
             </section>
-        </a>
+        </button>
     </section>
 
     <!--List of projects-->

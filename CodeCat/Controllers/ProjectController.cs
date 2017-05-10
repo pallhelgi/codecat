@@ -27,6 +27,7 @@ namespace CodeCat.Controllers
             return View();
         }
 
+        [NoDirectAccess.NoDirectAccess]
         public ActionResult showProject(int id)
         {
             ProjectViewModel viewModel = new ProjectViewModel();
@@ -44,7 +45,7 @@ namespace CodeCat.Controllers
 
             DocumentViewModel viewModel = new DocumentViewModel();
             viewModel.documents = projectService.getProject(document.projectID);
- 
+
             viewModel.document = documentService.getDocumentByID(document.ID);
 
             //else: get Document from DB and fill Ace with the string
@@ -52,13 +53,20 @@ namespace CodeCat.Controllers
             return View(viewModel.document);
         }
 
-        public ActionResult showDocument1(DocumentModel doc)
+        [NoDirectAccess.NoDirectAccess]
+        [HttpPost]
+        public ActionResult showDocument(int id, int? projID)
         {
+            if (Request.ServerVariables["HTTP_REFERER"].ToLower().IndexOf("http://localhost:2992") == -1)
+            {
+                // Not from my site
+                Response.Redirect("NotAllowed.aspx");
+            }
 
             DocumentViewModel viewModel = new DocumentViewModel();
-            viewModel.document = documentService.getDocumentByID(doc.ID);
+            viewModel.document = documentService.getDocumentByID(id);
 
-            return RedirectToAction("showDocument", doc);
+            return View(viewModel);
            // return RedirectToAction("showDocument");
         }
 

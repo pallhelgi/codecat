@@ -162,6 +162,13 @@ namespace CodeCat.Services
             return null;
         }
 
+        public int getProjectByDocumentID(int documentID)
+        {
+            DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+            int projectID = document.projectID;
+            return projectID;
+        }
+
         public string getProjectCreatorByID(string username)
         {
             //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);

@@ -71,7 +71,7 @@ namespace CodeCat.Controllers
                 doc.projectID = urlInt;
                 docService.addDocument(doc);
 
-                return RedirectToAction("../Project/ShowDocument/" + urlInt.ToString());
+                return RedirectToAction("../Project/ShowDocument/" + doc.ID);
             }
 
             return View(docFromUser);
