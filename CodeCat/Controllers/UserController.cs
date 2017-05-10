@@ -70,7 +70,6 @@ namespace CodeCat.Controllers
                 {
                     if(proj.name == userService.getProjectByID(urlInt).name)
                     {
-                        ModelState.AddModelError(user.email, "YOU FAIL");
                         return View(user);
                     }
                 }
