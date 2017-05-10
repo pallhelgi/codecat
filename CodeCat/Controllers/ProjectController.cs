@@ -61,6 +61,10 @@ namespace CodeCat.Controllers
             viewModel.docProjectName = p5Model.name;
             //
             return View(viewModel);
+
+
+
+
         }
 
         [NoDirectAccess.NoDirectAccess]
@@ -78,6 +82,7 @@ namespace CodeCat.Controllers
 
             viewModel.documentName = model.name;
             return View(viewModel);
+           // return RedirectToAction("showDocument");
         }
 
         // public ActionResult showDocument()
@@ -89,6 +94,15 @@ namespace CodeCat.Controllers
             viewModel.documents = projectService.getProject(projectID);
 
             return View(viewModel);
+        }
+        
+
+        public ActionResult deleteDocument(DocumentModel document)
+        {
+            int projectID = documentService.getProjectByDocumentID(document.ID);
+            documentService.deleteDocument(document.ID);
+
+            return RedirectToAction("ShowProject/" + projectID);
         }
     }
 }

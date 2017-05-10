@@ -21,8 +21,10 @@
     </section>
 
 <!--List of projects-->
-@foreach (var itemj in Model.projects)
+@using (Html.BeginForm())
 {
+    foreach (var itemj in Model.projects)
+    {
     <section class="col-sm-4 project-box">
 
                 <section class="well project-box-inner">
@@ -43,16 +45,14 @@
                         <div class="open-share-doc">
                             <br />
                             <br />
-                            @Html.ActionLink("Go to project", "../Project/ShowProject", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
+                            @Html.ActionLink("Open", "../Project/ShowProject", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
                             @Html.ActionLink("Share", "../User/Share", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
+                            @Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
                         </div>
                     </div>
                 </section>
-
-
-
-  
        </section>
+    }
 }
 
 </div>
