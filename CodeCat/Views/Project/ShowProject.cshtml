@@ -1,14 +1,16 @@
 ﻿@model CodeCat.Models.ViewModels.ProjectViewModel
 @{
-    ViewBag.Title = "ShowProject";
+    ViewBag.Title = Model.projectName;
 }
 
-<h2>ShowProject</h2>
+<h2>Project: @ViewBag.Title</h2>
 
 <div class="dashboard-wrapper" id="dashboard-wrapper">
     <!--Create new project button-->
     <section class="col-sm-4 create-new-project-box">
+
         <button type="submit" class="plus-link" onclick="k()">
+
             <script>
                 var url = window.location.href;
                 var projectID = parseInt(url.substring(url.lastIndexOf('/') + 1));
