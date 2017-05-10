@@ -30,6 +30,15 @@ namespace CodeCat.Controllers
             return View();
         }
 
+        public ActionResult deleteProject(ProjectModel project)
+        {
+            int projectID = project.ID;
+
+            projectService.deleteProject(projectID);
+
+            return RedirectToAction("Dashboard");
+        }
+
         [HttpPost]
         public ActionResult addProject(ProjectModel project)
         {

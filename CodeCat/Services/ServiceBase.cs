@@ -101,7 +101,8 @@ namespace CodeCat.Services
 
             var item = delete.ToList().First();
             _db.DocumentModel.Remove(item);
-            
+            _db.SaveChanges();
+
 
             return true;
         }
@@ -119,12 +120,33 @@ namespace CodeCat.Services
                 _db.DocumentModel.Remove(doc);
             }
 
-            var deleteProject = from projects in _db.ProjectModel
-                                where projects.ID == projectID
-                                select projects;
 
-            var project = deleteProject.ToList().First();
-            _db.ProjectModel.Remove(project);
+            //This is not working, it's not deleting from the connection table
+            var deleteConnection = from proj in _db.UserProjectModel
+                                   where proj.ProjectID == projectID
+                                   select proj;
+
+            var connection = deleteConnection.ToList();
+
+            foreach (UserProjectModel con in connection)
+            {
+                _db.UserProjectModel.Remove(con);
+            }
+
+            _db.SaveChanges();
+
+            var deleteProject = from proj in _db.ProjectModel
+                                where proj.ID == projectID
+                                select proj;
+
+            var projects = deleteProject.ToList();
+            
+            foreach(ProjectModel project in projects)
+            {
+                _db.ProjectModel.Remove(project);
+            }
+            
+            _db.SaveChanges();
 
             return true;
         }

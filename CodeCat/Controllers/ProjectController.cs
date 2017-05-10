@@ -72,5 +72,14 @@ namespace CodeCat.Controllers
 
             return View(viewModel);
         }
+        
+
+        public ActionResult deleteDocument(DocumentModel document)
+        {
+            int projectID = documentService.getProjectByDocumentID(document.ID);
+            documentService.deleteDocument(document.ID);
+
+            return RedirectToAction("ShowProject/" + projectID);
+        }
     }
 }
