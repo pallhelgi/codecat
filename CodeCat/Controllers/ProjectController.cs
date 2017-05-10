@@ -58,14 +58,6 @@ namespace CodeCat.Controllers
 
             DocumentViewModel viewModel = new DocumentViewModel();
             viewModel.document = documentService.getDocumentByID(id);
-<<<<<<< HEAD
-=======
-            if(projID != null)
-            {
-                //int.Parse(projID);
-            }
-            //viewModel.documents = projectService.getProject(projID);
->>>>>>> ffc651604b6282d8a745a42b21592a13c1468e92
 
             return View(viewModel);
         }
