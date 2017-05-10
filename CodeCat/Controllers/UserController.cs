@@ -84,7 +84,7 @@ namespace CodeCat.Controllers
         }
 
 
-        public ActionResult signUp()
+        /*public ActionResult signUp()
         {
             return View();
         }
@@ -94,7 +94,7 @@ namespace CodeCat.Controllers
         {
             //TODO
             //TODO
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 UserModel newUser = new UserModel();
                 newUser.ID = user.ID;
@@ -109,7 +109,7 @@ namespace CodeCat.Controllers
             }
 
             return View(user);
-        }
+        }*/
 
         public ActionResult forgottenPassword()
         {

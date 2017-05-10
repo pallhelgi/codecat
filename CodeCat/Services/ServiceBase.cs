@@ -23,13 +23,13 @@ namespace CodeCat.Services
 
 
         //gets a list of projects connected to a specific user
-        public List<ProjectModel> getAllProjectsFromDB(string userName)
+        /*public List<ProjectModel> getAllProjectsFromDB(string userName)
         {
             //ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == "pallhelgi@gmail.com");
             //string userID = "1"; //test for now should be in funciton
             //This is a work in process
 
-            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == userName);
+           /* ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == userName);
             var result = from proj in _db.ProjectModel
                          join con in _db.UserProjectModel
                          on proj.ID equals con.ProjectID
@@ -45,12 +45,12 @@ namespace CodeCat.Services
             lis2.ForEach(l => lis.Add(l));
             //return _db.ProjectModel.ToList();
 
-            /*Trying to make a cleaner code, didn't return in the order I wanted
+            Trying to make a cleaner code, didn't return in the order I wanted
              * var resultUnion = result.Union(_db.ProjectModel.Where(x => x.creatorUserID == user.Id)).ToList();
-            return resultUnion;*/
+            return resultUnion;
 
             return lis;
-        }
+        }*/
 
         public ProjectModel getProjectByID(int projectID)
         {
@@ -59,22 +59,22 @@ namespace CodeCat.Services
         }
 
         //gets a list of projects created by a specific user
-        public List<ProjectModel> getUserProjectsFromDB(string username)
+        /*public List<ProjectModel> getUserProjectsFromDB(string username)
         {
 
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
             return _db.ProjectModel.Where(x => x.creatorUserID == user.Id).ToList();
-        }
+        }*/
 
         //adds a project to database
-        public bool addProjectToDB(ProjectModel project)
+        /*public bool addProjectToDB(ProjectModel project)
         {
             _db.ProjectModel.Add(project);
             _db.SaveChanges();
 
             //MUNA AD BREYTA SVO THETTA SE EKKI ALLTAF TRUE
             return true;
-        }
+        }*/
 
         public bool saveDocumentToDB(int documentID, string content)
         {
@@ -107,7 +107,8 @@ namespace CodeCat.Services
             return true;
         }
 
-        public bool deleteProjectFromDB(int projectID)
+        //Delete a single project from database
+       /* public bool deleteProjectFromDB(int projectID)
         {
             var deleteDocuments = from documents in _db.DocumentModel
                                   where documents.projectID == projectID
@@ -120,8 +121,6 @@ namespace CodeCat.Services
                 _db.DocumentModel.Remove(doc);
             }
 
-
-            //This is not working, it's not deleting from the connection table
             var deleteConnection = from proj in _db.UserProjectModel
                                    where proj.ProjectID == projectID
                                    select proj;
@@ -149,11 +148,11 @@ namespace CodeCat.Services
             _db.SaveChanges();
 
             return true;
-        }
+        }*/
 
         //Might want to rename this properly
         //Is supposed to retrieve all documents contained in a single project and return them
-        public List<DocumentModel> getProjectFromDB(int projectID)
+        /*public List<DocumentModel> getProjectFromDB(int projectID)
         {
             //This is a work in process
             var result = from docs in _db.DocumentModel
@@ -163,7 +162,7 @@ namespace CodeCat.Services
             List<DocumentModel> documents = result.ToList();
 
             return documents;
-        }
+        }*/
 
         public DocumentModel getDocumentByID(int documentID)
         {
@@ -191,27 +190,23 @@ namespace CodeCat.Services
             return projectID;
         }
 
-        public string getProjectCreatorByID(string username)
+        /*public string getProjectCreatorByID(string username)
         {
-            //return _db.AspNetUsers.FirstOrDefault(x => x.Email == model.Email);
-
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
 
             return user.Id;
+        }*/
 
-            //return _db.Users.FirstOrDefault(x => x.Email == Users.Identity.Email);
-        }
-
-        public bool addUser(UserModel user)
+        /*public bool addUser(UserModel user)
         {
             _db.UserModel.Add(user);
             _db.SaveChanges();
             
             return false;
-        }
+        }*/
 
         //shares the project with another user
-        public bool shareToDB(string email, int projectID)
+        /*public bool shareToDB(string email, int projectID)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
 
@@ -225,15 +220,6 @@ namespace CodeCat.Services
             _db.SaveChanges();
 
             return true;
-        }
-
-        //Links the user to a project
-        public bool linkUserToProjectInDB(string email)
-        {
-            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
-            //Todo: link the user to the project in the database.
-            return true;
-        }
-
+        }*/
     }
 }
