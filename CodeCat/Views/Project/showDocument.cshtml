@@ -1,4 +1,4 @@
-﻿@model CodeCat.Models.ViewModels.DocumentViewModel
+﻿@model CodeCat.Models.DocumentModel
 
 @{
     ViewBag.Title = "showDocument";
@@ -8,38 +8,28 @@
 <!--The Ace Editor begin-->
 <div class="container">
     <div id="ace-editor">
-
-        @Model.document.content
-
+        @Model.content
     </div>
 </div>
 
 <!-- Add Document -->
 
 <!-- Save button for Document -->
-@using (Html.BeginForm("save", "Document", FormMethod.Post))
+@using (Html.BeginForm("save", "Document", FormMethod.Post, new { @id = "editor-form" }))
 {
     <div class="container editor-save-div">
-        @Html.HiddenFor(m => m.document.content , new { @id = "hidden-editor" })
-        <input type="submit" value="Save" class="editor-save-button btn btn-success" />
-        
-        <button type="button" onclick="k()">Button...</button>
-        <script>
-            var url = window.location.href;
-            var projectID = parseInt(url.substring(url.lastIndexOf('/') + 1));
-            console.log(projectID);
-            
-            function k() {
-                window.location.href = "../../Document/AddDocument/" + projectID;
-            };
-        </script>
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.content, new { @id = "hidden-editor" })
+        <input type="submit" id="btn-save" value="Save" class="editor-save-button btn btn-success" />
      </div>
 }
+
+
 
 <script>
     $("form").click(function () {
             console.log("Hallo");
-            console.log($("#hidden-editor").val(editor.getSession().getValue()));
+           // console.log($("#hidden-editor").val(editor.getSession().getValue()));
             $("#hidden-editor").val(editor.getSession().getValue());
             var content = editor.getSession().getValue();
 
@@ -50,7 +40,8 @@
             function f() {
                 window.location.href = "../../Document/ShowDocument/" + docID;
             };
-        });
+    });
+
 </script>
 
 
@@ -61,25 +52,27 @@
     <script src="~/signalr/hubs"></script>
     <script>
 
-        var documentID = @Model.document.ID;
-
-        console.log(documentID);
+        var documentID = @Model.ID;
 
         var editor = ace.edit("ace-editor");
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
-
-      
-
+        $("#editor-form").submit(function () {
+            $("#hidden_editor").val(editor.getSession().getValue());
+        });
 
         var codeHub = $.connection.codeHub;
         var silent = false;
+        var code = editor.getValue();
+      //  document.getElementById('DocumentContent').value = $("#hidden-editor").val(editor.getSession().getValue());
+
 
         codeHub.client.onChange = function (changeData) {
-            console.log(changeData);
+          //  console.log(changeData);
 
             silent = true;
             editor.getSession().getDocument().applyDelta(changeData);
+          //  console.log(code);
             silent = false;
         };
 
@@ -88,7 +81,7 @@
             codeHub.server.joinDocument(documentID);
 
             editor.on("change", function (obj) {
-                if (silent){
+                if (silent) {
                     return;
                 }
                 console.log(obj);

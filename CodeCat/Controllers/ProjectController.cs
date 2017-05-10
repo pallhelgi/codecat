@@ -49,17 +49,17 @@ namespace CodeCat.Controllers
 
             //else: get Document from DB and fill Ace with the string
 
-            return View(viewModel);
+            return View(viewModel.document);
         }
 
-        [HttpPost]
-        public ActionResult showDocument(int id, int? projID)
+        public ActionResult showDocument1(DocumentModel doc)
         {
 
             DocumentViewModel viewModel = new DocumentViewModel();
-            viewModel.document = documentService.getDocumentByID(id);
+            viewModel.document = documentService.getDocumentByID(doc.ID);
 
-            return View(viewModel);
+            return RedirectToAction("showDocument", doc);
+           // return RedirectToAction("showDocument");
         }
 
         // public ActionResult showDocument()
