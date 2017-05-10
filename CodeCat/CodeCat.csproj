@@ -208,6 +208,7 @@
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NoAccessController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Hubs\CodeHub.cs" />
@@ -389,6 +390,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\EntityClasses\" />
+    <Folder Include="Views\NoAccess\" />
     <Folder Include="Views\Parent\" />
   </ItemGroup>
   <ItemGroup>
