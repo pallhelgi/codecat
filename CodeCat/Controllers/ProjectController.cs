@@ -49,22 +49,12 @@ namespace CodeCat.Controllers
 
             viewModel.document = documentService.getDocumentByID(document.ID);
 
-            //else: get Document from DB and fill Ace with the string
-            //this is my code:
             DocumentModel model = documentService.getDocumentByID(document.ID);
             viewModel.documentName = model.name;
             ProjectModel p5Model = projectService.getProjectById(model.projectID);
-            //ProjectModel p4Model = projectService.getProjectByID(document.projectID);
-            //ProjectModel p3Model = projectService.getProjectById(document.projectID);
-            //ProjectModel p2Model = documentService.getProjectByID(document.projectID);
-            //ProjectModel pModel = documentService.getProjectByID(document.ID);
             viewModel.docProjectName = p5Model.name;
-            //
+            
             return View(viewModel);
-
-
-
-
         }
 
         [NoDirectAccess.NoDirectAccess]
@@ -74,11 +64,6 @@ namespace CodeCat.Controllers
             DocumentViewModel viewModel = new DocumentViewModel();
             viewModel.document = documentService.getDocumentByID(id);
             DocumentModel model = documentService.getDocumentByID(id);
-
-
-            //viewModel.documents = projectService.getProject(id);
-            //ProjectModel model = projectService.getProjectById(id);
-            //viewModel.projectName = model.name;
 
             viewModel.documentName = model.name;
             return View(viewModel);
