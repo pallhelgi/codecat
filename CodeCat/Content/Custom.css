@@ -393,15 +393,7 @@ footer {
     color: black;
 }
 
-a.btn-fab {
-    color: black;
-}
-
-a.btn-fab:hover {
-    color: white;
-}
-
-.sign-in-button:hover {
+.btn-fab:hover {
     color: white;
 }
 
