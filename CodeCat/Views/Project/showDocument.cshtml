@@ -1,8 +1,10 @@
 ﻿@model CodeCat.Models.ViewModels.DocumentViewModel
 
 @{
-    ViewBag.Title = "showDocument";
+    ViewBag.Title = "Project::" + Model.docProjectName + " Document::" + Model.documentName;
 }
+
+<h2>Project: @Model.docProjectName / @Model.documentName</h2>
 
 <!--The Ace Editor begin-->
 <div class="container">
