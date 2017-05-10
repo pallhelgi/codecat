@@ -390,6 +390,19 @@ footer {
 /* Buttons on project box*/
 .btn-fab {
     background-color: #fab;
+    color: black;
+}
+
+a.btn-fab {
+    color: black;
+}
+
+a.btn-fab:hover {
+    color: white;
+}
+
+.sign-in-button:hover {
+    color: white;
 }
 
 /*404 page*/

@@ -60,9 +60,9 @@ namespace CodeCat.Controllers
             viewModel.document = documentService.getDocumentByID(id);
             if(projID != null)
             {
-                int.Parse(projID);
+                //int.Parse(projID);
             }
-            viewModel.documents = projectService.getProject(projID);
+            //viewModel.documents = projectService.getProject(projID);
 
             return View(viewModel);
         }
