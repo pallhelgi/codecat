@@ -43,7 +43,14 @@ namespace CodeCat.Controllers
 
             docService.saveDocument(model.ID, model.content);
 
-            return RedirectToAction("../Project/ShowDocument/" + model.ID);
+            //if (String.IsNullOrEmpty(model.content))
+           // {
+                //return RedirectToAction("Detail", "MovieApp", new { id = movieId });
+                return Json(docService.getDocumentByID(model.ID).content, JsonRequestBehavior.AllowGet);
+
+         //   }
+
+         //   return RedirectToAction("../Project/ShowDocument/" + model.ID);
 
         }
 

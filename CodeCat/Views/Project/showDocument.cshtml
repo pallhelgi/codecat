@@ -7,7 +7,11 @@
 <!--The Ace Editor begin-->
 <div class="container">
     <div id="ace-editor">
-        @Model.content
+        @if (Model.content != null)
+        {
+            @Model.content
+
+        }
     </div>
 </div>
 
@@ -22,8 +26,6 @@
         <input type="submit" id="btn-save" value="Save" class="editor-save-button btn btn-success" />
      </div>
 }
-
-
 
 <script>
     $("form").click(function () {
