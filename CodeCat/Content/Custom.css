@@ -444,6 +444,7 @@ a.btn-fab:hover {
 .not-found-page button {
 }
 
+<<<<<<< HEAD
 .our-breadcrumb {
     height: 5px;
 }
@@ -469,4 +470,16 @@ a.btn-fab:hover {
 
 .breadcrumb-div a {
     font-weight: normal;
+=======
+/*About Us*/
+
+/*Pictures*/
+.img-profile {
+    height: 250px;
+    width: 200px;
+}
+
+.about-ul {
+    list-style-type: none;
+>>>>>>> 37e98a05625da8688c2074a3056b8403e1976518
 }
