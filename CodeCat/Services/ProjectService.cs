@@ -189,8 +189,6 @@ namespace CodeCat.Services
         }
 
         //Returns a projects based on it's ID
-        //This function also exists in serviceBase,
-        //is currently being used by UserController directly to serviceBase
         public ProjectModel getProjectById(int projectID)
         {
             return _db.ProjectModel.FirstOrDefault(x => x.ID == projectID);
