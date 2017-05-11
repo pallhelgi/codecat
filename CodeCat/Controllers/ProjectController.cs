@@ -31,9 +31,7 @@ namespace CodeCat.Controllers
         public ActionResult showProject(int id)
         {
             ProjectViewModel viewModel = new ProjectViewModel();
-            //testClass test = new testClass();
-            //viewModel.projects = projectService.getUserProjects(User.Identity.Name);
-            //viewModel.projects = test.SeedProject();
+
             viewModel.documents = projectService.getProject(id);
             ProjectModel model = projectService.getProjectById(id);
             viewModel.projectName = model.name;

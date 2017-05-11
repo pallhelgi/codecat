@@ -3,13 +3,14 @@
     ViewBag.Title = Model.projectName;
 }
 
-<h2>Project: @ViewBag.Title</h2>
+
+<h2>@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @ViewBag.Title</h2>
 
 <div class="dashboard-wrapper" id="dashboard-wrapper">
-    <!--Create new project button-->
-    <section class="col-sm-4 create-new-project-box">
+    <!--Create new document button-->
+    <section class="col-sm-4 project-box">
 
-        <button type="submit" class="plus-link" onclick="k()">
+        <!--<button type="submit" class="plus-link" onclick="k()"></button>-->
 
             <script>
                 var url = window.location.href;
@@ -21,13 +22,13 @@
             };
             </script>
 
-            <section class="well new-box">
+            <button type="submit" onclick="k()" class="well new-box" id="create-new-doc">
                 <div class="plus-sign-div">
                     <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
                 </div>
                 <p>Create a new document</p>
-            </section>
-        </button>
+            
+            </button>
     </section>
 
     @using (Html.BeginForm())

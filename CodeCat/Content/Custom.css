@@ -239,7 +239,7 @@ h2 {
 .sign-in-logo-div {
     margin-left: auto;
     margin-right: auto;    
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 /**/
@@ -261,6 +261,16 @@ footer {
     overflow: auto;
     vertical-align: top;
     color: black; 
+}
+
+.create-new-doc-box {
+    height: 90px;
+    width: 290px;
+}
+
+#create-new-doc-box {
+    width: 290px;
+    padding-right: -10px;
 }
 
 .create-new-project-box p {
@@ -336,6 +346,12 @@ footer {
 
 .new-box a:hover {
     color: white;
+}
+
+/*Create a new doc button/box on project page*/
+#create-new-doc {
+    width: 220px;
+    height: 249px;
 }
 
 .project-box a {
@@ -421,4 +437,16 @@ footer {
 }
 
 .not-found-page button {
+}
+
+/*About Us*/
+
+/*Pictures*/
+.img-profile {
+    height: 250px;
+    width: 200px;
+}
+
+.about-ul {
+    list-style-type: none;
 }

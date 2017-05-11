@@ -4,12 +4,13 @@
     ViewBag.Title = "Project::" + Model.docProjectName + " Document::" + Model.documentName;
 }
 
-<h2>Project: @Model.docProjectName / @Model.documentName</h2>
+<h2>@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @Html.ActionLink(Model.docProjectName, "../Project/ShowProject", new { id = Model.document.projectID }) / @Model.documentName</h2>
+
+
 
 <!--The Ace Editor begin-->
 <div class="container">
     <div id="ace-editor">
-
         @Model.document.content
 
     </div>

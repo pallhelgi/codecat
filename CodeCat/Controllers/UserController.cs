@@ -49,7 +49,7 @@ namespace CodeCat.Controllers
                 }
           
 
-            return HttpNotFound();
+            return RedirectToAction("../Dashboard/Dashboard");
         }
 
         [HttpPost]
@@ -90,7 +90,7 @@ namespace CodeCat.Controllers
                 return RedirectToAction("../Dashboard/Dashboard");
             }
 
-            return View();
+            return View("../Home/Error");
            // return View(user);
         }
 
