@@ -93,7 +93,7 @@ namespace CodeCat.Services
         }*/
 
         //Deletes a single document from database
-        public bool deleteDocumentFromDB(int documentID)
+        /*public bool deleteDocumentFromDB(int documentID)
         {
             var delete = from doc in _db.DocumentModel
                          where doc.ID == documentID
@@ -105,7 +105,7 @@ namespace CodeCat.Services
 
 
             return true;
-        }
+        }*/
 
         //Delete a single project from database
        /* public bool deleteProjectFromDB(int projectID)
@@ -170,13 +170,13 @@ namespace CodeCat.Services
         }
 
         //adds a doccument to database
-        public bool addDocumentToDB(DocumentModel document)
+        /*public bool addDocumentToDB(DocumentModel document)
         {
             _db.DocumentModel.Add(document);
             _db.SaveChanges();
 
             return true;
-        }
+        }*/
 
         public UserModel getuserByID(int userID)
         {

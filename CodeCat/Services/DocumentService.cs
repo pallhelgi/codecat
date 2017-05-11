@@ -25,17 +25,27 @@ namespace CodeCat.Services
 
             return true;
         }
-        
+
+        //adds a doccument to database
         public bool addDocument(DocumentModel doc)
         {
-            addDocumentToDB(doc);
+            _db.DocumentModel.Add(doc);
+            _db.SaveChanges();
 
             return false;
         }
 
+        //Deletes a single document from database
         public bool deleteDocument(int documentID)
         {
-            deleteDocumentFromDB(documentID);
+            var delete = from doc in _db.DocumentModel
+                         where doc.ID == documentID
+                         select doc;
+
+            var item = delete.ToList().First();
+            _db.DocumentModel.Remove(item);
+            _db.SaveChanges();
+
             return true;
         }
 
