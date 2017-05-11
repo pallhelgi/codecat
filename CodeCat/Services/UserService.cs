@@ -9,6 +9,13 @@ namespace CodeCat.Services
 {
     public class UserService : ServiceBase
     {
+        //public readonly IAppDataContext db;
+
+        public UserService(IAppDataContext context) : base(context)
+        {
+           // db = context ?? new ApplicationDbContext();
+        }
+
         //  ServiceBase baas = new ServiceBase();
         public UserModel user;
 

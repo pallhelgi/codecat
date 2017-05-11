@@ -11,8 +11,8 @@ namespace CodeCat.Controllers
 {
     public class ProjectController : Controller
     {
-        ProjectService projectService = new ProjectService();
-        DocumentService documentService = new DocumentService();
+        ProjectService projectService = new ProjectService(null);
+        DocumentService documentService = new DocumentService(null);
         // GET: Project
         public ActionResult Index()
         {

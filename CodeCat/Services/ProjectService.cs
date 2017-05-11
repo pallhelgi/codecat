@@ -15,6 +15,11 @@ namespace CodeCat.Services
     {
         public ProjectModel project;
 
+        public ProjectService(IAppDataContext context) : base(context)
+        {
+            // db = context ?? new ApplicationDbContext();
+        }
+
         //Returns all the projects a user has access to
         public List<ProjectModel> getAllProjects(string userName)
         {
