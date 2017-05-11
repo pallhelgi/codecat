@@ -13,7 +13,7 @@ namespace CodeCat.Services
 {
     public class ProjectService
     {
-        public ApplicationDbContext _db;
+        ApplicationDbContext _db;
 
         public ProjectService()
         {

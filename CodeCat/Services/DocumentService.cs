@@ -8,7 +8,7 @@ namespace CodeCat.Services
 {
     public class DocumentService
     {
-        public ApplicationDbContext _db;
+        ApplicationDbContext _db;
 
         public DocumentService()
         {

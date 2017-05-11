@@ -62,7 +62,7 @@ namespace CodeCat.Controllers
                 int urlInt = int.Parse(url);
 
                 int check = 0;
-                foreach(var us in userService._db.Users)
+                foreach(var us in userService.getUsers())
                 {
                     if(us.Email == user.Email)
                     {

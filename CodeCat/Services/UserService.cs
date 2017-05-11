@@ -9,7 +9,7 @@ namespace CodeCat.Services
 {
     public class UserService
     {
-        public ApplicationDbContext _db;
+        ApplicationDbContext _db;
 
         public UserService()
         {
@@ -50,6 +50,11 @@ namespace CodeCat.Services
             users.Add(user);
 
             return users;
+        }
+
+        public List<ApplicationUser> getUsers()
+        {
+            return _db.Users.ToList();
         }
     }
 }
