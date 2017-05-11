@@ -132,7 +132,7 @@ namespace CodeCat.Tests.Services
         }
 
 
-        [TestMethod]
+     /*   [TestMethod]
         public void getAllProjectsForMellon()
         {
             // Arrange:
@@ -148,7 +148,7 @@ namespace CodeCat.Tests.Services
             //There are two documents in the MockDB with the projectID '1'.
             Assert.AreEqual(2, result.Count);
             //Assert.AreEqual("doc3", result[1].name);
-        }
+        }*/
 
         [TestMethod]
         public void getProjectForProjectID1()
@@ -216,13 +216,11 @@ namespace CodeCat.Tests.Services
 
             // ACT:
 
-            var result1 = _service.deleteProject(projID);
+            _service.deleteProject(projID);
             //mellon is the creator of project1
             var deleted = _service.getUserProjects("mellon@mellon.com");
 
             // Assert:
-            
-            Assert.AreEqual(true, result1);
 
             //Mellon previously had two projects, and should therefore
             //now have only one
