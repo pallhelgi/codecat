@@ -32,11 +32,17 @@ namespace CodeCat.Controllers
 
         public ActionResult deleteProject(ProjectModel project)
         {
-            int projectID = project.ID;
+            try {
+                int projectID = project.ID;
 
-            projectService.deleteProject(projectID);
+                projectService.deleteProject(projectID);
 
-            return RedirectToAction("Dashboard");
+                return RedirectToAction("Dashboard");
+            }
+            catch
+            {
+                return Content(Boolean.FalseString);
+            }
         }
 
         [HttpPost]

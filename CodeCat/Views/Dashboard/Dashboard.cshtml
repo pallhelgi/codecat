@@ -62,12 +62,11 @@
                         <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
                         @if (User.Identity.GetUserId() == itemj.creatorUserID)
                         {
-                            <p> Author: @User.Identity.Name (you) </p>
+                            <p> You created this project </p>
                         }
                         else
                         {
-                            <p> Author: NOT YOU... </p>
-                            //TODO ef hofundurinn er ekki sa innskradi...
+                            <p> This was shared with you </p>
                         }
 
                         <div class="open-share-doc">
@@ -75,12 +74,11 @@
                             <br />
                             @Html.ActionLink("Open", "../Project/ShowProject", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
                             @Html.ActionLink("Share", "../User/Share", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
-                            @Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
+                            @Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class="btn btn-fab", onclick = "return confirm('Are you sure you wish to delete this project?');" })
                         </div>
                     </div>
                 </section>
        </section>
     }
 }
-
 </div>
