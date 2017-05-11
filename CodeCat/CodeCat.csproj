@@ -323,11 +323,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Adorable-Cat-PNG.png" />
     <Content Include="Images\codecat2_black.png" />
     <Content Include="Images\codecat2_white.png" />
     <Content Include="Images\codecat_on_circle2.png" />
     <Content Include="Images\codecat_with_text.png" />
     <Content Include="Images\giphy.gif" />
+    <Content Include="Images\kisi-white-notext.png" />
+    <Content Include="Images\kisi4-no-text.png" />
+    <Content Include="Images\kisi4.png" />
+    <Content Include="Images\kisi5.png" />
     <Content Include="Images\plus-sign-invert.png" />
     <Content Include="Images\plusplus.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -336,6 +341,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

@@ -239,7 +239,7 @@ h2 {
 .sign-in-logo-div {
     margin-left: auto;
     margin-right: auto;    
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 /**/
@@ -336,6 +336,11 @@ footer {
 
 .new-box a:hover {
     color: white;
+}
+
+/*Create a new doc button/box on project page*/
+#create-new-doc {
+    width: 100%;
 }
 
 .project-box a {
