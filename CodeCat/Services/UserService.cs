@@ -12,7 +12,7 @@ namespace CodeCat.Services
         //  ServiceBase baas = new ServiceBase();
         public UserModel user;
 
-        public bool share(string email, int projectID)
+        public void share(string email, int projectID)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
 
@@ -25,7 +25,18 @@ namespace CodeCat.Services
             _db.UserProjectModel.Add(link);
             _db.SaveChanges();
 
-            return true;
+        }
+
+
+        public List<ApplicationUser> getUsersSharingADocument(DocumentModel document)
+        {
+            var result = from user in _db.Users
+                         join con in _db.UserProjectModel
+                         on user.Id equals con.UserID
+                         where con.ProjectID == document.projectID
+                         select user;
+
+            return result.ToList();
         }
     }
 }
