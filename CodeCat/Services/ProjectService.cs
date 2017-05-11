@@ -14,6 +14,7 @@ namespace CodeCat.Services
     public class ProjectService : ServiceBase
     {
         //private ApplicationDbContext _db = new ApplicationDbContext();
+        private UserService userService = new UserService();
         public ProjectModel project;
 
         public List<ProjectModel> getAllProjects(string userName)
@@ -61,6 +62,13 @@ namespace CodeCat.Services
         public bool share(int userID)
         {
             return false;
+        }
+
+        public UserModel getUserByID(int userID)
+        {
+            UserModel user = userService.getuserByID(userID);
+                
+            return user;
         }
     }
 }
