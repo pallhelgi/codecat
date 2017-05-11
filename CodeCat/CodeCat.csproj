@@ -390,7 +390,7 @@
     <Content Include="Views\Project\ShowDocument.cshtml" />
     <Content Include="Views\Dashboard\AddProject.cshtml" />
     <Content Include="Views\Project\getDocuments.cshtml" />
-    <Content Include="Views\User\share.cshtml" />
+    <Content Include="Views\User\Share.cshtml" />
     <Content Include="Views\Document\AddDocument.cshtml" />
     <Content Include="Views\Project\ShowProject.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />

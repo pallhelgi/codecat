@@ -47,7 +47,7 @@ namespace CodeCat.Controllers
                 }
           
 
-            return HttpNotFound();
+            return RedirectToAction("../Home/Error");
         }
 
         [HttpPost]
