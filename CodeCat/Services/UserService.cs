@@ -7,12 +7,14 @@ using CodeCat.Services;
 
 namespace CodeCat.Services
 {
-    public class UserService : ServiceBase
+    public class UserService
     {
-        /*public UserService(IAppDataContext context) : base(context)
+        ApplicationDbContext _db;
+
+        public UserService()
         {
-            // db = context ?? new ApplicationDbContext();
-        }*/
+            _db = new ApplicationDbContext();
+        }
 
         public void share(string email, int projectID)
         {
@@ -48,6 +50,11 @@ namespace CodeCat.Services
             users.Add(user);
 
             return users;
+        }
+
+        public List<ApplicationUser> getUsers()
+        {
+            return _db.Users.ToList();
         }
     }
 }

@@ -14,12 +14,12 @@ namespace CodeCat.Services
     public class ServiceBase
     {
         //Connecting the serviceBase to the appDbContext class which speaks to the database(sql)
-        public readonly ApplicationDbContext _db; //= new ApplicationDbContext();
+        /*public  ApplicationDbContext _db; //= new ApplicationDbContext();
 
         public ServiceBase()
         {
             _db =  new ApplicationDbContext();
-        }
+        }*/
 
 
         //gets a list of projects connected to a specific user
