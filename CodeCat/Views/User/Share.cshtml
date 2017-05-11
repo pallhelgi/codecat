@@ -1,4 +1,4 @@
-﻿@model CodeCat.Models.UserModel
+﻿@model CodeCat.Models.ApplicationUser
 @{
     ViewBag.Title = "AddUser";
 }
@@ -7,7 +7,7 @@
 
 <!--LOGO-->
 <div class="sign-in-logo-div">
-    <img src="~/Images/codecat2_black.png" width="150" height="150" alt="Code Cat Logo" class="sign-up-logo" />
+    <img src="~/Images/kisi4.png" width="170" height="200" alt="Code Cat Logo" class="sign-up-logo" />
 </div>
 <hr />
 
@@ -17,9 +17,8 @@
         <div class="form-group" >
             <label for="email" class="control-label">Email address</label>
             
-            @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
-            <br />
-            @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
     </div>
     <input type="submit" class="btn btn-fab" value="Send invitation" />
