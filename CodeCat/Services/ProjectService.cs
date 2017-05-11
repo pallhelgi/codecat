@@ -36,6 +36,65 @@ namespace CodeCat.Services
             return lis;
         }
 
+        //Filters project by name(ascending and descending), newest/oldest project
+        //
+        public List<ProjectModel> getProjectFiltered(string userName, int option)
+        {
+            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == userName);
+
+            List<ProjectModel> list = getAllProjects(userName);
+
+            switch(option)
+            {
+                case 1: //By project name ascending
+                    var ascending = from lis in list
+                                 orderby lis.name ascending
+                                 select lis;
+
+                    return ascending.ToList();
+                    
+                case 2: //By project name descending
+                    var descending = from lis in list
+                                 orderby lis.name descending
+                                 select lis;
+
+                    return descending.ToList();
+                    
+                case 3: //By newest
+                    var newest = from lis in list
+                                     orderby lis.ID ascending
+                                     select lis;
+
+                    return newest.ToList();
+                    
+                case 4: //By oldest
+                    var oldest = from lis in list
+                                 orderby lis.ID descending
+                                 select lis;
+
+                    return oldest.ToList();
+
+                case 5: //By creator
+                    var creator = from lis in list
+                                 orderby lis.creatorUserID == user.Id
+                                 select lis;
+
+                    return creator.ToList();
+
+                case 6: //By share
+                    var share = from lis in list
+                                  orderby lis.creatorUserID != user.Id
+                                  select lis;
+
+                    return share.ToList();
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
+
+            return list;
+        }
+
         //Returns all the documents within a project
         public List<DocumentModel> getProject(int projectID)
         {
