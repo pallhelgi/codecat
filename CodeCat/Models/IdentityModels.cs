@@ -20,7 +20,7 @@ namespace CodeCat.Models
         }
     }
 
-    public interface IAppDataContext
+    /*public interface IAppDataContext
     {
         IDbSet<UserModel> UserModel { get; set; }
         IDbSet<DocumentModel> DocumentModel { get; set; }
@@ -34,9 +34,9 @@ namespace CodeCat.Models
 
         //System.Data.Entity.Infrastructure.DbEntityEntry Entry(object entity);
         
-    }
+    }*/
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IAppDataContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>//, IAppDataContext
     {
         public IDbSet<ProjectModel> ProjectModel { get; set; }
         public IDbSet<DocumentModel> DocumentModel { get; set; }

@@ -9,10 +9,10 @@ namespace CodeCat.Services
 {
     public class UserService : ServiceBase
     {
-        public UserService(IAppDataContext context) : base(context)
+        /*public UserService(IAppDataContext context) : base(context)
         {
             // db = context ?? new ApplicationDbContext();
-        }
+        }*/
 
         public void share(string email, int projectID)
         {

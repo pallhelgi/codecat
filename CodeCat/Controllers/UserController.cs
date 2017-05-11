@@ -13,9 +13,9 @@ namespace CodeCat.Controllers
     public class UserController : Controller
     {
 
-        private UserService userService = new UserService(null);
-        private ProjectService projectService = new ProjectService(null);
-        private ServiceBase baas = new ServiceBase(null);
+        private UserService userService = new UserService();
+        private ProjectService projectService = new ProjectService();
+        private ServiceBase baas = new ServiceBase();
         // GET: User
         public ActionResult Index()
         {

@@ -8,10 +8,10 @@ namespace CodeCat.Services
 {
     public class DocumentService : ServiceBase
     {
-        public DocumentService(IAppDataContext context) : base(context)
+        /*public DocumentService(IAppDataContext context) : base(context)
         {
 
-        }
+        }*/
 
         public DocumentModel document;
 
