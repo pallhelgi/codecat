@@ -76,7 +76,7 @@ namespace CodeCat.Services
             return true;
         }*/
 
-        public bool saveDocumentToDB(int documentID, string content)
+        /*public bool saveDocumentToDB(int documentID, string content)
         {
             var replace = from doc in _db.DocumentModel
                           where doc.ID == documentID
@@ -90,7 +90,7 @@ namespace CodeCat.Services
             _db.SaveChanges();
 
             return true;
-        }
+        }*/
 
         //Deletes a single document from database
         public bool deleteDocumentFromDB(int documentID)

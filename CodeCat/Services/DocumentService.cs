@@ -10,14 +10,18 @@ namespace CodeCat.Services
     {
         public DocumentModel document;
 
-        public DocumentModel getDocument(int documentID)
-        {
-            return null;
-        }
-
         public bool saveDocument(int documentID, string content)
         {
-            saveDocumentToDB(documentID, content);
+            var replace = from doc in _db.DocumentModel
+                          where doc.ID == documentID
+                          select doc;
+
+            foreach (DocumentModel doc in replace)
+            {
+                doc.content = content;
+            }
+
+            _db.SaveChanges();
 
             return true;
         }
@@ -34,5 +38,10 @@ namespace CodeCat.Services
             deleteDocumentFromDB(documentID);
             return true;
         }
+
+        /*public DocumentModel getDocumentByID(int documentID)
+        {
+            return getDocumentByID(documentID);
+        }*/
     }
 }
