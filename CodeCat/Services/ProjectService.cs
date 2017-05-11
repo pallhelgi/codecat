@@ -15,7 +15,16 @@ namespace CodeCat.Services
     {
         public ProjectModel project;
 
+<<<<<<< HEAD
         //Returns all the projects a user has access to both which he created and others shared with him
+=======
+        public ProjectService(IAppDataContext context) : base(context)
+        {
+            // db = context ?? new ApplicationDbContext();
+        }
+
+        //Returns all the projects a user has access to
+>>>>>>> d24407fc912127918f8e7a7dff967bf95e682033
         public List<ProjectModel> getAllProjects(string userName)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == userName);

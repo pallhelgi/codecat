@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+
 using CodeCat.Services;
 
 namespace CodeCat.Controllers
@@ -11,9 +13,9 @@ namespace CodeCat.Controllers
     public class UserController : Controller
     {
 
-        private UserService userService = new UserService();
-        private ProjectService projectService = new ProjectService();
-        private ServiceBase baas = new ServiceBase();
+        private UserService userService = new UserService(null);
+        private ProjectService projectService = new ProjectService(null);
+        private ServiceBase baas = new ServiceBase(null);
         // GET: User
         public ActionResult Index()
         {

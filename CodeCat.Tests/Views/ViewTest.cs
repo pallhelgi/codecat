@@ -8,13 +8,14 @@ namespace CodeCat.Tests.Views
 {
     public class ViewTest
     {
-        public void ViewTest();
+        public void ViewTester()
         {
             // Arrange:
 
             // ACT:
 
             // Assert:
+            return;
         }
     }
 }
