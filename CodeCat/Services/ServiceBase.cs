@@ -14,11 +14,11 @@ namespace CodeCat.Services
     public class ServiceBase
     {
         //Connecting the serviceBase to the appDbContext class which speaks to the database(sql)
-        public ApplicationDbContext _db; //= new ApplicationDbContext();
+        public readonly IAppDataContext _db; //= new ApplicationDbContext();
 
-        public ServiceBase()
+        public ServiceBase(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
+            _db = context ?? new ApplicationDbContext();
         }
 
 
