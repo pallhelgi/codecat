@@ -525,7 +525,13 @@ caption {
 }
 
 .our-breadcrumb a {
-    
+    color: #002986;
+    font-weight: bold;
+}   
+
+.our-breadcrumb a:hover {
+    color: blue;
+    text-decoration: none;
 }   
 
 .breadcrumb-div {
@@ -541,10 +547,6 @@ caption {
 
 .breadcrumb-item-active {
     font-weight: bold;
-}
-
-.breadcrumb-div a {
-    font-weight: normal;
 }
 
 .document-breadcrumb-div {
