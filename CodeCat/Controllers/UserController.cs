@@ -51,9 +51,9 @@ namespace CodeCat.Controllers
         }
 
         [HttpPost]
-        public ActionResult share(UserModel user)
+        public ActionResult share(ApplicationUser user)
         {
-            if (user.email != null)
+            if (user.Email != null)
             {
                 //The project ID is retrieved from the url
                 var url = Url.RequestContext.RouteData.Values["id"].ToString();
@@ -62,29 +62,29 @@ namespace CodeCat.Controllers
                 int check = 0;
                 foreach(var us in userService._db.Users)
                 {
-                    if(us.Email == user.email)
+                    if(us.Email == user.Email)
                     {
                         check++;
                     }
                 }
                 if(check == 0)
                 {
-                    ModelState.AddModelError("email", "Uh oh, this user does not exist!");
+                    ModelState.AddModelError("Email", "Uh oh, this user does not exist!");
                     return View(user);
                 }
 
                 //Prevent double share
-                List<ProjectModel> userProjects = projectService.getAllProjects(user.email);
+                List<ProjectModel> userProjects = projectService.getAllProjects(user.Email);
                 foreach(var proj in userProjects)
                 {
                     if(proj.name == userService.getProjectByID(urlInt).name)
                     {
-                        ModelState.AddModelError("email", "This user has already access to this project");
+                        ModelState.AddModelError("Email", "This user already has access to this project!");
                         return View(user);
                     }
                 }
 
-                userService.share(user.email, urlInt);
+                userService.share(user.Email, urlInt);
                 return RedirectToAction("../Dashboard/Dashboard");
             }
 
@@ -93,7 +93,7 @@ namespace CodeCat.Controllers
         }
 
 
-        public ActionResult signUp()
+        /*public ActionResult signUp()
         {
             return View();
         }
@@ -103,7 +103,7 @@ namespace CodeCat.Controllers
         {
             //TODO
             //TODO
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 UserModel newUser = new UserModel();
                 newUser.ID = user.ID;
@@ -118,7 +118,7 @@ namespace CodeCat.Controllers
             }
 
             return View(user);
-        }
+        }*/
 
         public ActionResult forgottenPassword()
         {
