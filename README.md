@@ -22,9 +22,9 @@ The user is greeted with a simple and friendly front page, where he can choose t
 When the user opens a project he enters a Document Dashboard, where he has an overview of all the documents within that project. There he can create additional documents or open existing documents. How nice!
 Opening a document brings the user to the fantastic editor where he can finally write his code! If another user has been invited to collaborate on the project and both are logged in with that document open at the same time, they can see what the other one is writing in real time. Amazing, we know!
 
-**MYND AF FRONT PAGE**
-![alt text](https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18387227_120332000748943921_1302218760_n.jpg)
+## Front pag
 
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18387227_120332000748943921_1302218760_n.jpg" alt="Front Page" width="350"/>
 
 The 'Sign In' and 'Sign Up' features are pretty straight forward fill out forms. No need for superfluous information, we only request an email address and a password, but promise never to spam you with emails!
 
