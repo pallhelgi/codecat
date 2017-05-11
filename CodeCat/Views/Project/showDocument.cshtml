@@ -4,9 +4,13 @@
     ViewBag.Title = "Project::" + Model.docProjectName + " Document::" + Model.documentName;
 }
 
-<h2>@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @Html.ActionLink(Model.docProjectName, "../Project/ShowProject", new { id = Model.document.projectID }) / @Model.documentName</h2>
 
+<div class="breadcrumb-div document-breadcrumb-div">
+    <h3 class="our-breadcrumb breadcrumb-item-active">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @Html.ActionLink(Model.docProjectName, "../Project/ShowProject", new { id = Model.document.projectID }) / @Model.documentName</h3>
+</div>
 
+<input type="hidden" id="currentUser" name="currentUser" value="@HttpContext.Current.User.Identity.Name" />
+    
 
 <!--The Ace Editor begin-->
 <div class="container">
@@ -27,6 +31,7 @@
      </div>
 }
 
+
 <script>
     $("form").click(function () {
             console.log("Hallo");
@@ -42,6 +47,7 @@
                 window.location.href = "../../Document/ShowDocument/" + docID;
             };
     });
+   
 
 
     $(function () {
@@ -78,14 +84,75 @@
 
         });
     });
+
 </script>
 
+<!-- Modal window -->
+<button id="myBtn">Keyboard shortcuts</button>
+
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <table>
+            <caption>Keyboard shortcuts</caption>
+            <tr>
+                <th>Windows/Linux</th>
+                <th>Mac</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Ctrl-D</td>
+                <td>Command-D</td>
+                <td>Remove line</td>
+            </tr>
+            <tr>
+                <td>Ctrl-F</td>
+                <td>Command-F</td>
+                <td>Find</td>
+            </tr>
+            <tr>
+                <td>Ctrl-H</td>
+                <td>Command-Option-F</td>
+                <td>Replace</td>
+            </tr>
+            <tr>
+                <td>Ctrl-K</td>
+                <td>Command-G</td>
+                <td>Find next</td>
+            </tr>
+            <tr>
+                <td>Ctrl-Shift-K</td>
+                <td>Command-Shift-G</td>
+                <td>Find previous</td>
+            </tr>
+            <tr>
+                <td>Tab</td>
+                <td>Tab</td>
+                <td>Indent</td>
+            </tr>
+            <tr>
+                <td>Shift-Tab</td>
+                <td>Shift-Tab</td>
+                <td>Outdent</td>
+            </tr>
+            <tr>
+                <td>Ctrl-,</td>
+                <td>Command-,</td>
+                <td>Show the settings menu</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Modal window ends -->
 
 @section scripts
 {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="~/Scripts/jquery.signalR-2.2.2.js"></script>
     <script src="~/signalr/hubs"></script>
+
     <script>
 
         var documentID = @Model.document.ID;
@@ -96,9 +163,6 @@
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
 
-      
-
-
         var codeHub = $.connection.codeHub;
         var silent = false;
 
@@ -107,8 +171,16 @@
 
             silent = true;
             editor.getSession().getDocument().applyDelta(changeData);
+            mytestfunc(changeData);
             silent = false;
         };
+        var mytestfunc = function(e){
+            console.log(e);
+            var row = e.start.row;
+            var column = e.start.column;
+            var user = $("#currentUser").val();
+            console.log(user);
+        }
 
         $.connection.hub.start().done(function () {
 
@@ -122,6 +194,70 @@
                 codeHub.server.onChange(obj, documentID);
             });
         });
+
+        // modal window functions
+        var modal = document.getElementById('myModal');
+
+        var btn = document.getElementById("myBtn");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        // auto-save feature
+        function myTimer() {
+            console.log(' each 1 second...');
+            var DocumentModel = {};
+
+            DocumentModel.content = editor.getSession().getValue();
+            DocumentModel.ID = @Model.document.ID;
+                
+            var jsonData = JSON.stringify({
+                DocumentModel : DocumentModel
+            });
+
+            console.log("hi from ajax");
+
+            console.log(jsonData);
+
+            $.ajax({
+                type: 'POST',
+                url: '/Document/Save',
+                data: jsonData,
+                contentType: "application/json; charset=utf-8",
+                //  method: 'POST',
+                dataType: "json",
+                success: function (response) {
+
+                    var result = response.d;
+                    if (result == "success") {
+                        $("#msg").html("New record addded successfully  :)").css("color", "green");
+                    }
+
+                    console.log("hi from ajax success");
+                    console.log("hi" + response);
+                }, error: function (response) {
+                    console.log("hi from ajax error");
+                    console.log(response);
+
+                }
+            });
+            return false;
+        }
+
+        var myVar = setInterval(function(){ myTimer() }, 1000);
+       
     </script>
 }
 

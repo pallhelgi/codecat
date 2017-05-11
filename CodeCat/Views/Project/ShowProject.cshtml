@@ -3,8 +3,16 @@
     ViewBag.Title = Model.projectName;
 }
 
+<!--
+<ol class="breadcrumb my-breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard")</li>
+    <li class="breadcrumb-item-active">@ViewBag.Title</li>
+</ol>
+-->
 
-<h2>@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @ViewBag.Title</h2>
+<div class="breadcrumb-div">
+    <h3 class="our-breadcrumb breadcrumb-item-active">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @ViewBag.Title</h3>
+</div>
 
 <div class="dashboard-wrapper" id="dashboard-wrapper">
     <!--Create new document button-->
@@ -27,7 +35,6 @@
                     <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
                 </div>
                 <p>Create a new document</p>
-            
             </button>
     </section>
 
@@ -36,25 +43,22 @@
     <!--List of projects-->
         foreach (var document in Model.documents)
         {
-        <section class="col-sm-4 project-box">
+            <section class="col-sm-4 project-box">
+                <section class="well project-box-inner">
+                    <div>
+                        <h3>@Html.DisplayFor(modelItem => document.name)</h3>
+                        <!--<p>ID: @Html.DisplayFor(modelItem => document.ID)</p>-->
 
-            <section class="well project-box-inner">
-
-                <div>
-                    <h3>@Html.DisplayFor(modelItem => document.name)</h3>
-                    <!--<p>ID: @Html.DisplayFor(modelItem => document.ID)</p>-->
-
-                    <div class="open-share-doc">
-                        <br />
-                        <br />
-                        @Html.ActionLink("Open", "../Project/ShowDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-fab" })
-                        @Html.ActionLink("Delete", "../Project/DeleteDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-fab" })
+                        <div class="open-share-doc">
+                            <br />
+                            <br />
+                            @Html.ActionLink("Open", "../Project/ShowDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-fab" })
+                            @Html.ActionLink("Delete", "../Project/DeleteDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-fab", onclick = "return confirm('Are you sure you wish to delete this document?');" })
+                        </div>
                     </div>
-                </div>
+                </section>
             </section>
-        </section>
         }
     }
-
 </div>
 

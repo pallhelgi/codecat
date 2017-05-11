@@ -32,11 +32,17 @@ namespace CodeCat.Controllers
 
         public ActionResult deleteProject(ProjectModel project)
         {
-            int projectID = project.ID;
+            try {
+                int projectID = project.ID;
 
-            projectService.deleteProject(projectID);
+                projectService.deleteProject(projectID);
 
-            return RedirectToAction("Dashboard");
+                return RedirectToAction("Dashboard");
+            }
+            catch
+            {
+                return Content(Boolean.FalseString);
+            }
         }
 
         [HttpPost]
@@ -99,13 +105,11 @@ namespace CodeCat.Controllers
             return View();
         }
 
-        public ActionResult Dashboard()
+        [HttpGet]
+        public ActionResult Dashboard(int id = 3)
         {
             DashboardViewModel viewModel = new DashboardViewModel();
-            //testClass test = new testClass();
-            //viewModel.projects = projectService.getUserProjects(User.Identity.Name);
-            //viewModel.projects = test.SeedProject();
-            viewModel.projects = projectService.getAllProjects(User.Identity.Name);
+            viewModel.projects = projectService.getProjectFiltered(User.Identity.Name, id);
 
             return View(viewModel);
         }

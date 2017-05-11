@@ -70,6 +70,7 @@ namespace CodeCat.Controllers
 
         // public ActionResult showDocument()
 
+        //This is probably not in use
         public ActionResult getDocuments(int projectID)
         {
             projectID = 1;
