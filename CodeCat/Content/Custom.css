@@ -125,6 +125,7 @@ h2 {
 
 /*Settings dropdown list on Dashboard*/
 .settings-dropdown {
+    border-radius: 5px;
     position: relative;
     background-color: #3c3a3a;
     border: 0px;
@@ -134,7 +135,6 @@ h2 {
 /*Dropdown list*/
 .settings-dropdown:hover, 
 .settings-dropdown:focus,
-.settings-dropdown:visited, 
 .settings-dropdown:active {
     background-color: #575757;
     color: white;
@@ -403,14 +403,19 @@ footer {
     bottom: 50px;
 }
 
-/* Buttons on project box*/
+/* Buttons*/
 .btn-fab {
-    background-color: #fab;
-    color: black;
+    background-color: #3c3a3a;
+    color: white;
 }
 
-.btn-fab:hover {
+a.btn-fab {
     color: white;
+}
+
+a.btn-fab:hover {
+    color: #d0d0d0;
+    background: #575757;
 }
 
 /*404 page*/
@@ -437,4 +442,31 @@ footer {
 }
 
 .not-found-page button {
+}
+
+.our-breadcrumb {
+    height: 5px;
+}
+
+.our-breadcrumb a {
+    color: blue;
+}   
+
+.breadcrumb-div {
+    padding-top: 70px;
+    display: block;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.breadcrumb-item-active {
+    font-weight: bold;
+}
+
+.breadcrumb-div a {
+    font-weight: normal;
 }
