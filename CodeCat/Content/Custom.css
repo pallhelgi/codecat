@@ -437,8 +437,20 @@ footer {
 }
 
 .open-share-doc {
-    position: absolute;
+    /*position: absolute;*/
     right: 40px;
+    bottom: 50px;
+}
+
+/*Delete Button In Dashboard*/
+.btn-delete-project {
+    width: 40px;
+    height: 40px;
+    background: url(/Images/delete.png) no-repeat;;
+    z-index: 50;
+    float: right;
+    background-size: contain;
+    text-indent: -9999px;
     bottom: 50px;
 }
 
