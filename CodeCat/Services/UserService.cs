@@ -27,7 +27,6 @@ namespace CodeCat.Services
 
         }
 
-
         public List<ApplicationUser> getUsersSharingADocument(DocumentModel document)
         {
             var result = from user in _db.Users

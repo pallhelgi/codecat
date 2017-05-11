@@ -103,6 +103,7 @@ namespace CodeCat.Services
                          select docs;
 
             List<DocumentModel> documents = result.ToList();
+            documents.Reverse();
 
             return documents;
         }
