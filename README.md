@@ -19,15 +19,25 @@ Online collaborative coding program where edits made by collaborators are seen i
 
 ## Sneak peak
 Here is a sneak peak on the program with the main funtionalities.
+
 The user is greeted with a simple and friendly front page.
+
 There you can either sign in with an old account or create a brand new one!
+
 **MYND AF FRONT PAGE**
+
 The 'Sign In' and 'Sign Up' features are pretty straight forward fill out forms.
+
 **MYND AF SIGN IN OG SIGN UP**
+
 When the user has signed in he is able to create some cool projects with bunch of documents to write some code in. If he gets lonely he can always share the project with his friends so they can code together. No cat should be lonely!
+
 **EINHVER SCREEN SHOT AF VIRKNINNI**
+
 Don't worry if you accidentally go astray because this little kitten will help you find your way back to the homepage.
+
 **404 MYND**
+
 
 ## Architecture layout - describe how the program is built with MVC
 The program was implemented with Model-View-Controller (MVC) in ASP.NET web form.
