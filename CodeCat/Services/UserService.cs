@@ -30,12 +30,22 @@ namespace CodeCat.Services
 
         public List<ApplicationUser> getUsersSharingADocument(int projID)
         {
-            var result = from user in _db.Users
+            var result = from u in _db.Users
                          join con in _db.UserProjectModel
-                         on user.Id equals con.UserID
+                         on u.Id equals con.UserID
                          where con.ProjectID == projID
-                         select user;
+                         select u;
+
+            var resultOwner = from u in _db.Users
+                              join proj in _db.ProjectModel
+                              on u.Id equals proj.creatorUserID
+                              where proj.ID == projID
+                              select u;
+
             List<ApplicationUser> users = result.ToList();
+            ApplicationUser user = resultOwner.ToList().FirstOrDefault();
+
+            users.Add(user);
 
             return users;
         }
