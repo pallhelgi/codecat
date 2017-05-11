@@ -442,11 +442,25 @@ footer {
 /*About Us*/
 
 /*Pictures*/
+
+
 .img-profile {
     height: 250px;
     width: 200px;
+    border-radius: 15%;
+    align-content: center;
 }
 
-.about-ul {
-    list-style-type: none;
+.about-wrapper {
+    float: right;
+    align-content: center;
+}
+
+.about-profile {
+    align-content: center;
+    margin: 2px 2px 2px 2px;
+}
+
+.about-h3 {
+    
 }
