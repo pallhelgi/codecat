@@ -62,3 +62,16 @@
     }
 </div>
 
+<div>
+    @foreach(var user in Model.sidebar.users)
+    {
+        if(user.Email == User.Identity.Name)
+        {
+            <p>Owner: @user.Email</p>
+        }
+    }
+    @foreach(var user in Model.sidebar.users)
+    {
+        <p>@user.Email</p>
+    }
+</div>

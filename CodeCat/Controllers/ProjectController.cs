@@ -13,6 +13,7 @@ namespace CodeCat.Controllers
     {
         ProjectService projectService = new ProjectService();
         DocumentService documentService = new DocumentService();
+        UserService userService = new UserService();
         // GET: Project
         public ActionResult Index()
         {
@@ -31,10 +32,15 @@ namespace CodeCat.Controllers
         public ActionResult showProject(int id)
         {
             ProjectViewModel viewModel = new ProjectViewModel();
+            SideBarViewModel sideView = new SideBarViewModel();
 
             viewModel.documents = projectService.getProject(id);
             ProjectModel model = projectService.getProjectById(id);
             viewModel.projectName = model.name;
+
+            sideView.users = userService.getUsersSharingADocument(model.ID);
+            viewModel.sidebar = sideView;
+
             return View(viewModel);
         }
 

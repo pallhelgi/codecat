@@ -8,6 +8,6 @@ namespace CodeCat.Models.ViewModels
 {
     public class SideBarViewModel
     {
-        public List<UserModel> users;
+        public List<ApplicationUser> users;
     }
 }
