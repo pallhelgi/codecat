@@ -16,6 +16,7 @@ namespace CodeCat.Services
             _db = new ApplicationDbContext();
         }
 
+        //Sharing a project with another user
         public void share(string email, int projectID)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
@@ -30,6 +31,7 @@ namespace CodeCat.Services
 
         }
 
+        //retursn a list of usres who are part of a specfic project
         public List<ApplicationUser> getUsersSharingADocument(int projID)
         {
             var result = from u in _db.Users
@@ -52,6 +54,7 @@ namespace CodeCat.Services
             return users;
         }
 
+        //Returns a list of users
         public List<ApplicationUser> getUsers()
         {
             return _db.Users.ToList();
