@@ -1,4 +1,4 @@
-### CodeCat
+# CodeCat
 Because Code::Cat was not allowed...
 
 ## Features in Code::Cat
