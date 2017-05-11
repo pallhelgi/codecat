@@ -598,3 +598,25 @@ caption {
     margin: 0px 0px 25px 0px;
 }
 
+/*Layout for sidebar list of users in a project*/
+.sidebar-view-list {
+    padding: 1em;
+    text-align: center;
+    background-color: #c8c8c8;
+    width: 13em;
+    position: absolute;
+    right: 1em;
+    top: 11.5em;
+}
+
+.sidebar-view-owner {
+    font-weight: bold;
+}
+
+.sidebar-view-users {
+}
+
+.sidebar-con {
+    font-weight: bold;
+    font-size: 1.5em;
+}

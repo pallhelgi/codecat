@@ -62,16 +62,20 @@
     }
 </div>
 
-<div>
+
+
+<div class="sidebar-view-list">   
+    <p class="sidebar-con">Contributors</p>
     @foreach(var user in Model.sidebar.users)
     {
-        if(user.Email == User.Identity.Name)
+        if(Model.project.creatorUserID == user.Id)
         {
-            <p>Owner: @user.Email</p>
+            <p class="sidebar-view-owner">Owner: @user.Email</p>
+        }
+        else
+        {
+            <p class="sidebar-view-users">@user.Email</p>
         }
     }
-    @foreach(var user in Model.sidebar.users)
-    {
-        <p>@user.Email</p>
-    }
+    
 </div>
