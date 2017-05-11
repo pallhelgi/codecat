@@ -11,8 +11,10 @@ namespace CodeCat.Controllers
 {
     public class ProjectController : Controller
     {
-        ProjectService projectService = new ProjectService(null);
-        DocumentService documentService = new DocumentService(null);
+        ProjectService projectService = new ProjectService();
+        DocumentService documentService = new DocumentService();
+        UserService userService = new UserService();
+
         // GET: Project
         public ActionResult Index()
         {
@@ -31,10 +33,17 @@ namespace CodeCat.Controllers
         public ActionResult showProject(int id)
         {
             ProjectViewModel viewModel = new ProjectViewModel();
+            SideBarViewModel sideView = new SideBarViewModel();
 
             viewModel.documents = projectService.getProject(id);
             ProjectModel model = projectService.getProjectById(id);
             viewModel.projectName = model.name;
+
+            sideView.users = userService.getUsersSharingADocument(model.ID);
+            viewModel.sidebar = sideView;
+
+            viewModel.project = model;
+
             return View(viewModel);
         }
 
@@ -51,6 +60,8 @@ namespace CodeCat.Controllers
             viewModel.documentName = model.name;
             ProjectModel p5Model = projectService.getProjectById(model.projectID);
             viewModel.docProjectName = p5Model.name;
+
+            
             
             return View(viewModel);
         }
@@ -83,7 +94,7 @@ namespace CodeCat.Controllers
 
         public ActionResult deleteDocument(DocumentModel document)
         {
-            int projectID = documentService.getProjectByDocumentID(document.ID);
+            int projectID = documentService.getProjectIDByDocumentID(document.ID);
             documentService.deleteDocument(document.ID);
 
             return RedirectToAction("ShowProject/" + projectID);

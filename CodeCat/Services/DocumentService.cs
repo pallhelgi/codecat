@@ -6,11 +6,13 @@ using CodeCat.Models;
 
 namespace CodeCat.Services
 {
-    public class DocumentService : ServiceBase
+    public class DocumentService
     {
-        public DocumentService(IAppDataContext context) : base(context)
-        {
+        ApplicationDbContext _db;
 
+        public DocumentService()
+        {
+            _db = new ApplicationDbContext();
         }
 
         public DocumentModel document;
@@ -63,9 +65,16 @@ namespace CodeCat.Services
             _db.SaveChanges();
         }
 
-        /*public DocumentModel getDocumentByID(int documentID)
+        public int getProjectIDByDocumentID(int documentID)
         {
-            return getDocumentByID(documentID);
-        }*/
+            DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+            int projectID = document.projectID;
+            return projectID;
+        }
+
+        public DocumentModel getDocumentByID(int documentID)
+        {
+            return _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace CodeCat.Controllers
 {
     public class DocumentController : Controller
     {
-        DocumentService docService = new DocumentService(null);
+        DocumentService docService = new DocumentService();
         // GET: Document
         public ActionResult Index()
         {

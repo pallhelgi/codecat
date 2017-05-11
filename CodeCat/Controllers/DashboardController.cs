@@ -13,9 +13,9 @@ namespace CodeCat.Controllers
     [Authorize]
     public class DashboardController : Controller
     {
-        ProjectService projectService = new ProjectService(null);
-        UserService userService = new UserService(null);
-        DocumentService docService = new DocumentService(null);
+        ProjectService projectService = new ProjectService();
+        UserService userService = new UserService();
+        DocumentService docService = new DocumentService();
         // GET: Dashboard
         public ActionResult Index()
         {
