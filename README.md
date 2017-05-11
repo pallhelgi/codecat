@@ -29,8 +29,8 @@ Opening a document brings the user to the fantastic editor where he can finally 
 The 'Sign In' and 'Sign Up' features are pretty straight forward fill out forms. No need for superfluous information, we only request an email address and a password, but promise never to spam you with emails!
 
 ## Sign up and sign in
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18425841_120332000717051007_953507242_n.jpg" alt="Register for a new account" width="350"/>
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18447901_120332000717569579_1117722544_n.jpg" alt="Sign up, friend" width="350"/>
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18425841_120332000717051007_953507242_n.jpg" alt="Register for a new account" width="200"
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18447901_120332000717569579_1117722544_n.jpg" alt="Sign up, friend" width="0"/>
 
 When the user has signed in he is able to create some cool projects with bunch of documents to write some code in. If he gets lonely he can always share the project with his friends so they can code together. No code::cat should be lonely!
 
