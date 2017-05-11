@@ -263,6 +263,16 @@ footer {
     color: black; 
 }
 
+.create-new-doc-box {
+    height: 90px;
+    width: 290px;
+}
+
+#create-new-doc-box {
+    width: 290px;
+    padding-right: -10px;
+}
+
 .create-new-project-box p {
     color: black;
     text-decoration: none;
@@ -340,7 +350,8 @@ footer {
 
 /*Create a new doc button/box on project page*/
 #create-new-doc {
-    width: 100%;
+    width: 220px;
+    height: 249px;
 }
 
 .project-box a {
