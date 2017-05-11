@@ -1,4 +1,4 @@
-﻿@model CodeCat.Models.UserModel
+﻿@model CodeCat.Models.ApplicationUser
 @{
     ViewBag.Title = "AddUser";
 }
@@ -17,9 +17,8 @@
         <div class="form-group" >
             <label for="email" class="control-label">Email address</label>
             
-            @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
-            <br />
-            @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
     </div>
     <input type="submit" class="btn btn-fab" value="Send invitation" />
