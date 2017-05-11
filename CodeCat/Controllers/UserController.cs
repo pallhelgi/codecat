@@ -13,6 +13,7 @@ namespace CodeCat.Controllers
 
         private UserService userService = new UserService();
         private ProjectService projectService = new ProjectService();
+        private ServiceBase baas = new ServiceBase();
         // GET: User
         public ActionResult Index()
         {
@@ -58,9 +59,17 @@ namespace CodeCat.Controllers
                 var url = Url.RequestContext.RouteData.Values["id"].ToString();
                 int urlInt = int.Parse(url);
 
-                //Check if user is already in database
-                if(projectService.getuserByID(user.ID) == null)
+                int check = 0;
+                foreach(var us in userService._db.Users)
                 {
+                    if(us.Email == user.email)
+                    {
+                        check++;
+                    }
+                }
+                if(check == 0)
+                {
+                    ModelState.AddModelError("email", "Uh oh, this user does not exist!");
                     return View(user);
                 }
 
@@ -70,6 +79,7 @@ namespace CodeCat.Controllers
                 {
                     if(proj.name == userService.getProjectByID(urlInt).name)
                     {
+                        ModelState.AddModelError("email", "This user has already access to this project");
                         return View(user);
                     }
                 }

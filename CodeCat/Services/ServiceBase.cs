@@ -181,7 +181,8 @@ namespace CodeCat.Services
 
         public UserModel getuserByID(int userID)
         {
-            return null;
+            UserModel user = _db.UserModel.FirstOrDefault(x => x.ID == userID);
+            return user;
         }
 
         public int getProjectByDocumentID(int documentID)
