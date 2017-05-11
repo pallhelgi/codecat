@@ -62,28 +62,28 @@ namespace CodeCat.Services
                     
                 case 3: //By newest
                     var newest = from lis in list
-                                     orderby lis.ID ascending
+                                     orderby lis.ID descending
                                      select lis;
 
                     return newest.ToList();
                     
                 case 4: //By oldest
                     var oldest = from lis in list
-                                 orderby lis.ID descending
+                                 orderby lis.ID ascending
                                  select lis;
 
                     return oldest.ToList();
 
                 case 5: //By creator
                     var creator = from lis in list
-                                 orderby lis.creatorUserID == user.Id
+                                 orderby lis.creatorUserID != user.Id
                                  select lis;
 
                     return creator.ToList();
 
                 case 6: //By share
                     var share = from lis in list
-                                  orderby lis.creatorUserID != user.Id
+                                  orderby lis.creatorUserID == user.Id
                                   select lis;
 
                     return share.ToList();
@@ -115,14 +115,12 @@ namespace CodeCat.Services
         }
 
         //Adds a projects to the database
-        public bool addProject(ProjectModel project, string username)
+        public void addProject(ProjectModel project, string username)
         {
             project.creatorUserID = getProjectCreatorByID(username);
 
             _db.ProjectModel.Add(project);
             _db.SaveChanges();
-
-            return true;
         }
 
         //Returns projects creator id
@@ -135,7 +133,7 @@ namespace CodeCat.Services
 
         //Deletes a projects, including all documents within it
         //and all connections to users in the connection table
-        public bool deleteProject(int projectID)
+        public void deleteProject(int projectID)
         {
             var deleteDocuments = from documents in _db.DocumentModel
                                   where documents.projectID == projectID
@@ -173,8 +171,6 @@ namespace CodeCat.Services
             }
 
             _db.SaveChanges();
-
-            return true;
         }
 
         //Returns a projects based on it's ID
