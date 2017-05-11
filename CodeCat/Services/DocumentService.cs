@@ -6,12 +6,14 @@ using CodeCat.Models;
 
 namespace CodeCat.Services
 {
-    public class DocumentService : ServiceBase
+    public class DocumentService
     {
-        /*public DocumentService(IAppDataContext context) : base(context)
-        {
+        public ApplicationDbContext _db;
 
-        }*/
+        public DocumentService()
+        {
+            _db = new ApplicationDbContext();
+        }
 
         public DocumentModel document;
 
