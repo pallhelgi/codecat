@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace CodeCat.Models
 {
@@ -19,12 +20,30 @@ namespace CodeCat.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    /*public interface IAppDataContext
     {
-        public DbSet<ProjectModel> ProjectModel { get; set; }
-        public DbSet<DocumentModel> DocumentModel { get; set; }
-        public DbSet<UserModel> UserModel { get; set; }
-        public DbSet<UserProjectModel> UserProjectModel { get; set; }
+        IDbSet<UserModel> UserModel { get; set; }
+        IDbSet<DocumentModel> DocumentModel { get; set; }
+        IDbSet<ProjectModel> ProjectModel { get; set; }
+        IDbSet<UserProjectModel> UserProjectModel { get; set; }
+        IDbSet<ApplicationUser> Users { get; set; }
+
+        // IDbSet<UserModel> Users { get; set; }
+
+        int SaveChanges();
+
+        //System.Data.Entity.Infrastructure.DbEntityEntry Entry(object entity);
+        
+    }*/
+
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>//, IAppDataContext
+    {
+        public IDbSet<ProjectModel> ProjectModel { get; set; }
+        public IDbSet<DocumentModel> DocumentModel { get; set; }
+        public IDbSet<UserModel> UserModel { get; set; }
+        public IDbSet<UserProjectModel> UserProjectModel { get; set; }
+      //  public IDbSet<ApplicationUser> ApplicationUser { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

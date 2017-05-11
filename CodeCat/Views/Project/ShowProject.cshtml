@@ -10,7 +10,7 @@
 </ol>
 -->
 
-<div class="breadcrumb-div">
+<div class="breadcrumb-div" id="breadcrumb-div-project">
     <h3 class="our-breadcrumb breadcrumb-item-active">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @ViewBag.Title</h3>
 </div>
 
@@ -62,3 +62,20 @@
     }
 </div>
 
+
+
+<div class="sidebar-view-list">   
+    <p class="sidebar-con">Contributors: </p>
+    @foreach(var user in Model.sidebar.users)
+    {
+        if(Model.project.creatorUserID == user.Id)
+        {
+            <p class="sidebar-view-owner">Owner: @user.Email</p>
+        }
+        else
+        {
+            <p class="sidebar-view-users">@user.Email</p>
+        }
+    }
+    
+</div>

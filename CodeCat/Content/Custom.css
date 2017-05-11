@@ -196,9 +196,28 @@ h2 {
 /*Button to save a document in ACE editor*/
 /*Why oh why will it not behave??*/
 .editor-save-div {
-    position: relative;
-    width: 150px;
-    padding-top: 605px;
+    width: 60px;
+    padding-top: 520px;
+    display: inline-block;
+}
+
+.editor-save-button {
+    width: 60px;
+}
+
+#myBtn {
+    /*margin-left: 900px;*/
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 35%;
+}
+
+.myBtn-div {
+    display: inline-block;
+}
+
+/*Button to get list of keyboard shortcuts on ACE*/
+.keyboard-shortcuts-button {
 }
 
 /*Login page*/
@@ -441,7 +460,8 @@ footer {
     color: white;
 }
 
-a.btn-fab {
+a.btn-fab,
+a.btn-fab:visited {
     color: white;
 }
 
@@ -534,6 +554,7 @@ caption {
 
 .our-breadcrumb {
     height: 5px;
+    display: inline;
 }
 
 .our-breadcrumb a {
@@ -546,8 +567,12 @@ caption {
     text-decoration: none;
 }   
 
+#breadcrumb-div-project {
+    padding-top: 60px;
+}
+
 .breadcrumb-div {
-    padding-top: 70px;
+    padding-top: 40px;
     display: block;
     border: none;
     color: black;
@@ -585,3 +610,25 @@ caption {
     margin: 0px 0px 25px 0px;
 }
 
+/*Layout for sidebar list of users in a project*/
+.sidebar-view-list {
+    padding: 1em;
+    text-align: center;
+    background-color: #c8c8c8;
+    width: 13em;
+    position: absolute;
+    right: 1em;
+    top: 11.5em;
+}
+
+.sidebar-view-owner {
+    font-weight: bold;
+}
+
+.sidebar-view-users {
+}
+
+.sidebar-con {
+    font-weight: bold;
+    font-size: 1.5em;
+}

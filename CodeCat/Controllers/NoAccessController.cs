@@ -13,7 +13,7 @@ namespace NoDirectAccess
                         filterContext.HttpContext.Request.Url.Host != filterContext.HttpContext.Request.UrlReferrer.Host)
             {
                 filterContext.Result = new RedirectToRouteResult(new
-                               RouteValueDictionary(new { controller = "Home", action = "Index", area = "" }));
+                               RouteValueDictionary(new { controller = "Error", action = "PageNotFound", area = "" }));
             }
         }
     }

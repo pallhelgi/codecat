@@ -14,12 +14,12 @@ namespace CodeCat.Services
     public class ServiceBase
     {
         //Connecting the serviceBase to the appDbContext class which speaks to the database(sql)
-        public ApplicationDbContext _db; //= new ApplicationDbContext();
+        /*public  ApplicationDbContext _db; //= new ApplicationDbContext();
 
         public ServiceBase()
         {
-            _db = new ApplicationDbContext();
-        }
+            _db =  new ApplicationDbContext();
+        }*/
 
 
         //gets a list of projects connected to a specific user
@@ -52,11 +52,11 @@ namespace CodeCat.Services
             return lis;
         }*/
 
-        public ProjectModel getProjectByID(int projectID)
+        /*public ProjectModel getProjectByID(int projectID)
         {
           
             return _db.ProjectModel.FirstOrDefault(x => x.ID == projectID);
-        }
+        }*/
 
         //gets a list of projects created by a specific user
         /*public List<ProjectModel> getUserProjectsFromDB(string username)
@@ -164,10 +164,10 @@ namespace CodeCat.Services
             return documents;
         }*/
 
-        public DocumentModel getDocumentByID(int documentID)
+        /*public DocumentModel getDocumentByID(int documentID)
         {
             return _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
-        }
+        }*/
 
         //adds a doccument to database
         /*public bool addDocumentToDB(DocumentModel document)
@@ -178,18 +178,18 @@ namespace CodeCat.Services
             return true;
         }*/
 
-        public UserModel getuserByID(int userID)
+        /*public UserModel getuserByID(int userID)
         {
             UserModel user = _db.UserModel.FirstOrDefault(x => x.ID == userID);
             return user;
-        }
+        }*/
 
-        public int getProjectByDocumentID(int documentID)
+        /*public int getProjectIDByDocumentID(int documentID)
         {
             DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
             int projectID = document.projectID;
             return projectID;
-        }
+        }*/
 
         /*public string getProjectCreatorByID(string username)
         {

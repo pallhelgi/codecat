@@ -11,9 +11,23 @@ using Microsoft.AspNet.Identity;
 
 namespace CodeCat.Services
 {
-    public class ProjectService : ServiceBase
+    public class ProjectService
     {
+        ApplicationDbContext _db;
+
+        public ProjectService()
+        {
+            _db = new ApplicationDbContext();
+        }
+
         public ProjectModel project;
+
+        //Returns all the projects a user has access to both which he created and others shared with him
+
+        /*public ProjectService(IAppDataContext context) : base(context)
+        {
+            // db = context ?? new ApplicationDbContext();
+        }*/
 
         //Returns all the projects a user has access to
         public List<ProjectModel> getAllProjects(string userName)
