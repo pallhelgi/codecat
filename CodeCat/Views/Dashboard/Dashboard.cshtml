@@ -58,7 +58,11 @@
                 <section class="well project-box-inner">
         
                     <div>
+                        <div>
+                            @Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class = "btn btn-delete-project", onclick = "return confirm('Are you sure you wish to delete this project?');" })
+                        </div>
                         <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
+                        
                         <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
                         @if (User.Identity.GetUserId() == itemj.creatorUserID)
                         {
@@ -74,7 +78,7 @@
                             <br />
                             @Html.ActionLink("Open", "../Project/ShowProject", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
                             @Html.ActionLink("Share", "../User/Share", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
-                            @Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class="btn btn-fab", onclick = "return confirm('Are you sure you wish to delete this project?');" })
+                            @*@Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class="btn btn-delete-project", onclick = "return confirm('Are you sure you wish to delete this project?');" })*@
                         </div>
                     </div>
                 </section>
