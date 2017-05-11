@@ -75,9 +75,10 @@ namespace CodeCat.Controllers
 
                 //Prevent double share
                 List<ProjectModel> userProjects = projectService.getAllProjects(user.Email);
-                foreach(var proj in userProjects)
+
+                foreach (var proj in userProjects)
                 {
-                    if(proj.name == userService.getProjectByID(urlInt).name)
+                    if(proj.name == projectService.getProjectById(urlInt).name)
                     {
                         ModelState.AddModelError("Email", "This user already has access to this project!");
                         return View(user);

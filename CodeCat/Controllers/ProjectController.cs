@@ -83,7 +83,7 @@ namespace CodeCat.Controllers
 
         public ActionResult deleteDocument(DocumentModel document)
         {
-            int projectID = documentService.getProjectByDocumentID(document.ID);
+            int projectID = documentService.getProjectIDByDocumentID(document.ID);
             documentService.deleteDocument(document.ID);
 
             return RedirectToAction("ShowProject/" + projectID);

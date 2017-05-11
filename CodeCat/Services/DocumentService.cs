@@ -58,9 +58,16 @@ namespace CodeCat.Services
             _db.SaveChanges();
         }
 
-        /*public DocumentModel getDocumentByID(int documentID)
+        public int getProjectIDByDocumentID(int documentID)
         {
-            return getDocumentByID(documentID);
-        }*/
+            DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+            int projectID = document.projectID;
+            return projectID;
+        }
+
+        public DocumentModel getDocumentByID(int documentID)
+        {
+            return _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace CodeCat.Tests.Controllers
 {
     public class ControllerTest
     {
-        public void ControllerTest();
+        public void ControllerTest()
         {
             // Arrange:
 
