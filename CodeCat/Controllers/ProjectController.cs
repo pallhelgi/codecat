@@ -11,8 +11,8 @@ namespace CodeCat.Controllers
 {
     public class ProjectController : Controller
     {
-        ProjectService projectService = new ProjectService();
-        DocumentService documentService = new DocumentService();
+        ProjectService projectService = new ProjectService(null);
+        DocumentService documentService = new DocumentService(null);
         // GET: Project
         public ActionResult Index()
         {
@@ -70,6 +70,7 @@ namespace CodeCat.Controllers
 
         // public ActionResult showDocument()
 
+        //This is probably not in use
         public ActionResult getDocuments(int projectID)
         {
             projectID = 1;

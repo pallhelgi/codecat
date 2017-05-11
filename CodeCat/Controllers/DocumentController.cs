@@ -12,7 +12,7 @@ namespace CodeCat.Controllers
 {
     public class DocumentController : Controller
     {
-        DocumentService docService = new DocumentService();
+        DocumentService docService = new DocumentService(null);
         // GET: Document
         public ActionResult Index()
         {
@@ -36,11 +36,6 @@ namespace CodeCat.Controllers
         [WebMethod]
         public string save(DocumentModel DocumentModel)
         {
-            /* if (model.document.ID == null || String.IsNullOrEmpty(model.document.ID))
-             {
-                 return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
-             }*/
-            // do you stuff
 
             try
             {
@@ -55,13 +50,6 @@ namespace CodeCat.Controllers
                 return "error";
 
             }
-
-
-
-
-            //   }
-
-               //return RedirectToAction("../Project/ShowDocument/" + model.ID);
 
         }
 

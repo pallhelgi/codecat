@@ -8,9 +8,14 @@ namespace CodeCat.Services
 {
     public class DocumentService : ServiceBase
     {
+        public DocumentService(IAppDataContext context) : base(context)
+        {
+
+        }
+
         public DocumentModel document;
 
-        public bool saveDocument(int documentID, string content)
+        public void saveDocument(int documentID, string content)
         {
             var replace = from doc in _db.DocumentModel
                           where doc.ID == documentID
@@ -22,8 +27,6 @@ namespace CodeCat.Services
             }
 
             _db.SaveChanges();
-
-            return true;
         }
 
         //adds a doccument to database
