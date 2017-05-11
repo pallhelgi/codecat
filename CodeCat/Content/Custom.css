@@ -73,6 +73,12 @@
     padding-right: 10px;
 }
 
+.nav-bar-text {
+    text-align: center;
+    color: #dddddd;
+    padding-top: -10px;
+}
+
 /*Logo on pop up windows*/
 .popup-window-logo {
     width: 150px;
