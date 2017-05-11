@@ -47,13 +47,16 @@
                 <section class="well project-box-inner">
                     <div>
                         <h3>@Html.DisplayFor(modelItem => document.name)</h3>
+                        <div>
+                            @Html.ActionLink("Delete", "../Project/DeleteDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-delete-project", onclick = "return confirm('Are you sure you wish to delete this document?');" })
+                        </div>
                         <!--<p>ID: @Html.DisplayFor(modelItem => document.ID)</p>-->
 
                         <div class="open-share-doc">
                             <br />
                             <br />
                             @Html.ActionLink("Open", "../Project/ShowDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-fab" })
-                            @Html.ActionLink("Delete", "../Project/DeleteDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-fab", onclick = "return confirm('Are you sure you wish to delete this document?');" })
+                            
                         </div>
                     </div>
                 </section>
