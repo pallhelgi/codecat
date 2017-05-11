@@ -165,7 +165,11 @@ namespace CodeCat.Tests.Services
 
             //There are two documents in the MockDB with the projectID '1'.
             Assert.AreEqual(2, result.Count);
-            Assert.AreEqual("doc3", result[1].name);
+
+            foreach(var proj in result)
+            {
+                Assert.AreEqual(1, proj.projectID);
+            }
         }
 
         [TestMethod]

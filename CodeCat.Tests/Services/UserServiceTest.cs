@@ -72,15 +72,21 @@ namespace CodeCat.Tests.Services
         {
             // Arrange:
             string email = "mellon@mellon.com";
+            string fakeEmail = "nina@nina.com";
+
             int projID = 2;
 
             // ACT:
 
             var result = _service.share(email, projID);
+            var result2 = _service.share(fakeEmail, projID);
 
             // Assert:
 
             Assert.AreEqual(true, result);
+
+            //there is no user with the email "nina@nina.com"
+            Assert.AreEqual(false, result2);
         }
     }
 }
