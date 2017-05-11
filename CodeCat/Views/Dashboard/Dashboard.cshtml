@@ -7,6 +7,34 @@
 
 <h2>Dashboard</h2>
 
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Filter
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li>@Html.ActionLink("By project name ascending", "Dashboard", new { id = 1 })</li>
+        <li>@Html.ActionLink("By project name descending", "Dashboard", new { id = 2 })</li>
+        <li>@Html.ActionLink("By newest", "Dashboard", new { id = 3 })</li>
+        <li>@Html.ActionLink("By oldest", "Dashboard", new { id = 4 })</li>
+        <li>@Html.ActionLink("By projects you created", "Dashboard", new { id = 5 })</li>
+        <li>@Html.ActionLink("By projects shared with you", "Dashboard", new { id = 6 })</li>
+    </ul>
+</div>
+    
+<!--
+<form action="Dashboard">
+    <select name="Filter" class="btn btn-primary dropdown-toggle">
+        <option value="1">@Html.ActionLink("By project name ascending", "Dashboard", new { id = 1 })</option>
+        <option value="2">By project name descending</option>
+        <option value="3">By newest</option>
+        <option value="4">By oldest</option>
+        <option value="5">By projects you created</option>
+        <option value="6">By projects shared with you</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+   -->
 <div class="dashboard-wrapper" id="dashboard-wrapper">
     <!--Create new project button-->
     <section class="col-sm-4 create-new-project-box">

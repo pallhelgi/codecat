@@ -62,28 +62,28 @@ namespace CodeCat.Services
                     
                 case 3: //By newest
                     var newest = from lis in list
-                                     orderby lis.ID ascending
+                                     orderby lis.ID descending
                                      select lis;
 
                     return newest.ToList();
                     
                 case 4: //By oldest
                     var oldest = from lis in list
-                                 orderby lis.ID descending
+                                 orderby lis.ID ascending
                                  select lis;
 
                     return oldest.ToList();
 
                 case 5: //By creator
                     var creator = from lis in list
-                                 orderby lis.creatorUserID == user.Id
+                                 orderby lis.creatorUserID != user.Id
                                  select lis;
 
                     return creator.ToList();
 
                 case 6: //By share
                     var share = from lis in list
-                                  orderby lis.creatorUserID != user.Id
+                                  orderby lis.creatorUserID == user.Id
                                   select lis;
 
                     return share.ToList();
