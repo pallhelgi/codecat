@@ -35,19 +35,30 @@ namespace CodeCat.Services
             //IF document name already exissts within the same project: return false
             List<DocumentModel> dModel = _db.DocumentModel.Where(d => d.projectID == doc.projectID).ToList();
 
+            bool exists = false;
+
             foreach(DocumentModel d in dModel)
             {
                 if(d.name == doc.name)
                 {
-                    return false;
+                    exists = true;
                 }
 
             }
 
-            _db.DocumentModel.Add(doc);
-            _db.SaveChanges();
+            if (!exists)
+            {
+                _db.DocumentModel.Add(doc);
+                _db.SaveChanges();
 
-            return false;
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+            
         }
 
         //Deletes a single document from database

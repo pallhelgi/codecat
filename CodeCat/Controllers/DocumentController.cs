@@ -66,6 +66,7 @@ namespace CodeCat.Controllers
         {
             if(ModelState.IsValid)
             {
+
                 var url = Url.RequestContext.RouteData.Values["id"].ToString();
                 int urlInt = int.Parse(url);
 
@@ -75,12 +76,19 @@ namespace CodeCat.Controllers
                 //Maybe add some default code in content
                 doc.content = null;
                 doc.projectID = urlInt;
-                docService.addDocument(doc);
+                bool success = docService.addDocument(doc);
+                if (success)
+                {
+                    return RedirectToAction("../Project/ShowDocument/" + doc.ID);
+                }
+                else
+                {
+                    return View("../Project/AddDocument");
+                }
 
-                return RedirectToAction("../Project/ShowDocument/" + doc.ID);
             }
 
-            return View(docFromUser);
+            return View("../Home/Error");
         }
      }
 }

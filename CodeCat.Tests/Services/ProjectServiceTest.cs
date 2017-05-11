@@ -65,6 +65,7 @@ namespace CodeCat.Tests.Services
             var p2 = new ProjectModel
             {
                 ID = 2,
+                name = "gimli",
                 creatorUserID = "jon"
             };
             mockDb.ProjectModel.Add(p2);
@@ -72,6 +73,7 @@ namespace CodeCat.Tests.Services
             var p3 = new ProjectModel
             {
                 ID = 3,
+                name = "frodo",
                 creatorUserID = "mellon"
             };
             mockDb.ProjectModel.Add(p3);
@@ -171,6 +173,26 @@ namespace CodeCat.Tests.Services
                 Assert.AreEqual(1, proj.projectID);
             }
         }
+
+        [TestMethod]
+        public void filterProjectsByNameDescending()
+        {
+            // Arrange:
+            //4 is the "sort by name descending" id
+            const int id = 2;
+            const string username = "mellon@mellon.com";
+
+            // ACT:
+
+            var result = _service.getProjectFiltered(username, id);
+
+            // Assert:
+
+            Assert.AreEqual(4, result.Count);
+
+            Assert.AreEqual("gandalf", result[1].name);
+        }
+
 
         [TestMethod]
         public void getUserProjectsForMellon()

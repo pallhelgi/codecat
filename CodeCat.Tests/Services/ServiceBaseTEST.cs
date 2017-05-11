@@ -12,9 +12,9 @@ namespace CodeCat.Tests.Services
 {
 
     [TestClass]
-    public class DocumentServiceTest
+    public class ServiceBaseTest
     {
-        private DocumentService _service;
+        private ServiceBase _service;
 
         [TestInitialize]
         public void Initializer()
@@ -95,19 +95,62 @@ namespace CodeCat.Tests.Services
             };
             mockDb.UserProjectModel.Add(UP2);
 
-            _service = new DocumentService(mockDb);
+            //ProjectModel table
+            var p1 = new ProjectModel
+            {
+                ID = 1,
+                name = "gandalf",
+                creatorUserID = "mellon"
+            };
+            mockDb.ProjectModel.Add(p1);
+
+            var p2 = new ProjectModel
+            {
+                ID = 2,
+                name = "gimli",
+                creatorUserID = "jon"
+            };
+            mockDb.ProjectModel.Add(p2);
+
+            var p3 = new ProjectModel
+            {
+                ID = 3,
+                name = "frodo",
+                creatorUserID = "mellon"
+            };
+            mockDb.ProjectModel.Add(p3);
+
+            _service = new ServiceBase(mockDb);
         }
 
         [TestMethod]
-        public void saveDocument1()
+        public void getProject3()
         {
             // Arrange:
-            int docID = 1;
-            string content = "I'm updated!";
+            int projID = 3;
+            string name = "frodo";
+            string wrongName = "gimli";
 
             // ACT:
 
-            _service.saveDocument(docID, content);
+            var result = _service.getProjectByID(3);
+
+            // Assert:
+
+            Assert.AreEqual(name, result.name);
+            Assert.AreNotEqual(wrongName, result.name);
+
+        }
+
+        [TestMethod]
+        public void getDocument2()
+        {
+            // Arrange:
+            int docID = 2;
+            string content = "Lorem ipsum Doc2";
+
+            // ACT:
+
             var result = _service.getDocumentByID(docID);
 
             // Assert:
@@ -117,54 +160,43 @@ namespace CodeCat.Tests.Services
         }
 
         [TestMethod]
-        public void addDocument()
+        public void getProjectFromDoc4()
         {
             // Arrange:
-            DocumentModel doc = new DocumentModel
-            {
-                ID = 10,
-                name = "I'm new!",
-                projectID = 3
-            };
-
-            DocumentModel doc2 = new DocumentModel
-            {
-                ID = 11,
-                name = "This name is taken!",
-                projectID = 3
-            };
+            int docID = 4;
 
             // ACT:
 
-            var result = _service.addDocument(doc);
-            var result2 = _service.addDocument(doc2); 
+            //Returns the projectID of the project that contains the document
+            var result = _service.getProjectByDocumentID(docID);
 
             // Assert:
 
-            Assert.AreEqual(true, result);
-            Assert.AreEqual(false, result2);
+            //The projectID of document 4 is 1
+            Assert.AreEqual(1, result);
 
         }
-
 
         [TestMethod]
-        public void deleteDocument4()
+        [ExpectedException(typeof(Exception), "That document id is invalid")]
+        public void getProjectFromDoc3()
         {
             // Arrange:
-            const int id = 4;
+
+            //There is no document with the id 3
+            int docID = 3;
 
             // ACT:
 
-            _service.deleteDocument(id);
-            var result = _service.getDocumentByID(4);
-            var result1 = _service.getDocumentByID(1);
+            //Returns the projectID of the project that contains the document
+            var result = _service.getProjectByDocumentID(docID);
 
             // Assert:
 
-            Assert.AreEqual(null, result);
-            Assert.AreEqual("doc1", result1.name);
+            
 
         }
+
 
     }
 }

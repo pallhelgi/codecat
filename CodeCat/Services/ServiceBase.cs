@@ -13,6 +13,7 @@ namespace CodeCat.Services
 {
     public class ServiceBase
     {
+        public class EmptyException { }
         //Connecting the serviceBase to the appDbContext class which speaks to the database(sql)
         public readonly IAppDataContext _db; //= new ApplicationDbContext();
 
@@ -178,17 +179,26 @@ namespace CodeCat.Services
             return true;
         }*/
 
-        public UserModel getuserByID(int userID)
+       /* public UserModel getuserByID(int userID)
         {
             UserModel user = _db.UserModel.FirstOrDefault(x => x.ID == userID);
             return user;
-        }
+        }*/
 
         public int getProjectByDocumentID(int documentID)
         {
-            DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
-            int projectID = document.projectID;
-            return projectID;
+            try
+            {
+                DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+                int projectID = document.projectID;
+
+                return projectID;
+            }
+            catch
+            {
+                throw new Exception("That document id is invalid");
+            }
+          
         }
 
         /*public string getProjectCreatorByID(string username)
