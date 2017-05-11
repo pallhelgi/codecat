@@ -68,7 +68,7 @@ namespace CodeCat.Controllers
            return View(project);
         }
 
-        [HttpGet]
+/*        [HttpGet]
         public ActionResult addUser()
         {
             return View();
@@ -92,7 +92,7 @@ namespace CodeCat.Controllers
             //TODO
             return View();
         }
-
+*/
         public ActionResult openProject()
         {
             //TODO
