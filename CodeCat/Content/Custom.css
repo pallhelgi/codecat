@@ -435,3 +435,7 @@ footer {
     height: 250px;
     width: 200px;
 }
+
+.about-ul {
+    list-style-type: none;
+}
