@@ -11,5 +11,7 @@ namespace CodeCat.Models.ViewModels
         public DocumentModel document;
         public int? selectedDocument { get; set; }
         public List<DocumentModel> documents { get; set; }
+        public string documentName { get; set; }
+        public string docProjectName { get; set; }
     }
 }
