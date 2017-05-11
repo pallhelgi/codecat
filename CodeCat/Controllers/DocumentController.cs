@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CodeCat.Models.ViewModels;
+using System.Web.Services;
 
 namespace CodeCat.Controllers
 {
@@ -32,8 +33,8 @@ namespace CodeCat.Controllers
 
 
         // [AjaxAuthorize]
-        [HttpPost]
-        public ActionResult save(DocumentModel model)
+        [WebMethod]
+        public string save(DocumentModel DocumentModel)
         {
             /* if (model.document.ID == null || String.IsNullOrEmpty(model.document.ID))
              {
@@ -41,9 +42,26 @@ namespace CodeCat.Controllers
              }*/
             // do you stuff
 
-            docService.saveDocument(model.ID, model.content);
+            try
+            {
+                docService.saveDocument(DocumentModel.ID, DocumentModel.content);
 
-            return RedirectToAction("../Project/ShowDocument/" + model.ID);
+                return "success";
+
+            }
+
+            catch
+            {
+                return "error";
+
+            }
+
+
+
+
+            //   }
+
+               //return RedirectToAction("../Project/ShowDocument/" + model.ID);
 
         }
 

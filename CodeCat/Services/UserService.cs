@@ -12,31 +12,19 @@ namespace CodeCat.Services
         //  ServiceBase baas = new ServiceBase();
         public UserModel user;
 
-        public bool getUser(int userID)
-        {
-            return false;
-        }
-
-        public List<UserModel> listUsers(int projectID)
-        {
-            return null;
-        }
-
-        public bool addUser(UserModel user)
-        {
-            addUser(user);
-            return false;
-        }
-
         public bool share(string email, int projectID)
         {
-            shareToDB(email, projectID);
-            return true;
-        }
+            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
 
-        public bool addUserToProject(string email)
-        {
-            linkUserToProjectInDB(email);
+            var link = new UserProjectModel
+            {
+                UserID = user.Id,
+                ProjectID = projectID
+            };
+
+            _db.UserProjectModel.Add(link);
+            _db.SaveChanges();
+
             return true;
         }
     }

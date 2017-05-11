@@ -284,6 +284,14 @@
     <Compile Include="Migrations\201705081358122_ProjectModelBool.Designer.cs">
       <DependentUpon>201705081358122_ProjectModelBool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705102122222_UserModelEmailError.cs" />
+    <Compile Include="Migrations\201705102122222_UserModelEmailError.Designer.cs">
+      <DependentUpon>201705102122222_UserModelEmailError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705102134328_UserModelErasedEmailError.cs" />
+    <Compile Include="Migrations\201705102134328_UserModelErasedEmailError.Designer.cs">
+      <DependentUpon>201705102134328_UserModelErasedEmailError.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -333,6 +341,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -387,7 +396,7 @@
     <Content Include="Views\Project\ShowDocument.cshtml" />
     <Content Include="Views\Dashboard\AddProject.cshtml" />
     <Content Include="Views\Project\getDocuments.cshtml" />
-    <Content Include="Views\User\Share.cshtml" />
+    <Content Include="Views\User\share.cshtml" />
     <Content Include="Views\Document\AddDocument.cshtml" />
     <Content Include="Views\Project\ShowProject.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
@@ -460,6 +469,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705081358122_ProjectModelBool.resx">
       <DependentUpon>201705081358122_ProjectModelBool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705102122222_UserModelEmailError.resx">
+      <DependentUpon>201705102122222_UserModelEmailError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705102134328_UserModelErasedEmailError.resx">
+      <DependentUpon>201705102134328_UserModelErasedEmailError.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

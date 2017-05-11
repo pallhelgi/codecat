@@ -1,4 +1,4 @@
-﻿@model CodeCat.Models.UserModel
+﻿@model CodeCat.Models.ApplicationUser
 @{
     ViewBag.Title = "AddUser";
 }
@@ -11,18 +11,14 @@
 </div>
 <hr />
 
-@using (Html.BeginForm("Share", "User", FormMethod.Post, new { @class = "add-document-form" }))
+@using (Html.BeginForm("share", "User", FormMethod.Post, new { @class = "add-document-form" }))
 { 
-    <div class="add-document-div">
-        <div class="form-group">
+    <div class="add-document-div" >
+        <div class="form-group" >
             <label for="email" class="control-label">Email address</label>
-            <br />
-            @Html.TextBoxFor(m => m.email, new { @class = "form-conrtol" })
-            <br />
-            @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
-
-
-
+            
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
     </div>
     <input type="submit" class="btn btn-fab" value="Send invitation" />
