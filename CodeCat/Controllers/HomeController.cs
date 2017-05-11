@@ -44,5 +44,10 @@ namespace CodeCat.Controllers
 
             return View();
         }
+
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }

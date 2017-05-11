@@ -125,6 +125,7 @@ h2 {
 
 /*Settings dropdown list on Dashboard*/
 .settings-dropdown {
+    border-radius: 5px;
     position: relative;
     background-color: #3c3a3a;
     border: 0px;
@@ -134,7 +135,6 @@ h2 {
 /*Dropdown list*/
 .settings-dropdown:hover, 
 .settings-dropdown:focus,
-.settings-dropdown:visited, 
 .settings-dropdown:active {
     background-color: #575757;
     color: white;
@@ -263,6 +263,16 @@ footer {
     color: black; 
 }
 
+.create-new-doc-box {
+    height: 90px;
+    width: 290px;
+}
+
+#create-new-doc-box {
+    width: 290px;
+    padding-right: -10px;
+}
+
 .create-new-project-box p {
     color: black;
     text-decoration: none;
@@ -340,7 +350,8 @@ footer {
 
 /*Create a new doc button/box on project page*/
 #create-new-doc {
-    width: 100%;
+    width: 220px;
+    height: 249px;
 }
 
 .project-box a {
@@ -392,14 +403,19 @@ footer {
     bottom: 50px;
 }
 
-/* Buttons on project box*/
+/* Buttons*/
 .btn-fab {
-    background-color: #fab;
-    color: black;
+    background-color: #3c3a3a;
+    color: white;
 }
 
-.btn-fab:hover {
+a.btn-fab {
     color: white;
+}
+
+a.btn-fab:hover {
+    color: #d0d0d0;
+    background: #575757;
 }
 
 /*404 page*/
@@ -482,4 +498,41 @@ tr:nth-child(even) {
 caption{
     font-weight: bold;
     font-size: 28px;
+
+.our-breadcrumb {
+    height: 5px;
+}
+
+.our-breadcrumb a {
+    color: blue;
+}   
+
+.breadcrumb-div {
+    padding-top: 70px;
+    display: block;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.breadcrumb-item-active {
+    font-weight: bold;
+}
+
+.breadcrumb-div a {
+    font-weight: normal;
+}
+/*About Us*/
+
+/*Pictures*/
+.img-profile {
+    height: 250px;
+    width: 200px;
+}
+
+.about-ul {
+    list-style-type: none;
 }
