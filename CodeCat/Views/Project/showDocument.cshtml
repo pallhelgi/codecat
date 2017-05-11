@@ -27,6 +27,7 @@
      </div>
 }
 
+
 <script>
     $("form").click(function () {
             console.log("Hallo");
@@ -42,6 +43,7 @@
                 window.location.href = "../../Document/ShowDocument/" + docID;
             };
     });
+   
 
 
     $(function () {
@@ -87,14 +89,74 @@
 
         });
     });
+
 </script>
 
+<!-- Modal window -->
+<button id="myBtn">Keyboard shortcuts</button>
+
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <table>
+            <caption>Keyboard shortcuts</caption>
+            <tr>
+                <th>Windows/Linux</th>
+                <th>Mac</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Ctrl-D</td>
+                <td>Command-D</td>
+                <td>Remove line</td>
+            </tr>
+            <tr>
+                <td>Ctrl-F</td>
+                <td>Command-F</td>
+                <td>Find</td>
+            </tr>
+            <tr>
+                <td>Ctrl-H</td>
+                <td>Command-Option-F</td>
+                <td>Replace</td>
+            </tr>
+            <tr>
+                <td>Ctrl-K</td>
+                <td>Command-G</td>
+                <td>Find next</td>
+            </tr>
+            <tr>
+                <td>Ctrl-Shift-K</td>
+                <td>Command-Shift-G</td>
+                <td>Find previous</td>
+            </tr>
+            <tr>
+                <td>Tab</td>
+                <td>Tab</td>
+                <td>Indent</td>
+            </tr>
+            <tr>
+                <td>Shift-Tab</td>
+                <td>Shift-Tab</td>
+                <td>Outdent</td>
+            </tr>
+            <tr>
+                <td>Ctrl-,</td>
+                <td>Command-,</td>
+                <td>Show the settings menu</td>
+            </tr>
+        </table>
+    </div>
+    <!-- Modal window ends -->
 
 @section scripts
 {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="~/Scripts/jquery.signalR-2.2.2.js"></script>
     <script src="~/signalr/hubs"></script>
+
     <script>
 
         var documentID = @Model.document.ID;
@@ -104,9 +166,6 @@
         var editor = ace.edit("ace-editor");
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
-
-      
-
 
         var codeHub = $.connection.codeHub;
         var silent = false;
@@ -131,6 +190,27 @@
                 codeHub.server.onChange(obj, documentID);
             });
         });
+
+        // modal window functions
+        var modal = document.getElementById('myModal');
+
+        var btn = document.getElementById("myBtn");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 }
 
