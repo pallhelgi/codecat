@@ -29,6 +29,18 @@ namespace CodeCat.Services
         //adds a doccument to database
         public bool addDocument(DocumentModel doc)
         {
+            //IF document name already exissts within the same project: return false
+            List<DocumentModel> dModel = _db.DocumentModel.Where(d => d.projectID == doc.projectID).ToList();
+
+            foreach(DocumentModel d in dModel)
+            {
+                if(d.name == doc.name)
+                {
+                    return false;
+                }
+
+            }
+
             _db.DocumentModel.Add(doc);
             _db.SaveChanges();
 
@@ -36,17 +48,16 @@ namespace CodeCat.Services
         }
 
         //Deletes a single document from database
-        public bool deleteDocument(int documentID)
+        public void deleteDocument(int documentID)
         {
             var delete = from doc in _db.DocumentModel
                          where doc.ID == documentID
                          select doc;
 
             var item = delete.ToList().First();
+
             _db.DocumentModel.Remove(item);
             _db.SaveChanges();
-
-            return true;
         }
 
         /*public DocumentModel getDocumentByID(int documentID)
