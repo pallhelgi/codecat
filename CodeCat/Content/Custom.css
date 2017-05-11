@@ -75,8 +75,10 @@
 
 .nav-bar-text {
     text-align: center;
+    display: inline;
     color: #dddddd;
-    padding-top: -10px;
+    position: center;
+    padding-right: 20%;
 }
 
 /*Logo on pop up windows*/
@@ -159,6 +161,18 @@ h2 {
 .settings-dropdown 
 .caret {
     border-top-color: white;
+}
+
+.dropdown-toggle-sort-projects {
+    width: 130px;
+}
+
+.dropdown-toggle-sort-projects:after,
+.dropdown-toggle-sort-projects:active,
+.dropdown-toggle-sort-projects:hover,
+.dropdown-toggle-sort-projects:visited,
+.dropdown-toggle-sort-projects:before {
+    color: #a3a3a3;
 }
 
 /*Tabs of ACE EDITOR*/
@@ -511,7 +525,7 @@ caption {
 }
 
 .our-breadcrumb a {
-    color: blue;
+    
 }   
 
 .breadcrumb-div {
@@ -532,6 +546,11 @@ caption {
 .breadcrumb-div a {
     font-weight: normal;
 }
+
+.document-breadcrumb-div {
+    padding-top: 40px;
+}
+
 /*About Us*/
 
 /*Pictures*/

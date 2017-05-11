@@ -4,8 +4,10 @@
     ViewBag.Title = "Project::" + Model.docProjectName + " Document::" + Model.documentName;
 }
 
-<h2>@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @Html.ActionLink(Model.docProjectName, "../Project/ShowProject", new { id = Model.document.projectID }) / @Model.documentName</h2>
 
+<div class="breadcrumb-div document-breadcrumb-div">
+    <h3 class="our-breadcrumb breadcrumb-item-active">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @Html.ActionLink(Model.docProjectName, "../Project/ShowProject", new { id = Model.document.projectID }) / @Model.documentName</h3>
+</div>
 
 
 <!--The Ace Editor begin-->
