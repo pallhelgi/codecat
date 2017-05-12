@@ -22,26 +22,32 @@ The user is greeted with a simple and friendly front page, where he can choose t
 When the user opens a project he enters a Document Dashboard, where he has an overview of all the documents within that project. There he can create additional documents or open existing documents. How nice!
 Opening a document brings the user to the fantastic editor where he can finally write his code! If another user has been invited to collaborate on the project and both are logged in with that document open at the same time, they can see what the other one is writing in real time. Amazing, we know!
 
-## Front page
+### Front page
 
 <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18387227_120332000748943921_1302218760_n.jpg" alt="Front Page" width="350"/>
 
+### Sign up and sign in
 The 'Sign In' and 'Sign Up' features are pretty straight forward fill out forms. No need for superfluous information, we only request an email address and a password, but promise never to spam you with emails!
-
-## Sign up and sign in
 <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18425841_120332000717051007_953507242_n.jpg" alt="Register for a new account" width="350">
 <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18447901_120332000717569579_1117722544_n.jpg" alt="Sign up, friend" width="350"/>
 
 When the user has signed in he is able to create some cool projects with bunch of documents to write some code in. If he gets lonely he can always share the project with his friends so they can code together. No Code::Cat should be lonely!
 
-**EINHVER SCREEN SHOT AF VIRKNINNI**
+### Dashboard
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/Dashboard.JPG" alt="Dashboard" width="350" />
 
-## Create a new project
+### Project Page
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/Project.JPG" alt="Project Page" width="350" />
+
+### Inside of a document
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/Document.JPG" alt="Document" alt="Document" width="350" />
+
+### Create a new project
 <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18424780_120332000725636873_374558613_n.jpg" alt="Create a new project" width="350"/>
 
 Don't worry if you accidentally go astray because this little kitten will help you find your way back to the homepage.
 
-## 404 page
+### 404 page
 <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18471315_120332000688769752_2057557954_n.jpg" alt="This kitty is lost" width="350"/>
 
 ## Architecture layout - describe how the program is built with MVC
