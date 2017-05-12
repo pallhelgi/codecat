@@ -11,9 +11,7 @@
 
 <!--</div>-->
 <!--<button class="btn btn-fab keyboard-shortcuts-button-new" id="myBtn">Keyboard shortcuts</button>
-    -->
-<input type="hidden" id="currentUser" name="currentUser" value="@HttpContext.Current.User.Identity.Name" />
-    
+    -->    
 
 <!--The Ace Editor begin-->
 <div class="container">
@@ -185,13 +183,7 @@
             mytestfunc(changeData);
             silent = false;
         };
-        var mytestfunc = function(e){
-            console.log(e);
-            var row = e.start.row;
-            var column = e.start.column;
-            var user = $("#currentUser").val();
-            console.log(user);
-        }
+
 
         $.connection.hub.start().done(function () {
 

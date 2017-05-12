@@ -473,11 +473,11 @@ footer {
 
 /*Delete Button In Dashboard*/
 .btn-delete-project {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background: url(/Images/delete.png) no-repeat;
     float: right;
-    margin: 5px;
+    margin: 6px;
     background-size: contain;
     background-color: transparent;
     text-indent: -9999px;
