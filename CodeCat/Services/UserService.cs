@@ -49,16 +49,7 @@ namespace CodeCat.Services
                          where con.ProjectID == projID
                          select u;
 
-            var resultOwner = from u in _db.Users
-                              join proj in _db.ProjectModel
-                              on u.Id equals proj.creatorUserID
-                              where proj.ID == projID
-                              select u;
-
             List<ApplicationUser> users = result.ToList();
-            ApplicationUser user = resultOwner.ToList().FirstOrDefault();
-
-            users.Add(user);
 
             return users;
         }
