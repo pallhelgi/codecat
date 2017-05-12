@@ -88,7 +88,7 @@ namespace CodeCat.Controllers
                 }
 
                 userService.share(user.Email, urlInt);
-                return RedirectToAction("../Dashboard/Dashboard");
+                return RedirectToAction("../Project/ShowProject/" + urlInt);
             }
 
             return View("../Home/Error");
