@@ -138,6 +138,23 @@ h2 {
     background-color: #3c3a3a;
     border: 0px;
     color: white;
+    width: 14.5em;
+    height: 3.5em;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 94%;
+    background-color: #484848;
+    color: white;
+}
+
+.dropdown-items {
+    width: 14.5em;
+}
+
+.dropdown-items li a {
+    color: white;
 }
 
 /*Dropdown list*/
@@ -155,12 +172,17 @@ h2 {
 .dropdown-items > .active > a:hover,
 .dropdown-items > .active > a:focus {
     background-color: #a3a3a3;
+    color: white;
 }
 
 /*Dropdown list arrow*/
 .settings-dropdown 
 .caret {
     border-top-color: white;
+    position: relative;
+    top: 1em;
+    left: 0.5em;
+    color: white;
 }
 
 .dropdown-toggle-sort-projects {
@@ -413,10 +435,6 @@ footer {
     padding-top: 5px;
 }
 
-/* ADD DOCUMENT */
-.CREATE-TEST-DELETE-LATER {
-}
-
 /*Choose the file type of new document*/
 .file-type-dropdown {
     padding: 10px;
@@ -438,8 +456,32 @@ footer {
 
 .open-share-doc {
     position: absolute;
-    right: 40px;
+    right: 62px;
     bottom: 50px;
+}
+
+.open-share-doc-alone {
+    position: absolute;
+    bottom: 3.5em;
+    right: 6.7em;
+}
+
+/*Delete Button In Dashboard*/
+.btn-delete-project {
+    width: 35px;
+    height: 35px;
+    background: url(/Images/delete.png) no-repeat;
+    float: right;
+    margin: 5px;
+    background-size: contain;
+    text-indent: -9999px;
+    top: 6px;
+}
+
+.delete-button-form {
+    position: absolute;
+    top: 1em;
+    right: 1em;
 }
 
 /* Buttons*/
@@ -596,5 +638,41 @@ caption {
 .about-profile {
     align-content: center;
     margin: 0px 0px 25px 0px;
+}
+
+/*Layout for sidebar list of users in a project*/
+.sidebar-view-list {
+    padding: 1em;
+    text-align: center;
+    background-color: #c8c8c8;
+    width: 13em;
+    position: absolute;
+    right: 1em;
+    top: 11.5em;
+}
+
+.sidebar-view-owner {
+    font-weight: bold;
+}
+
+.sidebar-view-users {
+}
+
+.sidebar-con {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+h2 {
+    padding-left: 0.6em
+}
+
+.dropdown {
+    padding-left: 1em;
+}
+
+.hello-message li a {
+    color: white;
+    text-decoration-color: white;
 }
 

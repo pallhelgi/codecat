@@ -11,6 +11,8 @@ namespace CodeCat.Models.ViewModels
     {
         public List<DocumentModel> documents;
 
+        public ProjectModel project;
+
         public SideBarViewModel sidebar;
 
         public string userEmail { get; set; }

@@ -42,6 +42,8 @@ namespace CodeCat.Controllers
             sideView.users = userService.getUsersSharingADocument(model.ID);
             viewModel.sidebar = sideView;
 
+            viewModel.project = model;
+
             return View(viewModel);
         }
 
@@ -58,6 +60,8 @@ namespace CodeCat.Controllers
             viewModel.documentName = model.name;
             ProjectModel p5Model = projectService.getProjectById(model.projectID);
             viewModel.docProjectName = p5Model.name;
+
+            
             
             return View(viewModel);
         }

@@ -332,6 +332,8 @@
     <Content Include="Images\codecat_on_circle.png" />
     <Content Include="Images\codecat_on_circle2.png" />
     <Content Include="Images\codecat_with_text.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\delete2.png" />
     <Content Include="Images\Eydis.png" />
     <Content Include="Images\Eyrun.png" />
     <Content Include="Images\favicon.ico" />
