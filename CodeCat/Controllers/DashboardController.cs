@@ -44,6 +44,7 @@ namespace CodeCat.Controllers
             catch
             {
                 return Content(Boolean.FalseString);
+
             }
         }
 

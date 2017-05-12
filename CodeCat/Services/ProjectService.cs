@@ -20,14 +20,6 @@ namespace CodeCat.Services
             _db = context ?? new ApplicationDbContext();
         }
 
-        public ProjectModel project;
-
-        //Returns all the projects a user has access to both which he created and others shared with him
-
-        /*public ProjectService(IAppDataContext context) : base(context)
-        {
-            // db = context ?? new ApplicationDbContext();
-        }*/
 
         //Returns all the projects a user has access to
         public List<ProjectModel> getAllProjects(string userName)
@@ -40,12 +32,8 @@ namespace CodeCat.Services
                          select proj;
 
             List<ProjectModel> lis = new List<ProjectModel>();
-            List<ProjectModel> lis2 = new List<ProjectModel>();
 
-            lis = _db.ProjectModel.Where(x => x.creatorUserID == user.Id).ToList();
-            lis2 = result.ToList();
-
-            lis2.ForEach(l => lis.Add(l));
+             lis = result.ToList();
 
             return lis;
         }
@@ -133,8 +121,21 @@ namespace CodeCat.Services
         public void addProject(ProjectModel project, string username)
         {
             project.creatorUserID = getProjectCreatorByID(username);
+            ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
 
             _db.ProjectModel.Add(project);
+            _db.SaveChanges();
+
+            UserProjectModel link = new UserProjectModel
+            {
+                UserID = user.Id,
+                ProjectID = project.ID
+
+            };
+
+            _db.UserProjectModel.Add(link);
+
+
             _db.SaveChanges();
         }
 

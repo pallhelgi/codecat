@@ -47,7 +47,7 @@ namespace CodeCat.Tests.Services
                 ID = 4,
                 content = "Lorem ipsum Doc3",
                 name = "This name is taken!",
-                projectID = 1,
+                projectID = 3,
                 type = 0
             };
             mockDb.DocumentModel.Add(f3);
@@ -148,21 +148,105 @@ namespace CodeCat.Tests.Services
 
 
         [TestMethod]
-        public void deleteDocument4()
+        [ExpectedException(typeof(Exception), "That document id is invalid")]
+        public void deleteDocument1()
         {
             // Arrange:
-            const int id = 4;
+            const int id = 1;
 
             // ACT:
 
             _service.deleteDocument(id);
-            var result = _service.getDocumentByID(4);
-            var result1 = _service.getDocumentByID(1);
+
+            //If the document no longer exists, getDocumentByID should throw an
+            //exception
+            var result = _service.getDocumentByID(id);
 
             // Assert:
 
-            Assert.AreEqual(null, result);
-            Assert.AreEqual("doc1", result1.name);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void deleteDocument6()
+        {
+            // Arrange:
+            const int id = 6;
+
+            // ACT:
+
+            //Document 6 does not exists, and therefore an exception should be thrown
+            _service.deleteDocument(id);
+
+            // Assert:
+
+        }
+
+        [TestMethod]
+        public void getProjectFromDoc4()
+        {
+            // Arrange:
+            int docID = 4;
+
+            // ACT:
+
+            //Returns the projectID of the project that contains the document
+            var result = _service.getProjectIDByDocumentID(docID);
+
+            // Assert:
+
+            //The projectID of document 4 is 1
+            Assert.AreEqual(3, result);
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception), "That document id is invalid")]
+        public void getProjectFromDoc3()
+        {
+            // Arrange:
+
+            //There is no document with the id 3
+            int docID = 3;
+
+            // ACT:
+
+            //Returns the projectID of the project that contains the document
+            var result = _service.getProjectIDByDocumentID(docID);
+
+            // Assert:
+        }
+
+        [TestMethod]
+        public void getDocument2()
+        {
+            // Arrange:
+            int docID = 2;
+            string content = "Lorem ipsum Doc2";
+
+            // ACT:
+
+            var result = _service.getDocumentByID(docID);
+
+            // Assert:
+
+            Assert.AreEqual(content, result.content);
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception), "That document id is invalid")]
+        public void getDocument10()
+        {
+            // Arrange:
+            int docID = 10;
+          //  string content = "Lorem ipsum Doc2";
+
+            // ACT:
+
+            var result = _service.getDocumentByID(docID);
+
+            // Assert:
 
         }
 

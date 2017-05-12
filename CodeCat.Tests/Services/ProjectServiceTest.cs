@@ -134,7 +134,7 @@ namespace CodeCat.Tests.Services
         }
 
 
-     /*   [TestMethod]
+        [TestMethod]
         public void getAllProjectsForMellon()
         {
             // Arrange:
@@ -150,7 +150,7 @@ namespace CodeCat.Tests.Services
             //There are two documents in the MockDB with the projectID '1'.
             Assert.AreEqual(2, result.Count);
             //Assert.AreEqual("doc3", result[1].name);
-        }*/
+        }
 
         [TestMethod]
         public void getProjectForProjectID1()
@@ -178,7 +178,7 @@ namespace CodeCat.Tests.Services
         public void filterProjectsByNameDescending()
         {
             // Arrange:
-            //4 is the "sort by name descending" id
+            //2 is the "sort by name descending" id
             const int id = 2;
             const string username = "mellon@mellon.com";
 
@@ -188,9 +188,28 @@ namespace CodeCat.Tests.Services
 
             // Assert:
 
-            Assert.AreEqual(4, result.Count);
+            Assert.AreEqual(2, result.Count);
 
             Assert.AreEqual("gandalf", result[1].name);
+        }
+
+        [TestMethod]
+        public void filterProjectsByOldest()
+        {
+            // Arrange:
+            //4 is the "sort by name descending" id
+            const int id = 4;
+            const string username = "mellon@mellon.com";
+
+            // ACT:
+
+            var result = _service.getProjectFiltered(username, id);
+
+            // Assert:
+
+            Assert.AreEqual(2, result.Count);
+
+            Assert.AreEqual("gimli", result[1].name);
         }
 
 

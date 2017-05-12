@@ -26,6 +26,15 @@ namespace CodeCat.Services
                 ProjectID = projectID
             };
 
+            List<UserProjectModel> links = _db.UserProjectModel.ToList();
+
+            foreach(var l in links)
+            {
+                if (l.ProjectID == link.ProjectID && l.UserID == link.UserID)
+                {
+                    return;
+                }
+            }
             _db.UserProjectModel.Add(link);
             _db.SaveChanges();
 

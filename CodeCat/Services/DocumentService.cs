@@ -48,7 +48,7 @@ namespace CodeCat.Services
 
             }
 
-            if (!exists)
+            if (exists == false)
             {
                 _db.DocumentModel.Add(doc);
                 _db.SaveChanges();
@@ -78,14 +78,33 @@ namespace CodeCat.Services
 
         public int getProjectIDByDocumentID(int documentID)
         {
-            DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
-            int projectID = document.projectID;
-            return projectID;
+            try
+            {
+                DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+                int projectID = document.projectID;
+
+                return projectID;
+            }
+            catch
+            {
+                throw new Exception("That document id is invalid");
+            }
         }
 
         public DocumentModel getDocumentByID(int documentID)
         {
-            return _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+            DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+                
+            if(document == null)
+            {
+                throw new Exception("That document id is invalid");
+
+            }
+
+            return document;
+
+
+            
         }
     }
 }

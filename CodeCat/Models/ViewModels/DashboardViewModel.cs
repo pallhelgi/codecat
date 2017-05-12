@@ -10,5 +10,6 @@ namespace CodeCat.Models.ViewModels
     public class DashboardViewModel
     {
         public List<ProjectModel> projects { get; set; }
+        public ProjectModel currProject { get; set; }
     }
 }
