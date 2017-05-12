@@ -13,13 +13,12 @@ namespace CodeCat.Services
 {
     public class ProjectService
     {
-        public IAppDataContext _db;
+        private IAppDataContext _db;
 
         public ProjectService(IAppDataContext context)
         {
             _db = context ?? new ApplicationDbContext();
         }
-
 
         //Returns all the projects a user has access to
         public List<ProjectModel> getAllProjects(string userName)
@@ -27,23 +26,20 @@ namespace CodeCat.Services
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == userName);
             var result = from proj in _db.ProjectModel
                          join con in _db.UserProjectModel
-                         on proj.ID equals con.ProjectID
-                         where con.UserID == user.Id
+                         on proj.ID equals con.projectID
+                         where con.userID == user.Id
                          select proj;
 
             List<ProjectModel> lis = new List<ProjectModel>();
-
-             lis = result.ToList();
+            lis = result.ToList();
 
             return lis;
         }
 
         //Filters project by name(ascending and descending), newest/oldest project
-        //
         public List<ProjectModel> getProjectFiltered(string userName, int option)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == userName);
-
             List<ProjectModel> list = getAllProjects(userName);
 
             switch(option)
@@ -114,6 +110,7 @@ namespace CodeCat.Services
         public List<ProjectModel> getUserProjects(string username)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);
+
             return _db.ProjectModel.Where(x => x.creatorUserID == user.Id).ToList();
         }
 
@@ -128,14 +125,12 @@ namespace CodeCat.Services
 
             UserProjectModel link = new UserProjectModel
             {
-                UserID = user.Id,
-                ProjectID = project.ID
+                userID = user.Id,
+                projectID = project.ID
 
             };
 
             _db.UserProjectModel.Add(link);
-
-
             _db.SaveChanges();
         }
 
@@ -157,18 +152,18 @@ namespace CodeCat.Services
 
             var docs = deleteDocuments.ToList();
 
-            foreach (DocumentModel doc in docs)
+            foreach(DocumentModel doc in docs)
             {
                 _db.DocumentModel.Remove(doc);
             }
 
             var deleteConnection = from proj in _db.UserProjectModel
-                                   where proj.ProjectID == projectID
+                                   where proj.projectID == projectID
                                    select proj;
 
             var connection = deleteConnection.ToList();
 
-            foreach (UserProjectModel con in connection)
+            foreach(UserProjectModel con in connection)
             {
                 _db.UserProjectModel.Remove(con);
             }
@@ -181,7 +176,7 @@ namespace CodeCat.Services
 
             var projects = deleteProject.ToList();
 
-            foreach (ProjectModel project in projects)
+            foreach(ProjectModel project in projects)
             {
                 _db.ProjectModel.Remove(project);
             }

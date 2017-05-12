@@ -12,10 +12,8 @@ namespace CodeCat.Models
         [Key]
         public int ID { get; set; }
 
-       // [ForeignKey("UserID")]
-        public string UserID { get; set; }
+        public string userID { get; set; }
 
-       // [ForeignKey("ProjectID")]
-        public int ProjectID { get; set; }
+        public int projectID { get; set; }
     }
 }

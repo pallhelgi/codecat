@@ -1,71 +1,61 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code::Cat - @ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    <link rel="shortcut icon" href="~/favicon3.ico" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Code::Cat - @ViewBag.Title</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link rel="shortcut icon" href="~/favicon3.ico" />
 
-    <!--Stylesheets and jquery for popup modal windows-->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+        <!--Stylesheets and jquery for popup modal windows-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-</head>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
 
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                    <a href="/"><img src="~/Images/kisi5.png" width="140" alt="Code::Cat logo" class="navbar-brand"></a>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                        <a href="/"><img src="~/Images/kisi5.png" width="140" alt="Code::Cat logo" class="navbar-brand"></a>
+                </div>
             </div>
-            @*
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Dashboard", "Dashboard", "Dashboard")</li>
-                </ul>
-                <h2 class="nav-bar-text">Code::Cat</h2>
-                <!--@Html.Partial("_LoginPartial")-->
-            </div>
-            *@
+
+            <!-- Dropdown only shows if user is logged in -->
+            @if(Context.User.Identity.IsAuthenticated)
+            {
+                <!--Dropdown list for settings and help...-->
+                <div class="navdropdown">
+                    <button class="dropdown-toggle settings-dropdown" type="button" data-toggle="dropdown">                
+                        @Html.Partial("_LoginPartial")  
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-items">
+                        <li><a href="/">Dashbord</a></li>
+                        <li><a href="~/Home/About">About us</a></li>
+                        <li><a href="http://www.google.com">Help</a></li>
+                        <li class="divider"></li>
+                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a></li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <a href="~/Home/About" class="navdropdown navbar-link" id="about-link">About us</a>
+            }
         </div>
 
-        <!-- Dropdown only shows if user is logged in -->
-        @if(Context.User.Identity.IsAuthenticated)
-        {
-            <!--Dropdown list for settings and help...-->
-            <div class="navdropdown">
-                <button class="dropdown-toggle settings-dropdown" type="button" data-toggle="dropdown">                
-                    @Html.Partial("_LoginPartial")  
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu dropdown-items">
-                    <li><a href="/">Dashbord</a></li>
-                    <li><a href="~/Home/About">About us</a></li>
-                    <li><a href="http://www.google.com">Help</a></li>
-                    <li class="divider"></li>
-                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a></li>
-                </ul>
-            </div>
-        }
-        else
-        {
-            <a href="~/Home/About" class="navdropdown navbar-link" id="about-link">About us</a>
-        }
-    </div>
-
-    <div class="container">
-        @RenderBody()
-        <footer>
-        </footer>
-    </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/Scripts/custom.js")
-    @RenderSection("scripts", required: false)
-</body>
+        <div class="container">
+            @RenderBody()
+            <footer>
+            </footer>
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/Scripts/custom.js")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>

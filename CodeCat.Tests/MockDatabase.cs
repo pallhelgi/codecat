@@ -18,7 +18,6 @@ namespace CodeCat.Tests
             UserProjectModel = new InMemoryDbSet<UserProjectModel>();
             Users = new InMemoryDbSet<ApplicationUser>();
         }
-        public IDbSet<UserModel> UserModel { get; set; }
         public IDbSet<DocumentModel> DocumentModel { get; set; }
         public IDbSet<ProjectModel> ProjectModel { get; set; }
         public IDbSet<UserProjectModel> UserProjectModel { get; set; }

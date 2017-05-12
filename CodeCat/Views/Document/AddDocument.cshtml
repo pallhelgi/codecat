@@ -9,13 +9,11 @@
 <div class="sign-in-logo-div">
     <img src="~/Images/kisi4.png" width="170" height="200" alt="Code Cat Logo" class="sign-up-logo" />
 </div>
-
 <hr />
 
 @using (Html.BeginForm("addDocument", "Document", FormMethod.Post, new { @class = "add-document-form" }))
 {
     @Html.AntiForgeryToken()
-
     <div class="add-document-div">
         <div class="form-group">
             @Html.LabelFor(m => m.type, new { @class = "control-label label-for-type-dropdown" })
@@ -27,6 +25,14 @@
             @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
         </div>
-        <button type="submit" class="btn btn-fab">Create document</button>
+
+        <button type="submit" value="Create" id="create-button" onclick="createFeedback()" class="btn btn-fab">Create document</button>
+
+        <script>
+                function createFeedback() {
+                    var name = $(".form-control").val();
+                    toastr.success(name + " was added to your projects!");
+                };
+        </script>
     </div>
 }

@@ -9,7 +9,7 @@ namespace CodeCat.Services
 {
     public class UserService
     {
-        public IAppDataContext _db;
+        private IAppDataContext _db;
 
         public UserService(IAppDataContext context)
         {
@@ -22,15 +22,15 @@ namespace CodeCat.Services
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
             var link = new UserProjectModel
             {
-                UserID = user.Id,
-                ProjectID = projectID
+                userID = user.Id,
+                projectID = projectID
             };
 
             List<UserProjectModel> links = _db.UserProjectModel.ToList();
 
             foreach(var l in links)
             {
-                if (l.ProjectID == link.ProjectID && l.UserID == link.UserID)
+                if(l.projectID == link.projectID && l.userID == link.userID)
                 {
                     return;
                 }
@@ -45,8 +45,8 @@ namespace CodeCat.Services
         {
             var result = from u in _db.Users
                          join con in _db.UserProjectModel
-                         on u.Id equals con.UserID
-                         where con.ProjectID == projID
+                         on u.Id equals con.userID
+                         where con.projectID == projID
                          select u;
 
             List<ApplicationUser> users = result.ToList();

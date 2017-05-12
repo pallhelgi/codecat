@@ -18,29 +18,11 @@ namespace CodeCat.Controllers
             }
             
             return View();
-            //return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult SignIn(FormCollection collection)
-        {
-            UserModel user = new UserModel();
-            user.fullName = collection["form-signin"];
-            string movieId = collection["form-signin"];
-            Console.Write(user.fullName);
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }

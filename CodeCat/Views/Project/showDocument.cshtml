@@ -4,100 +4,27 @@
     ViewBag.Title = "Project::" + Model.docProjectName + " Document::" + Model.documentName;
 }
 
-
-<!--<div class="breadcrumb-div document-breadcrumb-div">-->
 <h3 class="our-breadcrumb breadcrumb-item-active breadcrumb-div">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @Html.ActionLink(Model.docProjectName, "../Project/ShowProject", new { id = Model.document.projectID }) / @Model.documentName</h3>
 <button class="btn btn-fab" id="myBtn">Keyboard shortcuts</button>
-
-<!--</div>-->
-<!--<button class="btn btn-fab keyboard-shortcuts-button-new" id="myBtn">Keyboard shortcuts</button>
-    -->    
 
 <!--The Ace Editor begin-->
 <div class="container">
     <div id="ace-editor">
         @Model.document.content
-
     </div>
 </div>
 
 <!-- Add Document -->
-
 <!-- Save button for Document -->
 <div class="editor-save-div">
-@using (Html.BeginForm("save", "Document", FormMethod.Post))
-{
+    @using (Html.BeginForm("save", "Document", FormMethod.Post))
+    {
         @Html.HiddenFor(m => m.document.content, new { @id = "hidden-editor" })
         <input type="submit" value="Save" id="btn-save" class="editor-save-button btn btn-fab" />
-}
+    }
 </div>
-
-
-
-<script>
-    $("form").click(function () {
-            console.log("Hallo");
-            console.log($("#hidden-editor").val(editor.getSession().getValue()));
-            $("#hidden-editor").val(editor.getSession().getValue());
-            var content = editor.getSession().getValue();
-
-            var url = window.location.href;
-            var docID = parseInt(url.substring(url.lastIndexOf('?') + 1));
-            console.log(docID);
-            
-            function f() {
-                window.location.href = "../../Document/ShowDocument/" + docID;
-            };
-    });
-   
-
-
-    $(function () {
-        $('#btn-save').on('click', function (e) {
-
-            e.preventDefault();
-            var DocumentModel = {};
-
-            DocumentModel.content = editor.getSession().getValue();
-            DocumentModel.ID = @Model.document.ID;
-                
-            var jsonData = JSON.stringify({
-                DocumentModel : DocumentModel
-            });
-
-            console.log("hi from ajax");
-
-            console.log(jsonData);
-
-            $.ajax({
-                type: 'POST',
-                url: '/Document/Save',
-                data: jsonData,
-                contentType: "application/json; charset=utf-8",
-                success: function (response) {
-                    console.log("Successfully saved!");
-                    toastr.success("Saved!");
-                    
-
-                }, error: function (response) {
-                    console.log("Something went wrong :(");
-                    toastr.error("Something went wrong");
-
-                }
-            });
-            return false;
-
-        });
-    });
-
-</script>
 
 <!-- Modal window -->
-<!--
-<div class="myBtn-div">
-    <button class="btn btn-fab keyboard-shortcuts-button" id="myBtn">Keyboard shortcuts</button>
-</div>
-    -->
 <div id="myModal" class="modal">
 
     <div class="modal-content">
@@ -153,8 +80,7 @@
         </table>
     </div>
 </div>
-
-    <!-- Modal window ends -->
+<!-- Modal window ends -->
 
 @section scripts
 {
@@ -163,11 +89,55 @@
     <script src="~/signalr/hubs"></script>
 
     <script>
+        $("form").click(function () {
+                $("#hidden-editor").val(editor.getSession().getValue());
+                var content = editor.getSession().getValue();
+                var url = window.location.href;
+                var docID = parseInt(url.substring(url.lastIndexOf('?') + 1));
 
+                function f() {
+                    window.location.href = "../../Document/ShowDocument/" + docID;
+                };
+        });
+
+        $(function () {
+            $('#btn-save').on('click', function (e) {
+                e.preventDefault();
+                var DocumentModel = {};
+
+                DocumentModel.content = editor.getSession().getValue();
+                DocumentModel.ID = @Model.document.ID;
+
+                var jsonData = JSON.stringify({
+                    DocumentModel : DocumentModel
+                });
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Document/Save',
+                    data: jsonData,
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        if(response == "success") {
+                            toastr.success("Saved!");
+                        }
+                        else if(response == "error") {
+                            toastr.error("This document has been deleted by another user");
+                        }
+
+                    }, error: function (response) {
+                        toastr.error("Something went wrong");
+
+                    }
+                });
+
+                return false;
+            });
+        });
+    </script>
+
+    <script>
         var documentID = @Model.document.ID;
-
-        console.log(documentID);
-
         var editor = ace.edit("ace-editor");
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
@@ -176,33 +146,25 @@
         var silent = false;
 
         codeHub.client.onChange = function (changeData) {
-            console.log(changeData);
-
             silent = true;
             editor.getSession().getDocument().applyDelta(changeData);
             mytestfunc(changeData);
             silent = false;
         };
 
-
         $.connection.hub.start().done(function () {
-
             codeHub.server.joinDocument(documentID);
-
             editor.on("change", function (obj) {
-                if (silent){
+                if(silent) {
                     return;
                 }
-                console.log(obj);
                 codeHub.server.onChange(obj, documentID);
             });
         });
 
-        // modal window functions
+        //Modal window functions
         var modal = document.getElementById('myModal');
-
         var btn = document.getElementById("myBtn");
-
         var span = document.getElementsByClassName("close")[0];
 
         btn.onclick = function() {
@@ -220,9 +182,7 @@
         }
         // auto-save feature
         function myTimer() {
-            console.log(' each 1 second...');
             var DocumentModel = {};
-
             DocumentModel.content = editor.getSession().getValue();
             DocumentModel.ID = @Model.document.ID;
                 
@@ -230,80 +190,20 @@
                 DocumentModel : DocumentModel
             });
 
-            console.log("hi from ajax");
-
-            console.log(jsonData);
-
             $.ajax({
                 type: 'POST',
                 url: '/Document/Save',
                 data: jsonData,
                 contentType: "application/json; charset=utf-8",
-                //  method: 'POST',
                 dataType: "json",
                 success: function (response) {
-
-                    var result = response.d;
-                    if (result == "success") {
-                        $("#msg").html("New record addded successfully  :)").css("color", "green");
-                    }
-
-                    console.log("hi from ajax success");
-                    console.log("hi" + response);
                 }, error: function (response) {
-                    console.log("hi from ajax error");
-                    console.log(response);
-
                 }
             });
+
             return false;
         }
 
         var myVar = setInterval(function(){ myTimer() }, 3000);
-       
     </script>
 }
-
-<!--Test Gudrunar-->
-<!-- Autocomplete -->
-<!--
-<script>
-    ace.require("ace/ext/language_tools");
-    var editor = ace.edit("ace-editor");
-    editor.setOptions({
-        enableBasicAutocompletion: true
-    });
-</script>
--->
-<!-- Trying to save the file -->
-<!--
-<script>
-    editor.getSession().on('change', function (e) {
-        thisfile = editor.getValue();
-    });
-</script>
--->
-<!--
-<script>
-    var lastLine = editor.session.getLength();
-    editor.gotoLine(lastLine);
-    editor.insert("the new text here"); // or session.setValue
-    editor.getValue(); // or session.getValue
-</script>
--->
-<!--
-<!-- Script to override enter button -->
-<script>
-    /* editor.commands.addCommand({
-        name: 'Enter',
-        bindKey: {win: 'Enter',  mac: 'Enter'},
-        exec: function(editor) {
-            editor.gotoLine(editor.session.getLength() + 1);
-            editor.insert("\n");
-            editor.insert("I'm at the bottom.");
-        },
-        readOnly: true // false if this command should not apply in readOnly mode
-    });*/
-</script>
-<!--End of test Gudrun-->
-<!--The Ace Editor end-->

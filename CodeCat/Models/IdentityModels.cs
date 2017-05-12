@@ -22,7 +22,6 @@ namespace CodeCat.Models
 
     public interface IAppDataContext
     {
-        IDbSet<UserModel> UserModel { get; set; }
         IDbSet<DocumentModel> DocumentModel { get; set; }
         IDbSet<ProjectModel> ProjectModel { get; set; }
         IDbSet<UserProjectModel> UserProjectModel { get; set; }
@@ -40,9 +39,8 @@ namespace CodeCat.Models
     {
         public IDbSet<ProjectModel> ProjectModel { get; set; }
         public IDbSet<DocumentModel> DocumentModel { get; set; }
-        public IDbSet<UserModel> UserModel { get; set; }
         public IDbSet<UserProjectModel> UserProjectModel { get; set; }
-      //  public IDbSet<ApplicationUser> ApplicationUser { get; set; }
+        public override IDbSet<ApplicationUser> Users { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

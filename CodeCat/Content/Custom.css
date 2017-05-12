@@ -1,173 +1,122 @@
 ﻿body {
-    font-family: Helvetica, Arial;
-    background-color: #e1e1e1;
+  font-family: Helvetica, Arial;
+  background-color: #e1e1e1;
 }
 
-/**/
+/*FRONT PAGE*/
 .logo-frontpage {
-    padding-top: 80px;
-    width: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  padding-top: 80px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*Front page heading for Code::Cat*/
 #code-cat {
-    font-weight: bold;
-    text-align: center;
+  font-weight: bold;
+  text-align: center;
 }
 
 /*Centering description*/
 .description {
-    text-align: center;
+  text-align: center;
 }
 
 /*Spaces for buttons*/
 .sign-frontpage {
-    margin: 40px 10px;
+  margin: 40px 10px;
 }
 
-/*Centering buttons and ul list*/
+/*Centering buttons */
 .info, 
 .center-buttons {
-    display: table; 
-    margin: 0 auto;
+  display: table; 
+  margin: 0 auto;
 }
 
 .sign-in-button {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
-/*In the pop up windows*/
-#sign-in-form {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-}
-
-/*Pop up window*/
-.modal-dialog {
-  z-index: 1050;
-  width: 400px;
-  padding: 10px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/*On the front page*/
-.sign-up-button {
-    margin-left: 5px;
-}
-
-/*Info about the system on the frontpage*/
-.info {
-    padding-top: 20px;
-}
-
+/*NAVIGATION BAR*/
 /*Logo on nav bar*/
 .navbar-brand {
-    width: 90px;
-    height: 90px;
-    padding-right: 10px;
+  width: 90px;
+  height: 90px;
+  padding-right: 10px;
 }
 
 .nav-bar-text {
-    text-align: center;
-    display: inline;
-    color: #dddddd;
-    position: center;
-    padding-right: 20%;
-}
-
-/*Logo on pop up windows*/
-.popup-window-logo {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-    float: none;
-    padding-bottom: 30px;
-}
-
-/*Background color for the popup windows*/
-.modal-header,
-.modal-body {
-    background-color: #e1e1e1;
+  text-align: center;
+  display: inline;
+  color: #fff;
+  position: center;
+  padding-right: 20%;
 }
 
 /*dropdown navbar*/
 .navdropdown {
-    padding: 0px;
-    position: absolute;
-    right: 15px;
-    top: 15px;
+  padding: 0px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
 
 .nav-dropdown-front{
-    padding: 0px;
-    boarder: 0px;
+  padding: 0px;
+  border: 0px;
 }
 
 #about-link {
-    padding-right: 60px;
-    padding-top: 20px;
-}
-
-/*Pop up window buttons*/
-.modal-footer button {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  padding-right: 60px;
+  padding-top: 20px;
 }
 
 .navbar-inverse {
-    background-color: #262626;
-    margin-bottom: 4px;
+  background-color: #262626;
+  margin-bottom: 4px;
 }
 
 h2 {
-    padding-top: 50px;
-    font-size: 25px;
-    font-weight: bold;
+  padding-top: 50px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
-.navbar-collapse collapse alignlink {
-
-}
-
+/*DASHBOARD*/
 /*Settings dropdown list on Dashboard*/
 .settings-dropdown {
-    border-radius: 5px;
-    position: relative;
-    background-color: #3c3a3a;
-    border: 0px;
-    color: white;
-    width: 14.5em;
-    height: 3.5em;
+  border-radius: 5px;
+  position: relative;
+  background-color: #3c3a3a;
+  border: 0px;
+  color: #fff;
+  width: 14.5em;
+  height: 3.5em;
 }
 
 .dropdown-menu {
-    position: absolute;
-    top: 94%;
-    background-color: #484848;
-    color: white;
+  position: absolute;
+  top: 94%;
+  background-color: #484848;
+  color: #fff;
 }
 
 .dropdown-items {
-    width: 14.5em;
+  width: 14.5em;
 }
 
 .dropdown-items li a {
-    color: white;
+  color: #fff;
 }
 
-/*Dropdown list*/
+/*DROPDOWN LIST*/
 .settings-dropdown:hover, 
 .settings-dropdown:focus,
 .settings-dropdown:active {
-    background-color: #575757;
-    color: white;
+  background-color: #575757;
+  color: #fff;
 }
 
 /*Dropdown list*/
@@ -176,22 +125,22 @@ h2 {
 .dropdown-items > .active > a,
 .dropdown-items > .active > a:hover,
 .dropdown-items > .active > a:focus {
-    background-color: #a3a3a3;
-    color: white;
+  background-color: #a3a3a3;
+  color: #fff;
 }
 
 /*Dropdown list arrow*/
 .settings-dropdown 
 .caret {
-    border-top-color: white;
-    position: relative;
-    top: 14px;
-    left: 6px;
-    color: white;
+  border-top-color: white;
+  position: relative;
+  top: 14px;
+  left: 6px;
+  color: white;
 }
 
 .dropdown-toggle-sort-projects {
-    width: 130px;
+  width: 130px;
 }
 
 .dropdown-toggle-sort-projects:after,
@@ -199,490 +148,461 @@ h2 {
 .dropdown-toggle-sort-projects:hover,
 .dropdown-toggle-sort-projects:visited,
 .dropdown-toggle-sort-projects:before {
-    color: #a3a3a3;
+  color: #a3a3a3;
 }
 
-/*Tabs of ACE EDITOR*/
-.navDoc {
-    position: absolute;
-    top: 110px;
-    right: 100px;
-    left: 100px;
-}
-
-/*Shape of ACE EDITOR*/
+/*ACE EDITOR*/
+/*Shape*/
 #ace-editor {
-    position: absolute;
-    height: 500px;
-    top: 150px;
-    right: 100px;
-    bottom: 50px;
-    left: 100px;
+  position: absolute;
+  height: 500px;
+  top: 150px;
+  right: 100px;
+  bottom: 50px;
+  left: 100px;
 }
 
 /*Button to save a document in ACE editor*/
-/*Why oh why will it not behave??*/
 .editor-save-div {
-    width: 60px;
-    padding-top: 520px;
-    display: inline-block;
+  width: 60px;
+  padding-top: 520px;
+  display: inline-block;
 }
 
 .editor-save-button {
-    width: 60px;
+  width: 60px;
 }
 
 #myBtn {
-    /*margin-left: 900px;*/
-    position: absolute;
-    margin-top: 60px;
-    margin-left: 35%;
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 35%;
 }
 
 .myBtn-div {
-    display: inline-block;
-}
-
-/*Button to get list of keyboard shortcuts on ACE*/
-.keyboard-shortcuts-button {
+  display: inline-block;
 }
 
 /*Login page*/
 .sign-in-form {
-    text-align: center;
-    margin-left: auto;
+  text-align: center;
+  margin-left: auto;
 }
 
 #loginForm, 
 #registerForm {
-    margin-left: auto;
-    margin-right: auto;
-    width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
 }
 
 .form-group,
 .form-control {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .add-document-div {
-    margin: auto;
-    width: 50%;
+  margin: auto;
+  width: 50%;
 }
 
 .add-document-form {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .label-for-type-dropdown {
-    text-align: center;
+  text-align: center;
 }
 
 .form-horizontal {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .control-label {
-    text-align: right;
-    margin-left: auto;
-    margin-right: auto;
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sign-up-from-sign-in {
-    float: right;
+  float: right;
 }
 
 .sign-up-logo {
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
 }
 
 .sign-in-logo-div {
-    margin-left: auto;
-    margin-right: auto;    
-    padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;    
+  padding-bottom: 20px;
 }
 
 /**/
 .toggle-theme {
-    padding-top:100px;
+  padding-top:100px;
 }
 
-/*footer*/
-footer {
-    position: absolute;
-    bottom: 0;
-}
-
-/*Dashboard*/
+/*DASHBOARD*/
 .project-box,
 .create-new-project-box {
-    min-height: 150px;
-    width: 250px;
-    overflow: auto;
-    vertical-align: top;
-    color: black; 
+  min-height: 150px;
+  width: 250px;
+  overflow: auto;
+  vertical-align: top;
+  color: #000; 
 }
 
 .create-new-doc-box {
-    height: 90px;
-    width: 290px;
+  height: 90px;
+  width: 290px;
 }
 
 #create-new-doc-box {
-    width: 290px;
-    padding-right: -10px;
+  width: 290px;
+  padding-right: -10px;
 }
 
 .create-new-project-box p {
-    color: black;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 .create-new-project-box:hover p {
-    color: white;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .create-new-project-box:hover {
-    color: white;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .create-new-project-box a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .project-box-inner:hover {
-    background-color: #c0c0c0;
-    color: white;
+  background-color: #c0c0c0;
+  color: #fff;
 }
 
 .project-box-inner {
-    height: 250px;
+  height: 250px;
 }
 
 .new-box {
-    background-color: #d0d0d0;
-    min-height: 155px;
-    height: 250px;
-    text-align: center;
+  background-color: #d0d0d0;
+  min-height: 155px;
+  height: 250px;
+  text-align: center;
 }
 
 .plus-sign {
-    margin-top: 30px;
-    margin-bottom: 50px;
-    width: 80px;
-    height: 80px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 80px;
+  height: 80px;
 }
 
 .plus-sign-div {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    color: black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  color: #000;
 }
 
 .plus-sign-div a {
-    color: black;
+  color: #000;
 }
 
+/*PROJECTS*/
 /*Wraps around project boxes*/
 .dashboard-wrapper {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-left:auto;
-    margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .new-box:hover {
-    background-color: #808080;
+  background-color: #808080;
 }
 
 .new-box a {
-    color: black;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 .new-box a:hover {
-    color: white;
+  color: #fff;
 }
 
 /*Create a new doc button/box on project page*/
 #create-new-doc {
-    width: 220px;
-    height: 249px;
+  width: 220px;
+  height: 249px;
 }
 
 .project-box a {
-    color: black;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 .project-box a:hover {
-    color: white;
+  color: #fff;
 }
 
 /* ADD USER / SHARE PROJECT */
 /*Share button*/
 .share-doc-button {
-    padding-top: 5px;
+  padding-top: 5px;
 }
 
 /*Text that appears if share button is clicked*/
 #hidden-text {
-    padding-top: 5px;
+  padding-top: 5px;
 }
 
 /*Choose the file type of new document*/
 .file-type-dropdown {
-    padding: 10px;
+  padding: 10px;
 }
 
 #add-doc-form {
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #buttons-add-doc {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.add-document-form {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .open-share-doc {
-    position: absolute;
-    right: 62px;
-    bottom: 50px;
+  position: absolute;
+  right: 62px;
+  bottom: 50px;
 }
 
 .open-share-doc-alone {
-    position: absolute;
-    bottom: 3.5em;
-    right: 6.7em;
+  position: absolute;
+  bottom: 3.5em;
+  right: 6.7em;
 }
 
 /*Delete Button In Dashboard*/
 .btn-delete-project {
-    width: 25px;
-    height: 25px;
-    background: url(/Images/delete.png) no-repeat;
-    float: right;
-    margin: 6px;
-    background-size: contain;
-    background-color: transparent;
-    text-indent: -9999px;
-    top: 6px;
+  width: 25px;
+  height: 25px;
+  background: url(/Images/delete.png) no-repeat;
+  float: right;
+  margin: 6px;
+  background-size: contain;
+  background-color: transparent;
+  text-indent: -9999px;
+  top: 6px;
 }
 
 .delete-button-form {
-    position: absolute;
-    top: 1em;
-    right: 1em;
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }
 
 /* Buttons*/
 .btn-fab {
-    background-color: #3c3a3a;
-    color: white;
+  background-color: #3c3a3a;
+  color: #fff;
 }
 
 a.btn-fab,
 a.btn-fab:visited {
-    color: white;
+  color: #fff;
 }
 
 a.btn-fab:hover {
-    color: #d0d0d0;
-    background: #575757;
+  color: #d0d0d0;
+  background: #575757;
 }
 
 /*404 page*/
 #not-found-page {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    text-align: center;
-    padding-top: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  text-align: center;
+  padding-top: 30px;
 }
 
 #not-found-page h2 {
-    margin-left: auto;
-    margin-right: auto;
-  
+  margin-left: auto;
+  margin-right: auto;  
 }
 
 #not-found-page h2 {
-    font-size: 60px;
-    font-weight: bold;
-    padding-top: 20px;
-}
-
-.not-found-page button {
+  font-size: 60px;
+  font-weight: bold;
+  padding-top: 20px;
 }
 
 .modal {
-
-    display: none;
-    position: absolute;
-    z-index: 4;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 150%;
-    overflow: visible;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 150%;
+  overflow: visible;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
-
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
+
 table {
-    font-family: Helvetica, Arial;
-    border-collapse: collapse;
-    width: 100%;
+  font-family: Helvetica, Arial;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
-}
-caption {
-    font-weight: bold;
-    font-size: 28px;
+  background-color: #dddddd;
 }
 
+caption {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+/*BREADCRUMS*/
 .our-breadcrumb {
-    height: 5px;
-    display: inline;
+  height: 5px;
+  display: inline;
 }
 
 .our-breadcrumb a {
-    color: #002986;
-    font-weight: bold;
+  color: #002986;
+  font-weight: bold;
 }   
 
 .our-breadcrumb a:hover {
-    color: blue;
-    text-decoration: none;
+  color: #00f;
+  text-decoration: none;
 }   
 
 #breadcrumb-div-project {
-    padding-top: 60px;
+  padding-top: 60px;
 }
 
 .breadcrumb-div {
-    padding-top: 40px;
-    display: block;
-    border: none;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
+  padding-top: 40px;
+  display: block;
+  border: none;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
 }
 
 .breadcrumb-item-active {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .document-breadcrumb-div {
-    padding-top: 40px;
+  padding-top: 40px;
 }
 
 /*About Us*/
-
 /*Pictures*/
 .img-profile {
-    height: 250px;
-    width: 200px;
-    border-radius: 15%;
-    align-content: center;
+  height: 250px;
+  width: 200px;
+  border-radius: 15%;
+  align-content: center;
 }
 
 .about-wrapper {
-    float: right;
-    align-content: center;
+  float: right;
+  align-content: center;
 }
 
 .about-profile {
-    align-content: center;
-    margin: 0px 0px 25px 0px;
+  align-content: center;
+  margin: 0px 0px 25px 0px;
 }
 
 /*Layout for sidebar list of users in a project*/
 .sidebar-view-list {
-    padding: 1em;
-    text-align: center;
-    background-color: #c8c8c8;
-    width: 13em;
-    position: absolute;
-    right: 1em;
-    top: 11.5em;
+  padding: 1em;
+  text-align: center;
+  background-color: #c8c8c8;
+  width: 13em;
+  position: absolute;
+  right: 1em;
+  top: 11.5em;
 }
 
 .sidebar-view-owner {
-    font-weight: bold;
-}
-
-.sidebar-view-users {
+  font-weight: bold;
 }
 
 .sidebar-con {
-    font-weight: bold;
-    font-size: 1.5em;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 h2 {
-    padding-left: 0.6em
+  padding-left: 0.6em
 }
 
 .dropdown {
-    padding-left: 1em;
+  padding-left: 1em;
 }
 
 .hello-message li a {
-    color: white;
-    text-decoration-color: white;
+  color: #fff;
+  text-decoration-color: white;
 }
 
 .share-btn-doc {
-    float: right;
-
+  float: right;
 }

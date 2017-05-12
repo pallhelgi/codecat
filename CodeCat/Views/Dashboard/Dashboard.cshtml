@@ -6,62 +6,46 @@
 }
 
 <h2>Dashboard</h2>
-
 <div class="dropdown">
     <button class="btn btn-fab dropdown-toggle-sort-projects" type="button" data-toggle="dropdown">
         Sort projects
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-        <li>@Html.ActionLink("By project name ascending", "Dashboard", new { id = 1 })</li>
-        <li>@Html.ActionLink("By project name descending", "Dashboard", new { id = 2 })</li>
-        <li>@Html.ActionLink("By newest", "Dashboard", new { id = 3 })</li>
-        <li>@Html.ActionLink("By oldest", "Dashboard", new { id = 4 })</li>
-        <li>@Html.ActionLink("By projects you created", "Dashboard", new { id = 5 })</li>
-        <li>@Html.ActionLink("By projects shared with you", "Dashboard", new { id = 6 })</li>
+        <li>@Html.ActionLink("By project name ascending", "dashboard", new { id = 1 })</li>
+        <li>@Html.ActionLink("By project name descending", "dashboard", new { id = 2 })</li>
+        <li>@Html.ActionLink("By newest", "dashboard", new { id = 3 })</li>
+        <li>@Html.ActionLink("By oldest", "dashboard", new { id = 4 })</li>
+        <li>@Html.ActionLink("By projects you created", "dashboard", new { id = 5 })</li>
+        <li>@Html.ActionLink("By projects shared with you", "dashboard", new { id = 6 })</li>
     </ul>
 </div>
     
-<!--
-<form action="Dashboard">
-    <select name="Filter" class="btn btn-primary dropdown-toggle">
-        <option value="1">@Html.ActionLink("By project name ascending", "Dashboard", new { id = 1 })</option>
-        <option value="2">By project name descending</option>
-        <option value="3">By newest</option>
-        <option value="4">By oldest</option>
-        <option value="5">By projects you created</option>
-        <option value="6">By projects shared with you</option>
-    </select>
-    <input type="submit" value="Submit">
-</form>
-   -->
 <div class="dashboard-wrapper" id="dashboard-wrapper">
-    <!--Create new project button-->
-    <section class="col-sm-4 create-new-project-box">
-        <a href="@Url.Action("AddProject")" class="plus-link">
-            <section class="well new-box">
-                <div class="plus-sign-div">
-                    <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
-                </div>
-                <p>Create a new project</p>
-            </section>
-        </a>
-    </section>
+        <!--Create new project button-->
+        <section class="col-sm-4 create-new-project-box">
+            <a href="@Url.Action("AddProject")" class="plus-link">
+                <section class="well new-box">
+                    <div class="plus-sign-div">
+                        <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
+                    </div>
+                    <p>Create a new project</p>
+                </section>
+            </a>
+        </section>
 
-<!--List of projects-->
-@using (Html.BeginForm())
-{
-    foreach (var itemj in Model.projects)
+    <!--List of projects-->
+    @using (Html.BeginForm())
     {
-    <section class="col-sm-4 project-box">
-        <div>
-            @Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class = "btn-delete-project", onclick = "return confirm('Are you sure you wish to delete this project?');" })
-        </div>
+        foreach (var itemj in Model.projects)
+        {
+            <section class="col-sm-4 project-box">
+                <div>
+                    @Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class = "btn-delete-project", onclick = "return confirm('Are you sure you wish to delete this project?');" })
+                </div>
                 <section class="well project-box-inner">
                     <div>
                         <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
-                        
-                        <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
                         @if (User.Identity.GetUserId() == itemj.creatorUserID)
                         {
                             <p>  You created this project </p>
@@ -74,56 +58,10 @@
                         <div class="open-share-doc">
                             @Html.ActionLink("Open", "../Project/ShowProject", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
                             @Html.ActionLink("Share", "../User/Share", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
-                            @*@Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class="btn btn-delete-project", onclick = "return confirm('Are you sure you wish to delete this project?');" })*@
                         </div>
                     </div>
                 </section>
-       </section>
+           </section>
+        }
     }
-}
-
-
-<script>
- 
- /*   $(function () {
-        $('.btn-delete-project').on('click', function (e) {
-
-            e.preventDefault();
-            //  var DocumentModel = {};
-            var projectModel = {};
-
-            console.log(e);
-
-            //  DocumentModel.content = editor.getSession().getValue();
-          //  ProjectModel.id
-
-            var jsonData = JSON.stringify({
-                ProjectModel : projectModel
-            });
-
-
-            console.log(jsonData);
-
-            $.ajax({
-                type: 'POST',
-                url: '/Dashboard/DeleteProject',
-                data: jsonData,
-                contentType: "application/json; charset=utf-8",
-                success: function (response) {
-                    console.log("Successfully saved!");
-                    toastr.success("Saved!");
-
-
-                }, error: function (response) {
-                    console.log("Something went wrong :(");
-                    toastr.error("Something went wrong");
-
-                }
-            });
-            return false;
-
-        });
-    });*/
-
-    </script>
 </div>

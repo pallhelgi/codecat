@@ -3,40 +3,27 @@
     ViewBag.Title = Model.projectName;
 }
 
-<!--
-<ol class="breadcrumb my-breadcrumb">
-    <li class="breadcrumb-item">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard")</li>
-    <li class="breadcrumb-item-active">@ViewBag.Title</li>
-</ol>
--->
-
 <div class="breadcrumb-div" id="breadcrumb-div-project">
     <h3 class="our-breadcrumb breadcrumb-item-active">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @ViewBag.Title</h3>
 </div>
 
-
 <div class="dashboard-wrapper" id="dashboard-wrapper">
     <!--Create new document button-->
     <section class="col-sm-4 project-box">
+        <script>
+            var url = window.location.href;
+            var projectID = parseInt(url.substring(url.lastIndexOf('/') + 1));
 
-        <!--<button type="submit" class="plus-link" onclick="k()"></button>-->
-
-            <script>
-                var url = window.location.href;
-                var projectID = parseInt(url.substring(url.lastIndexOf('/') + 1));
-                console.log(projectID);
-
-                function k() {
-                window.location.href = "../../Document/AddDocument/" + projectID;
-            };
-            </script>
-
-            <button type="submit" onclick="k()" class="well new-box" id="create-new-doc">
-                <div class="plus-sign-div">
-                    <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
-                </div>
-                <p>Create a new document</p>
-            </button>
+            function k() {
+            window.location.href = "../../Document/AddDocument/" + projectID;
+        };
+        </script>
+        <button type="submit" onclick="k()" class="well new-box" id="create-new-doc">
+            <div class="plus-sign-div">
+                <img src="~/Images/plusplus.png" alt="Add project" class="plus-sign" />
+            </div>
+            <p>Create a new document</p>
+        </button>
     </section>
 
     
@@ -52,11 +39,8 @@
                 <section class="well project-box-inner">
                     <div>
                         <h3>@Html.DisplayFor(modelItem => document.name)</h3>
-                        <!--<p>ID: @Html.DisplayFor(modelItem => document.ID)</p>-->
-
                         <div class="open-share-doc-alone">
                             @Html.ActionLink("Open", "../Project/ShowDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-fab" })
-                            
                         </div>
                     </div>
                 </section>
@@ -64,8 +48,6 @@
         }
     }
 </div>
-
-
 
 <div class="sidebar-view-list">   
     <p class="sidebar-con">Contributors: </p>
@@ -81,5 +63,4 @@
         }
     }
     @Html.ActionLink("Share this Project", "../User/Share", new { id = @Model.project.ID }, htmlAttributes: new { @class = "share-btn-doc btn btn-fab" })
-    
 </div>

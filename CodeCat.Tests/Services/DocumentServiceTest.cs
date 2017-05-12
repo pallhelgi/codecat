@@ -82,16 +82,16 @@ namespace CodeCat.Tests.Services
             var UP1 = new UserProjectModel
             {
                 ID = 1,
-                UserID = "mellon",
-                ProjectID = 1
+                userID = "mellon",
+                projectID = 1
             };
             mockDb.UserProjectModel.Add(UP1);
 
             var UP2 = new UserProjectModel
             {
                 ID = 2,
-                UserID = "stina",
-                ProjectID = 2
+                userID = "stina",
+                projectID = 2
             };
             mockDb.UserProjectModel.Add(UP2);
 

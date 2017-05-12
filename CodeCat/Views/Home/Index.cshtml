@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
-@model CodeCat.Models.UserModel
+@model CodeCat.Models.ApplicationUser
 
 <!--LOGO-->
 <img class="logo-frontpage" src="~/Images/kisi4.png" alt="CodeCat logo" />
@@ -18,6 +18,7 @@
         and had a child.
     </p>
 </div>
+<br />
 
 <!--SIGN IN og SIGN UP buttons-->
 <div class="center-buttons">
@@ -26,116 +27,11 @@
         <a href="@Url.Action("../Account/Login")" class="btn btn-fab sign-popup" id="btn-fab">
             Sign in
         </a>
-        <!--
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#SignInModal">
-            Sign in
-        </button>
-            -->
     </span>
     <!--Sign up button-->
     <span class="sign-up-button">
         <a href="@Url.Action("../Account/Register")" class="btn btn-fab sign-popup">
-            Sign up
+            Register
         </a>
-        <!--
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#SignUpModal">
-            Sign up
-        </button>
-            -->
     </span>
-</div>
-
-<!--Sign in modal window-->
-<div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel"></h4>
-            </div>
-            <div class="modal-body">
-
-                <!--Pop up window LOGO-->
-                <div class="popup-window-logo">
-                    <img src="~/Images/codecat_with_text.png" width="150" height="150" alt="Code Cat Logo" />
-                </div>
-
-                <!--Pop up window sign in form-->
-                <div id="sign-in-form">
-                    @using (Html.BeginForm())
-                    {
-                        @Html.LabelFor(model => model.username, new { htmlAttributes = new { @class = "form-label" } })
-                        <br />
-                        @Html.TextBoxFor(model => model.username, new { htmlAttributes = new { @class = "form-signin" } })
-                        <br />
-                        @Html.LabelFor(model => model.password, new { htmlAttributes = new { @class = "form-label" } })
-                        <br />
-                        @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-signin" } })
-                        <br />
-                    }
-                </div>
-
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success sign-in-button" data-dismiss="modal">Sign in</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Sign up modal window-->
-<div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel"></h4>
-            </div>
-            <div class="modal-body">
-
-                <!--Pop up window LOGO-->
-                <div class="popup-window-logo">
-                    <img src="~/Images/codecat_with_text.png" width="150" height="150" alt="Code Cat Logo" />
-                </div>
-                
-                <!--Pop up window sign un form-->
-                <div id="sign-in-form">
-                    @Html.LabelFor(model => model.fullName, new { htmlAttributes = new { @class = "form-label" } })
-                    <br />
-                    @Html.TextBoxFor(model => model.fullName, new { htmlAttributes = new { @class = "form-signup" } })
-                    <br />
-                    @Html.LabelFor(model => model.username, new { htmlAttributes = new { @class = "form-label" } })
-                    <br />
-                    @Html.TextBoxFor(model => model.username, new { htmlAttributes = new { @class = "form-signup" } })
-                    <br />
-                    @Html.LabelFor(model => model.email, new { htmlAttributes = new { @class = "form-label" } })
-                    <br />
-                    @Html.TextBoxFor(model => model.email, new { htmlAttributes = new { @class = "form-signup" } })
-                    <br />
-                    @Html.LabelFor(model => model.password, new { htmlAttributes = new { @class = "form-label" } })
-                    <br />
-                    @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-signup" } })
-                    <br />
-                    @Html.LabelFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-label" } })
-                    <br />
-                    @Html.PasswordFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-signup" } })
-                    <br />
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Sign up</button>
-                <span class="sign-in-button">
-                    <button type="button" class="btn btn-basic" data-toggle="modal" data-target="#SignInModal">Sign in</button>
-                </span>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
 </div>

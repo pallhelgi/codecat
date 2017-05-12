@@ -15,52 +15,30 @@ namespace CodeCat.Controllers
 
         private UserService userService = new UserService(null);
         private ProjectService projectService = new ProjectService(null);
-      //  private ServiceBase baas = new ServiceBase(null);
-        // GET: User
-        public ActionResult Index()
-        {
-            //TODO
-            return View();
-        }
-
-        public ActionResult listUsers(int ProjectID)
-        {
-            //TODO
-            return View();
-        }
-
-        public ActionResult signIn()
-        {
-            //TODO
-            Console.Write("hi");
-            return View();
-        }
 
         [HttpGet]
         public ActionResult share(ProjectModel project)
         {
-           
+            project = projectService.getProjectById(project.ID);
 
-                project = projectService.getProjectById(project.ID);
-
-                if (project != null)
-                {
-                    return View();
-                }
+            if (project != null)
+            {
+                return View();
+            }
           
-
             return RedirectToAction("../Dashboard/Dashboard");
         }
 
         [HttpPost]
         public ActionResult share(ApplicationUser user)
         {
-            if (user.Email != null)
+            if(user.Email != null)
             {
                 //The project ID is retrieved from the url
                 var url = Url.RequestContext.RouteData.Values["id"].ToString();
                 int urlInt = int.Parse(url);
 
+                //Check if the user already exists in the database
                 int check = 0;
                 foreach(var us in userService.getUsers())
                 {
@@ -69,70 +47,32 @@ namespace CodeCat.Controllers
                         check++;
                     }
                 }
+
                 if(check == 0)
                 {
                     ModelState.AddModelError("Email", "Uh oh, this user does not exist!");
+
                     return View(user);
                 }
 
                 //Prevent double share
                 List<ProjectModel> userProjects = projectService.getAllProjects(user.Email);
-
-                foreach (var proj in userProjects)
+                foreach(var proj in userProjects)
                 {
                     if(proj.name == projectService.getProjectById(urlInt).name)
                     {
                         ModelState.AddModelError("Email", "This user already has access to this project!");
+
                         return View(user);
                     }
                 }
 
                 userService.share(user.Email, urlInt);
+
                 return RedirectToAction("../Project/ShowProject/" + urlInt);
             }
 
             return View("../Home/Error");
-           // return View(user);
-        }
-
-
-        /*public ActionResult signUp()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult signUp(UserModel user)
-        {
-            //TODO
-            //TODO
-            /*if (ModelState.IsValid)
-            {
-                UserModel newUser = new UserModel();
-                newUser.ID = user.ID;
-                newUser.fullName = user.fullName;
-                newUser.username = user.username;
-                newUser.email = user.email;
-                newUser.password = user.password;
-
-                userService.addUser(newUser);
-
-                return RedirectToAction("Index");
-            }
-
-            return View(user);
-        }*/
-
-        public ActionResult forgottenPassword()
-        {
-            //TODO
-            return View();
-        }
-
-        public ActionResult createUser()
-        {
-            //TODO
-            return View();
         }
     }
 }
