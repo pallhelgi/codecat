@@ -78,10 +78,12 @@
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
                     console.log("Successfully saved!");
+                    toastr.success("Saved!");
                     
 
                 }, error: function (response) {
                     console.log("Something went wrong :(");
+                    toastr.error("Something went wrong");
 
                 }
             });
