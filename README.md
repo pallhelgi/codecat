@@ -24,58 +24,74 @@ Opening a document brings the user to the fantastic editor where he can finally 
 
 ### Front page
 
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18387227_120332000748943921_1302218760_n.jpg" alt="Front Page" width="350"/>
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18387227_120332000748943921_1302218760_n.jpg" alt="Front Page" width="200"/>
 
 ### Sign up and sign in
 The 'Sign In' and 'Sign Up' features are pretty straight forward fill out forms. No need for superfluous information, we only request an email address and a password, but promise never to spam you with emails!
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18425841_120332000717051007_953507242_n.jpg" alt="Register for a new account" width="350">
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18447901_120332000717569579_1117722544_n.jpg" alt="Sign up, friend" width="350"/>
 
-When the user has signed in he is able to create some cool projects with bunch of documents to write some code in. If he gets lonely he can always share the project with his friends so they can code together. No Code::Cat should be lonely!
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18425841_120332000717051007_953507242_n.jpg" alt="Register for a new account" width="200"> <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18447901_120332000717569579_1117722544_n.jpg" alt="Sign up, friend" width="226.5"/>
 
 ### Dashboard
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/Dashboard.JPG" alt="Dashboard" width="350" />
+When the user has signed in he is able to create some cool projects with bunch of documents to write some code in. If he gets lonely he can always share the project with his friends so they can code together. No Code::Cat should be lonely!
 
-### Project Page
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/Project.JPG" alt="Project Page" width="350" />
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/Dashboard.JPG" alt="Dashboard" width="600" />
+
+### Inside of a project
+
+
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/Project.JPG" alt="Project Page" width="600" />
 
 ### Inside of a document
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/Document.JPG" alt="Document" alt="Document" width="350" />
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/Document.JPG" alt="Document" alt="Document" width="600" />
 
 ### Create a new project
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18424780_120332000725636873_374558613_n.jpg" alt="Create a new project" width="350"/>
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18424780_120332000725636873_374558613_n.jpg" alt="Create a new project" width="200"/>
 
 Don't worry if you accidentally go astray because this little kitten will help you find your way back to the homepage.
 
 ### 404 page
-<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18471315_120332000688769752_2057557954_n.jpg" alt="This kitty is lost" width="350"/>
+<img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18471315_120332000688769752_2057557954_n.jpg" alt="This kitty is lost" width="200"/>
 
 ## Architecture layout - describe how the program is built with MVC
 The program was implemented with Model-View-Controller (MVC) in ASP.NET web form.
 * Models
-  The models in the program contain every variable needed. They are split into entity models and viewmodels.
+  
+  The models in the program contain every variable needed. They are split into entity models and view models.
   * Entity Models
-    Contain the neccesary variables to 
+    
+    Contain the neccesary variables to store in the database.
     * IdentityModels - ApplicationUser
     * ProjectModel
     * DocumentModel
   * View Models
     
+    Contains the variables and lists needed to display in the views.
     * DashboardViewModel
     * ProjectViewModel
     * DocumentViewModel
     * AccountViewModel
 * Views
-  * Describe
+  
+  *See 'Views' map in the project*
+  
+  Handles every view whicht the user sees while using the program.
 * Controllers
-    * AccountController
-    * DashboardController
-    * DocumentController
-    * ErrorController
-    * HomeController
-    * NoAccessController
-    * ProjectController
-  * Describe
+
+  The controllers fetch data from the database (through service classes - see below), send it to the views and vice versa.
+  * AccountController
+  * DashboardController
+  * DocumentController
+  * ErrorController
+  * HomeController
+  * NoAccessController
+  * ProjectController
+  
+In addition to the MVC structure we used service classes to talk to our database. They are the link that both adds and fetched data from the database and hands it to the right controller.
+
+They are as following:
+* UserService
+* ProjectService
+* UserService
 
 ## Coding standards(rules) and tools
  * Naming conventions:
@@ -98,6 +114,7 @@ The program was implemented with Model-View-Controller (MVC) in ASP.NET web form
 * Browser tested
   * Google Chrome
   * Mozilla Firefox
+  * Internet Explorer
  
 ## Code::Cat Members
 * Eydís Arnardóttir
