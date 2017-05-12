@@ -19,12 +19,7 @@
     <div class="add-document-div">
         <div class="form-group">
             @Html.LabelFor(m => m.type, new { @class = "control-label label-for-type-dropdown" })
-            <select class="form-control">
-                <option>HTML</option>
-            </select>
-            
- <!--           @Html.EnumDropDownListFor(m => m.type, new { @class = "form-control" })
- -->    
+            @Html.EnumDropDownListFor(m => m.type, new { @class = "form-control" })    
             @Html.ValidationMessageFor(m => m.type, "", new { @class = "text-danger" })
         </div>
         <div class="form-group">

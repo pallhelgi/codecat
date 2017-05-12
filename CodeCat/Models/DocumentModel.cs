@@ -6,12 +6,7 @@ using System.Web;
 
 namespace CodeCat.Models
 {
-    public enum documentType {
-        html,
-        css,
-        cplusplus,
-        js
-    }
+    public enum documentType { js }
 
     public class DocumentModel
     {

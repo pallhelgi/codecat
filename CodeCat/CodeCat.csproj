@@ -293,6 +293,10 @@
     <Compile Include="Migrations\201705102134328_UserModelErasedEmailError.Designer.cs">
       <DependentUpon>201705102134328_UserModelErasedEmailError.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705121124490_DocumentModel enum update.cs" />
+    <Compile Include="Migrations\201705121124490_DocumentModel enum update.Designer.cs">
+      <DependentUpon>201705121124490_DocumentModel enum update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocumentModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
@@ -490,6 +494,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705102134328_UserModelErasedEmailError.resx">
       <DependentUpon>201705102134328_UserModelErasedEmailError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705121124490_DocumentModel enum update.resx">
+      <DependentUpon>201705121124490_DocumentModel enum update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
