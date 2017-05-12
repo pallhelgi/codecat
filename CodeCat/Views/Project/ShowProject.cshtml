@@ -14,6 +14,7 @@
     <h3 class="our-breadcrumb breadcrumb-item-active">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @ViewBag.Title</h3>
 </div>
 
+
 <div class="dashboard-wrapper" id="dashboard-wrapper">
     <!--Create new document button-->
     <section class="col-sm-4 project-box">
@@ -38,6 +39,7 @@
             </button>
     </section>
 
+    
     @using (Html.BeginForm())
     {
     <!--List of projects-->
@@ -64,8 +66,6 @@
 </div>
 
 
-@Html.ActionLink("Share", "../User/Share", new { id = @Model.project.ID }, htmlAttributes: new { @class = "btn btn-fab" })
-
 
 <div class="sidebar-view-list">   
     <p class="sidebar-con">Contributors: </p>
@@ -80,5 +80,6 @@
             <p class="sidebar-view-users">@user.Email</p>
         }
     }
+    @Html.ActionLink("Share this Project", "../User/Share", new { id = @Model.project.ID }, htmlAttributes: new { @class = "share-btn-doc btn btn-fab" })
     
 </div>
