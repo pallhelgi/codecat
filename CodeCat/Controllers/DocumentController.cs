@@ -83,6 +83,7 @@ namespace CodeCat.Controllers
                 }
                 else
                 {
+                    ModelState.AddModelError("name", "Oops, this project already has a document with this name!");
                     return View(docFromUser);
                 }
 
