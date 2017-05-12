@@ -56,11 +56,10 @@
     <section class="col-sm-4 project-box">
 
                 <section class="well project-box-inner">
-        
+                    <div class="delete-button-div">
+                        @Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class = "btn btn-delete-project", onclick = "return confirm('Are you sure you wish to delete this project?');" })
+                    </div>
                     <div>
-                        <div>
-                            @Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class = "btn btn-delete-project", onclick = "return confirm('Are you sure you wish to delete this project?');" })
-                        </div>
                         <h3>@Html.DisplayFor(modelItem => itemj.name)</h3>
                         
                         <!--<p>ID: @Html.DisplayFor(modelItem => itemj.ID)</p>-->
@@ -74,8 +73,6 @@
                         }
 
                         <div class="open-share-doc">
-                            <br />
-                            <br />
                             @Html.ActionLink("Open", "../Project/ShowProject", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
                             @Html.ActionLink("Share", "../User/Share", new { id = itemj.ID }, htmlAttributes: new { @class = "btn btn-fab" })
                             @*@Html.ActionLink("Delete", "../Dashboard/DeleteProject", new { id = itemj.ID }, new { @class="btn btn-delete-project", onclick = "return confirm('Are you sure you wish to delete this project?');" })*@
