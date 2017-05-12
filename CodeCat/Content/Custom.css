@@ -104,6 +104,11 @@
     top: 15px;
 }
 
+.nav-dropdown-front{
+    padding: 0px;
+    boarder: 0px;
+}
+
 #about-link {
     padding-right: 60px;
     padding-top: 20px;
@@ -180,8 +185,8 @@ h2 {
 .caret {
     border-top-color: white;
     position: relative;
-    top: 1em;
-    left: 0.5em;
+    top: 14px;
+    left: 6px;
     color: white;
 }
 
@@ -474,6 +479,7 @@ footer {
     float: right;
     margin: 5px;
     background-size: contain;
+    background-color: transparent;
     text-indent: -9999px;
     top: 6px;
 }
