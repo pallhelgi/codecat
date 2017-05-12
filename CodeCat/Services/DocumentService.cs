@@ -93,18 +93,8 @@ namespace CodeCat.Services
 
         public DocumentModel getDocumentByID(int documentID)
         {
-            DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
-                
-            if(document == null)
-            {
-                throw new Exception("That document id is invalid");
+            return _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
 
-            }
-
-            return document;
-
-
-            
         }
     }
 }

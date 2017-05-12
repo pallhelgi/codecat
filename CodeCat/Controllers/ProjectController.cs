@@ -57,6 +57,11 @@ namespace CodeCat.Controllers
             viewModel.document = documentService.getDocumentByID(document.ID);
 
             DocumentModel model = documentService.getDocumentByID(document.ID);
+            if(model == null)
+            {
+                return RedirectToAction("../Dashboard/Dashboard");
+            }
+
             viewModel.documentName = model.name;
             ProjectModel p5Model = projectService.getProjectById(model.projectID);
             viewModel.docProjectName = p5Model.name;

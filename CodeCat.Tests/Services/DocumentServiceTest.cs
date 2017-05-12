@@ -148,7 +148,6 @@ namespace CodeCat.Tests.Services
 
 
         [TestMethod]
-        [ExpectedException(typeof(Exception), "That document id is invalid")]
         public void deleteDocument1()
         {
             // Arrange:
@@ -163,6 +162,8 @@ namespace CodeCat.Tests.Services
             var result = _service.getDocumentByID(id);
 
             // Assert:
+
+            Assert.AreEqual(null, result);
 
         }
 
@@ -235,7 +236,6 @@ namespace CodeCat.Tests.Services
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception), "That document id is invalid")]
         public void getDocument10()
         {
             // Arrange:
@@ -247,6 +247,8 @@ namespace CodeCat.Tests.Services
             var result = _service.getDocumentByID(docID);
 
             // Assert:
+
+            Assert.AreEqual(null, result);
 
         }
 
