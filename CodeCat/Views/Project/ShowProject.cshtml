@@ -50,12 +50,9 @@
                 <section class="well project-box-inner">
                     <div>
                         <h3>@Html.DisplayFor(modelItem => document.name)</h3>
-
                         <!--<p>ID: @Html.DisplayFor(modelItem => document.ID)</p>-->
 
-                        <div class="open-share-doc">
-                            <br />
-                            <br />
+                        <div class="open-share-doc-alone">
                             @Html.ActionLink("Open", "../Project/ShowDocument", new { id = document.ID }, htmlAttributes: new { @class = "btn btn-fab" })
                             
                         </div>

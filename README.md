@@ -32,7 +32,7 @@ The 'Sign In' and 'Sign Up' features are pretty straight forward fill out forms.
 <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18425841_120332000717051007_953507242_n.jpg" alt="Register for a new account" width="350">
 <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18447901_120332000717569579_1117722544_n.jpg" alt="Sign up, friend" width="350"/>
 
-When the user has signed in he is able to create some cool projects with bunch of documents to write some code in. If he gets lonely he can always share the project with his friends so they can code together. No code::cat should be lonely!
+When the user has signed in he is able to create some cool projects with bunch of documents to write some code in. If he gets lonely he can always share the project with his friends so they can code together. No Code::Cat should be lonely!
 
 **EINHVER SCREEN SHOT AF VIRKNINNI**
 
@@ -87,7 +87,7 @@ The program was implemented with Model-View-Controller (MVC) in ASP.NET web form
 * Tools
   *	Visual Studio 2015
   * Git and Github for version control and issue tracking.
-  * Operating systems tested
+* Operating systems tested
   * Windows 10
 * Browser tested
   * Google Chrome
