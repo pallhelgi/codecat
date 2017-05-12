@@ -47,9 +47,9 @@ When the user has signed in he is able to create some cool projects with bunch o
 ### Create a new project
 <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18424780_120332000725636873_374558613_n.jpg" alt="Create a new project" width="200"/>
 
+### 404 page
 Don't worry if you accidentally go astray because this little kitten will help you find your way back to the homepage.
 
-### 404 page
 <img src="https://github.com/eyrunh16/CodeCat/blob/master/CodeCat/Images/18471315_120332000688769752_2057557954_n.jpg" alt="This kitty is lost" width="200"/>
 
 ## Architecture layout - describe how the program is built with MVC
@@ -65,14 +65,12 @@ The program was implemented with Model-View-Controller (MVC) in ASP.NET web form
     * DocumentModel
   * View Models
     
-    Contains the variables and lists needed to display in the views.
+    Contain the variables and lists needed to display in the views.
     * DashboardViewModel
     * ProjectViewModel
     * DocumentViewModel
     * AccountViewModel
-* Views
-  
-  *See 'Views' map in the project*
+* Views *(See 'Views' map in the project)*
   
   Handles every view whicht the user sees while using the program.
 * Controllers
