@@ -7,49 +7,54 @@ using CodeCat.Services;
 
 namespace CodeCat.Services
 {
-    public class UserService : ServiceBase
+    public class UserService
     {
-        //public readonly IAppDataContext db;
+        public IAppDataContext _db;
 
-        public UserService(IAppDataContext context) : base(context)
+        public UserService(IAppDataContext context)
         {
-           // db = context ?? new ApplicationDbContext();
+            _db = context ?? new ApplicationDbContext();
         }
 
-        //  ServiceBase baas = new ServiceBase();
-        public UserModel user;
-
-        public bool share(string email, int projectID)
+        public void share(string email, int projectID)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == email);
-
-            if(user != null)
+            var link = new UserProjectModel
             {
-                var link = new UserProjectModel
-                {
-                    UserID = user.Id,
-                    ProjectID = projectID
-                };
+                UserID = user.Id,
+                ProjectID = projectID
+            };
 
-                _db.UserProjectModel.Add(link);
-                _db.SaveChanges();
-
-                return true;
-            }
-
-            return false;
+            _db.UserProjectModel.Add(link);
+            _db.SaveChanges();
 
         }
 
-        public List<ApplicationUser> getUsersSharingADocument(DocumentModel document)
+        public List<ApplicationUser> getUsersSharingADocument(int projID)
         {
-            var result = from user in _db.Users
+            var result = from u in _db.Users
                          join con in _db.UserProjectModel
-                         on user.Id equals con.UserID
-                         where con.ProjectID == document.projectID
-                         select user;
+                         on u.Id equals con.UserID
+                         where con.ProjectID == projID
+                         select u;
 
-            return result.ToList();
+            var resultOwner = from u in _db.Users
+                              join proj in _db.ProjectModel
+                              on u.Id equals proj.creatorUserID
+                              where proj.ID == projID
+                              select u;
+
+            List<ApplicationUser> users = result.ToList();
+            ApplicationUser user = resultOwner.ToList().FirstOrDefault();
+
+            users.Add(user);
+
+            return users;
+        }
+
+        public List<ApplicationUser> getUsers()
+        {
+            return _db.Users.ToList();
         }
     }
 }

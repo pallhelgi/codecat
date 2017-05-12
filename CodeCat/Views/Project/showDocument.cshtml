@@ -5,10 +5,13 @@
 }
 
 
-<div class="breadcrumb-div document-breadcrumb-div">
-    <h3 class="our-breadcrumb breadcrumb-item-active">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @Html.ActionLink(Model.docProjectName, "../Project/ShowProject", new { id = Model.document.projectID }) / @Model.documentName</h3>
-</div>
+<!--<div class="breadcrumb-div document-breadcrumb-div">-->
+<h3 class="our-breadcrumb breadcrumb-item-active breadcrumb-div">@Html.ActionLink("Dashboard", "../Dashboard/Dashboard") / @Html.ActionLink(Model.docProjectName, "../Project/ShowProject", new { id = Model.document.projectID }) / @Model.documentName</h3>
+<button class="btn btn-fab" id="myBtn">Keyboard shortcuts</button>
 
+<!--</div>-->
+<!--<button class="btn btn-fab keyboard-shortcuts-button-new" id="myBtn">Keyboard shortcuts</button>
+    -->
 <input type="hidden" id="currentUser" name="currentUser" value="@HttpContext.Current.User.Identity.Name" />
     
 
@@ -23,13 +26,14 @@
 <!-- Add Document -->
 
 <!-- Save button for Document -->
+<div class="editor-save-div">
 @using (Html.BeginForm("save", "Document", FormMethod.Post))
 {
-    <div class="container editor-save-div">
-        @Html.HiddenFor(m => m.document.content , new { @id = "hidden-editor" })
-        <input type="submit" value="Save" id="btn-save" class="editor-save-button btn btn-success" />
-     </div>
+        @Html.HiddenFor(m => m.document.content, new { @id = "hidden-editor" })
+        <input type="submit" value="Save" id="btn-save" class="editor-save-button btn btn-fab" />
 }
+</div>
+
 
 
 <script>
@@ -74,6 +78,7 @@
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
                     console.log("Successfully saved!");
+                    
 
                 }, error: function (response) {
                     console.log("Something went wrong :(");
@@ -88,8 +93,11 @@
 </script>
 
 <!-- Modal window -->
-<button id="myBtn">Keyboard shortcuts</button>
-
+<!--
+<div class="myBtn-div">
+    <button class="btn btn-fab keyboard-shortcuts-button" id="myBtn">Keyboard shortcuts</button>
+</div>
+    -->
 <div id="myModal" class="modal">
 
     <div class="modal-content">
@@ -144,6 +152,7 @@
             </tr>
         </table>
     </div>
+</div>
 
     <!-- Modal window ends -->
 

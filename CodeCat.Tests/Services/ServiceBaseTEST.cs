@@ -14,7 +14,7 @@ namespace CodeCat.Tests.Services
     [TestClass]
     public class ServiceBaseTest
     {
-        private ServiceBase _service;
+       /* private ServiceBase _service;
 
         [TestInitialize]
         public void Initializer()
@@ -192,11 +192,7 @@ namespace CodeCat.Tests.Services
             var result = _service.getProjectByDocumentID(docID);
 
             // Assert:
-
-            
-
-        }
-
+        }*/
 
     }
 }

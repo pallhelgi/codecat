@@ -67,7 +67,7 @@ namespace CodeCat.Tests.Services
             _service = new UserService(mockDb);
         }
 
-        [TestMethod]
+     /*   [TestMethod]
         public void shareWithMellon()
         {
             // Arrange:
@@ -87,6 +87,6 @@ namespace CodeCat.Tests.Services
 
             //there is no user with the email "nina@nina.com"
             Assert.AreEqual(false, result2);
-        }
+        }*/
     }
 }

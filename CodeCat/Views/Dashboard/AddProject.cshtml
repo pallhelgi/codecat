@@ -25,7 +25,16 @@
             @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger" })
         </div>
         <di>
-            <button type="submit" value="Create" id="create-button" class="btn btn-fab">Create</button>
+            <button type="submit" value="Create" id="create-button" onclick="hi()" class="btn btn-fab">Create</button>
+
+            <script>
+                console.log("hi");
+               
+                function hi() {
+                    var name = $(".form-control").val();
+                    toastr.success(name + " was added to your projects!");
+                };
+            </script>
         </di>
     </div>
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCat", "CodeCat\CodeCat.csproj", "{DCA5DD03-FA98-4D03-B02D-95D44F2E9AB0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6020B5BC-1046-4432-8055-DA023B4EE656}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCat.Tests", "CodeCat.Tests\CodeCat.Tests.csproj", "{230ED607-0C91-4A49-8899-DAC6B99EAB38}"
 EndProject
 Global

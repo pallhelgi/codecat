@@ -77,18 +77,18 @@ namespace CodeCat.Controllers
                 doc.content = null;
                 doc.projectID = urlInt;
                 bool success = docService.addDocument(doc);
-                if (success)
+                if (success == true)
                 {
                     return RedirectToAction("../Project/ShowDocument/" + doc.ID);
                 }
                 else
                 {
-                    return View("../Project/AddDocument");
+                    return View(docFromUser);
                 }
 
             }
 
-            return View("../Home/Error");
+            return RedirectToAction("../Home/Error");
         }
      }
 }

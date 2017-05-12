@@ -15,12 +15,12 @@ namespace CodeCat.Services
     {
         public class EmptyException { }
         //Connecting the serviceBase to the appDbContext class which speaks to the database(sql)
-        public readonly IAppDataContext _db; //= new ApplicationDbContext();
+        /*public  ApplicationDbContext _db; //= new ApplicationDbContext();
 
-        public ServiceBase(IAppDataContext context)
+        public ServiceBase()
         {
-            _db = context ?? new ApplicationDbContext();
-        }
+            _db =  new ApplicationDbContext();
+        }*/
 
 
         //gets a list of projects connected to a specific user
@@ -53,11 +53,11 @@ namespace CodeCat.Services
             return lis;
         }*/
 
-        public ProjectModel getProjectByID(int projectID)
+        /*public ProjectModel getProjectByID(int projectID)
         {
           
             return _db.ProjectModel.FirstOrDefault(x => x.ID == projectID);
-        }
+        }*/
 
         //gets a list of projects created by a specific user
         /*public List<ProjectModel> getUserProjectsFromDB(string username)
@@ -165,10 +165,10 @@ namespace CodeCat.Services
             return documents;
         }*/
 
-        public DocumentModel getDocumentByID(int documentID)
+        /*public DocumentModel getDocumentByID(int documentID)
         {
             return _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
-        }
+        }*/
 
         //adds a doccument to database
         /*public bool addDocumentToDB(DocumentModel document)
@@ -179,14 +179,19 @@ namespace CodeCat.Services
             return true;
         }*/
 
+//<<<<<<< HEAD
        /* public UserModel getuserByID(int userID)
+=======
+        /*public UserModel getuserByID(int userID)
+>>>>>>> ea745a2f9d977071e584a5757a79075279925d1c
         {
             UserModel user = _db.UserModel.FirstOrDefault(x => x.ID == userID);
             return user;
         }*/
 
-        public int getProjectByDocumentID(int documentID)
+        /*public int getProjectIDByDocumentID(int documentID)
         {
+<<<<<<< HEAD
             try
             {
                 DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
@@ -200,7 +205,11 @@ namespace CodeCat.Services
             }
           
         }
-
+=======
+            DocumentModel document = _db.DocumentModel.FirstOrDefault(x => x.ID == documentID);
+            int projectID = document.projectID;
+            return projectID;
+        }*/
         /*public string getProjectCreatorByID(string username)
         {
             ApplicationUser user = _db.Users.FirstOrDefault(x => x.Email == username);

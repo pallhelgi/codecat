@@ -15,7 +15,7 @@ namespace CodeCat.Controllers
 
         private UserService userService = new UserService(null);
         private ProjectService projectService = new ProjectService(null);
-        private ServiceBase baas = new ServiceBase(null);
+      //  private ServiceBase baas = new ServiceBase(null);
         // GET: User
         public ActionResult Index()
         {
@@ -62,7 +62,7 @@ namespace CodeCat.Controllers
                 int urlInt = int.Parse(url);
 
                 int check = 0;
-                foreach(var us in userService._db.Users)
+                foreach(var us in userService.getUsers())
                 {
                     if(us.Email == user.Email)
                     {
@@ -77,9 +77,10 @@ namespace CodeCat.Controllers
 
                 //Prevent double share
                 List<ProjectModel> userProjects = projectService.getAllProjects(user.Email);
-                foreach(var proj in userProjects)
+
+                foreach (var proj in userProjects)
                 {
-                    if(proj.name == userService.getProjectByID(urlInt).name)
+                    if(proj.name == projectService.getProjectById(urlInt).name)
                     {
                         ModelState.AddModelError("Email", "This user already has access to this project!");
                         return View(user);

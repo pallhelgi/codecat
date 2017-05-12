@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,9 @@ namespace CodeCat.Tests.Controllers
 {
     public class ControllerTest
     {
+        [TestMethod]
         public void ControllerTester()
+
         {
             // Arrange:
 
