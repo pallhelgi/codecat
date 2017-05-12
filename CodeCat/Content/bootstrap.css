@@ -2025,8 +2025,9 @@ textarea.input-lg {
 
 .btn:hover,
 .btn:focus {
-  color: #333333;
   text-decoration: none;
+  color: #d0d0d0;
+  background: #575757;
 }
 
 .btn:active,
@@ -3234,7 +3235,8 @@ input[type="button"].btn-block {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  width: 14.5em;
+  top: 88%;
   left: 0;
   z-index: 1000;
   display: none;
@@ -3244,7 +3246,7 @@ input[type="button"].btn-block {
   margin: 2px 0 0;
   font-size: 14px;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #4c4c4c;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -3271,7 +3273,7 @@ input[type="button"].btn-block {
   clear: both;
   font-weight: normal;
   line-height: 1.428571429;
-  color: #333333;
+  color: #fff;
   white-space: nowrap;
 }
 
@@ -3294,7 +3296,7 @@ input[type="button"].btn-block {
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
-  color: #999999;
+  color: #fff;
 }
 
 .dropdown-menu > .disabled > a:hover,
@@ -3319,7 +3321,7 @@ input[type="button"].btn-block {
   padding: 3px 20px;
   font-size: 12px;
   line-height: 1.428571429;
-  color: #999999;
+  color: #fff;
 }
 
 .dropdown-backdrop {
