@@ -72,7 +72,7 @@ The program was implemented with Model-View-Controller (MVC) in ASP.NET web form
     * AccountViewModel
 * Views *(See 'Views' map in the project)*
   
-  Handles every view whicht the user sees while using the program.
+  Handles every view which the user sees while using the program.
 * Controllers
 
   The controllers fetch data from the database (through service classes - see below), send it to the views and vice versa.
