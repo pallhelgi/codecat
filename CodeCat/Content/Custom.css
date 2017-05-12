@@ -180,8 +180,8 @@ h2 {
 .caret {
     border-top-color: white;
     position: relative;
-    top: 1em;
-    left: 0.5em;
+    top: 14px;
+    left: 6px;
     color: white;
 }
 
